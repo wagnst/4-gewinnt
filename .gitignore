@@ -22,6 +22,10 @@
 *.x86_64
 *.hex
 
+# Apple -.-
+*.DS_Store
+/Debug/4-gewinnt
+
 # CodeBlocks specific
 *.layout
 *.depend
