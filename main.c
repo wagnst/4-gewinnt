@@ -7,7 +7,7 @@
 #include "variables.h"
 //and include function files themselves:
 #include "dummy.c"
-
+#include "mainMenu.c"
 int main()
 {
 	printf("Hello! [Program start dummy print]\n");
