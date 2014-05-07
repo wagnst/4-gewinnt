@@ -10,9 +10,7 @@
 #include "mainMenu.c"
 int main()
 {
-	printf("Hello! [Program start dummy print]\n");
 
-	HelloWorld();
 
-	return 0;
+	return mainMenu();
 }

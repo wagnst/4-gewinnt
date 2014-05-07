@@ -67,7 +67,8 @@ int mainMenu(){
                 case 3:
                      system("clear");
                     //replace printf with corresponding call
-                   showHallOfShame();
+                    printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
+                   //showHallOfShame();
                     break;
                 case 4:
                      //end game
