@@ -1,0 +1,2 @@
+﻿Niko,Marvin,18
+Michael,Niko,22
