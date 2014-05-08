@@ -40,7 +40,7 @@ void showHallOfShame(){
 	        printf("%s busted %s with %s moves\n",victor,victim,moves);
 	    }
 	    fclose(fh);
-	    return 0;
+//	    return 0;
 }
 
 void updateSaveHoS(char* victor,char* victim,int moves){

@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <string.h>
 void drawMainMenu(int pPos){
     consoleClear();
  switch(pPos){
@@ -35,20 +36,85 @@ int mainMenu(){
 	*/
 	while(con){
          drawMainMenu(pPos);
-        userInput="";
-        scanf("%c", &userInput);
-        switch(userInput){
+
+         //Windows implementation:
+	#ifdef _win32
+         switch(getch()) {
+    case 65:    // key up
+    	pPos--;
+        break;
+    case 66:    // key down
+    	pPos++;
+        break;
+    case 67:    // key right
+        break;
+    case 68:    // key left
+        break;
+	case '\n':
+		mainMenuReactToEnter();
+		break;
+}
+	#else
+	userInput="";
+	scanf("%c", &userInput);
+	 switch(userInput){
             //dummy for key up
-            case 'u':
+            case 'w':
                 pPos--;
                 break;
             //dummy for key down
-            case 'd':
+            case 's':
                 pPos++;
                 break;
             //dummy for return key
             case 'e':
-                switch(pPos){
+                mainMenuReactToEnter();
+                break;
+
+
+        }
+        //userInput="";
+       //gets(&userInput);
+        //scanf("%7[^\n]", &userInput);
+	#endif
+
+
+/**
+
+	if(strcmp(userInput,up)){
+		pPos--;
+	} else if(strcmp(userInput,down)){
+		pPos++;
+	}
+	*/
+        if(pPos>4){
+            //cursor is "below" the menu-->get him back
+            pPos=0;
+        } else if(pPos<0){
+            //cursor is the "over" the menu-->get him back
+            pPos=4;
+        }
+        printf("\n");
+      //  system("clear");
+    }
+    printf("Programm ended \n");
+}
+
+
+
+void consoleClear(){
+	//should clear the console on most plattforms
+	#ifdef _WIN32
+	//detected windows System (both 32 and 64bit)-->use windows clear
+		system("CLS");
+	#else
+	//detected other (non windows) System-->unse Unix-clear
+		system("clear");
+	#endif
+
+}
+void mainMenuReactToEnter(){
+	switch(pPos){
                 case 0:
                     consoleClear();
                     //replace printf with corresponding call
@@ -67,40 +133,12 @@ int mainMenu(){
                 case 3:
                      consoleClear();
                     //replace printf with corresponding call
-                    printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
-                   //showHallOfShame();
+                   //printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
+                     showHallOfShame();
                     break;
                 case 4:
                      //end game
                      con=0;
                     break;
                 }
-                break;
-
-
-        }
-
-        if(pPos>4){
-            //cursor is "below" the menu-->get him back
-            pPos=0;
-        } else if(pPos<0){
-            //cursor is the "over" the menu-->get him back
-            pPos=4;
-        }
-        printf("\n");
-      //  system("clear");
-    }
-    printf("Programm ended \n");
 }
-void consoleClear(){
-	//should clear the console on most plattforms
-	#ifdef _WIN32
-	//detected windows System (both 32 and 64bit)-->use windows clear
-		system("CLS");
-	#else
-	//detected other (non windows) System-->unse Unix-clear
-		system("clear");
-	#endif
-
-}
-
