@@ -3,7 +3,7 @@ extern int testerVariable;
 //mainMenu.c
 int pPos;
 int con;
-char userInput;
+unsigned char userInput;
 //board.c
 struct board {
 	unsigned int width;
