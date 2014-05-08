@@ -1,5 +1,5 @@
 ﻿//dummy.c
-int testerVariable;
+extern int testerVariable;
 //mainMenu.c
 int pPos;
 int con;

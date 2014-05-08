@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-testerVariable = 42;
+int testerVariable = 42;
 
 void HelloWorld()
 {
