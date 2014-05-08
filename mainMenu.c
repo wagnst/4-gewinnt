@@ -1,6 +1,6 @@
 ﻿#pragma once
 void drawMainMenu(int pPos){
-    system("clear");
+    consoleClear();
  switch(pPos){
     case 0:
         printf("-->NEW GAME<--\nSETTINGS\nRULES\nHALL OF SHAME\nQUIT\n");break;
@@ -50,22 +50,22 @@ int mainMenu(){
             case 'e':
                 switch(pPos){
                 case 0:
-                    system("clear");
+                    consoleClear();
                     //replace printf with corresponding call
                     printf("Starting new Game(Dummy)\nPress any key to return to main\n");
                     break;
                 case 1:
-                     system("clear");
+                     consoleClear();
                     //replace printf with corresponding call
                     printf("Settings Menu(Dummy)\nPress any key to return to main\n");
                     break;
                 case 2:
-                     system("clear");
+                     consoleClear();
                     //replace printf with corresponding call
                     printf("Rules (Dummy)\nPress any key to return to main\n");
                     break;
                 case 3:
-                     system("clear");
+                     consoleClear();
                     //replace printf with corresponding call
                     printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
                    //showHallOfShame();
@@ -91,5 +91,16 @@ int mainMenu(){
       //  system("clear");
     }
     printf("Programm ended \n");
+}
+void consoleClear(){
+	//should clear the console on most plattforms
+	#ifdef win32
+	//detected windows System-->use windows clear
+		system("CLS");
+	#else
+	//detected other (non windows) System-->unse Unix-clear
+		system("clear");
+	#endif
+
 }
 
