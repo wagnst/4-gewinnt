@@ -8,6 +8,7 @@
 //and include function files themselves:
 #include "dummy.c"
 #include "mainMenu.c"
+#include "hallofshame.c"
 int main()
 {
 

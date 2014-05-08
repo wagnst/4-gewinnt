@@ -4,5 +4,8 @@ void HelloWorld();
 void drawMainMenu();
 int mainMenu();
 void consoleClear();
-//dummy;
+//hallofshame.c
 void showHallOfShame();
+void updateSaveHoS(char* victor,char* victim,int moves);
+int extractMoves(char* line);
+int getOldFileLength();
