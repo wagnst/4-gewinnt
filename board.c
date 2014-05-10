@@ -1,5 +1,5 @@
 ﻿#pragma once
-//Board-Core: Create board, read&update field
+//Board-Core: Create board, read&update field, draw board
 
 struct board myboard;
 
@@ -29,9 +29,22 @@ void clearBoard(struct board* target) {
 	//fills the whole board with space chars
 	int i = 0;
 	while (i < target->numberOfFields) {
-		char* field = (target->content+i);
-		*field = 'p';
+		char* field = (target->content + i);
+		*field = FIELD_EMPTY;
 		printf("%i:%c\n",(int)field,*field);
 		i++;
 	}
+}
+
+char* calcFieldAddress(struct board* target, int x, int y) {
+	int offset = y*4 + x;
+	return (target->content + offset);
+}
+
+char getField(struct board* target, int x, int y) {
+	return *calcFieldAddress(target, x, y);
+}
+
+void setField(struct board* target, int x, int y, char value) {
+	*calcFieldAddress(target, x, y) = value;
 }
