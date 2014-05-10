@@ -16,3 +16,5 @@ void clearBoard(struct board* target);
 char* calcFieldAddress(struct board* target, int x, int y);
 char getField(struct board* target, int x, int y);
 void setField(struct board* target, int x, int y, char value);
+void freeBoard(struct board* target);
+void drawBoard(struct board* target);

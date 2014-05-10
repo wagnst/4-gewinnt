@@ -12,7 +12,5 @@
 #include "board.c"
 int main()
 {
-
-
 	return mainMenu();
 }
