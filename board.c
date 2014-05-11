@@ -76,80 +76,67 @@ void drawBoard(struct board* target) {
 	//writing-to-canvas setup
 	canvas[0] = '\0';
 
+	int fieldX;
+	int fieldY;
 
-	//does not compile because of this(compiler error: function definiton is not allowed here):
-	/**
-	void write(char* text) {
-		strcat(canvas,text);
-	}
-	*/
 	//loop over rows and build 2 console lines (grid + values) per loop
 	for(fieldY = target->height - 1; fieldY >= 0; fieldY--) {
 
 		//grid row
 		for(fieldX = 0; fieldX < target->width; fieldX++) {
 			if (fieldY == target->height - 1 && fieldX == 0) {
-				write("/");
+				strcat(canvas,"/");
 			} else if (fieldY == target->height - 1) {
-				write("~");
+				strcat(canvas,"~");
 			} else if (fieldX == 0) {
-				write("(");
+				strcat(canvas,"(");
 			} else {
-				write("+");
+				strcat(canvas,"+");
 			}
-			write("---");
+			strcat(canvas,"---");
 		}
 
 		//end of grid row
 		if (fieldY == target->height - 1) {
-			write("\\");
+			strcat(canvas,"\\");
 		} else {
-			write(")");
+			strcat(canvas,")");
 		}
-		write("\n");
+		strcat(canvas,"\n");
 
 		//value row
 		for(fieldX = 0; fieldX < target->width; fieldX++) {
-			write("| ");
+			strcat(canvas,"| ");
 			char field = getField(target,fieldX,fieldY);
-			if (field==FIELD_EMPTY)   write(" ");
-			if (field==FIELD_PLAYER1) write("X");
-			if (field==FIELD_PLAYER2) write("O");
-			write(" ");
+			if (field==FIELD_EMPTY)   strcat(canvas," ");
+			if (field==FIELD_PLAYER1) strcat(canvas,"X");
+			if (field==FIELD_PLAYER2) strcat(canvas,"O");
+			strcat(canvas," ");
 		}
 
 		//finish value row
-		write("|\n");
+		strcat(canvas,"|\n");
 
 	}
 
 	//build stand
 	for(fieldX = 0; fieldX < target->width; fieldX++) {
 		if (fieldX == 0) {
-			write("(---");
+			strcat(canvas,"(---");
 		} else {
-			write("~---");
+			strcat(canvas,"~---");
 		}
 	}
-	write(")\n");
+	strcat(canvas,")\n");
 	for(fieldX = 0; fieldX < target->width; fieldX++) {
 		if (fieldX == 0) {
-			write("\\---");
+			strcat(canvas,"\\---");
 		} else {
-			write("----");
+			strcat(canvas,"----");
 		}
 	}
-	write("/\n");
+	strcat(canvas,"/\n");
 
 	//we're done, output the whole thing
 	printf("%s",canvas);
 }
-
-
-//dummy implementation of write
-//--> just implemented to prevent crashes
-void write(char* text){
-	//does nothing
-	// but also does NOT crash
-}
-

@@ -1,4 +1,5 @@
-﻿//dummy.c
+﻿/***Global variable declaration file***/
+//dummy.c
 extern int testerVariable;
 //mainMenu.c
 int pPos;
@@ -15,6 +16,3 @@ struct board {
 	char* content;
 };
 extern struct board myBoard;
-//added by momoXD007:
-int fieldX;
-int fieldY;
