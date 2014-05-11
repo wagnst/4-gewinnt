@@ -75,12 +75,14 @@ void drawBoard(struct board* target) {
 
 	//writing-to-canvas setup
 	canvas[0] = '\0';
+
+
+	//does not compile because of this(compiler error: function definiton is not allowed here):
+	/**
 	void write(char* text) {
 		strcat(canvas,text);
 	}
-	int fieldX;
-	int fieldY;
-
+	*/
 	//loop over rows and build 2 console lines (grid + values) per loop
 	for(fieldY = target->height - 1; fieldY >= 0; fieldY--) {
 
@@ -142,3 +144,12 @@ void drawBoard(struct board* target) {
 	//we're done, output the whole thing
 	printf("%s",canvas);
 }
+
+
+//dummy implementation of write
+//--> just implemented to prevent crashes
+void write(char* text){
+	//does nothing
+	// but also does NOT crash
+}
+

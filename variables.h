@@ -15,3 +15,6 @@ struct board {
 	char* content;
 };
 extern struct board myBoard;
+//added by momoXD007:
+int fieldX;
+int fieldY;
