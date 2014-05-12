@@ -31,6 +31,7 @@ void gamefunction(){
 
     //Loop till the game is done
     while(end==0){
+		//ZeichneFeld();
 		//animation(); -> animation();-> Bewege Pfeil, Abwurf
 		//Rufe Funktion EingabeVerarbeiten -> EingabeVerarbeiten(); -> drop chip, nächster Spieler ist an der Reihe
 		//Rufe Funktion EingebenBisGültig (returns end=1 und Loop ist vorbei? Oder wie gedacht?) -> EingebenBisGültig();
