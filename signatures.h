@@ -13,3 +13,5 @@ int getOldFileLength();
 //board.c
 int newBoard(struct board* target, unsigned int width, unsigned int height);
 void clearBoard(struct board* target);
+// gamefunction.c
+void gamefunction();

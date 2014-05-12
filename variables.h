@@ -12,3 +12,8 @@ struct board {
 	char* content;
 };
 extern struct board myBoard;
+//gamefunction.c
+extern char name1[20];
+extern char name2[20];
+extern char winner[20];
+extern char looser[20];

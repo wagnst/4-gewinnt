@@ -10,6 +10,8 @@
 #include "mainMenu.c"
 #include "hallofshame.c"
 #include "board.c"
+#include "gamefunction.c"
+
 int main()
 {
 
