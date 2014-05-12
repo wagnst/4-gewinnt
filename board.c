@@ -1,7 +1,8 @@
 ﻿#pragma once
-//Board-Core: Create board, read&update field
+//Board-Core: Create board, read&update field, draw board
+#include <string.h>
 
-struct board myboard;
+struct board myBoard;
 
 int newBoard(struct board* target, unsigned int width, unsigned int height)
 {
@@ -14,7 +15,7 @@ int newBoard(struct board* target, unsigned int width, unsigned int height)
 	target->width = width;
 	target->height = height;
 	target->numberOfFields = width*height;
-	target->content = malloc(target->numberOfFields * sizeof(char));
+	target->content = malloc(target->numberOfFields * sizeof(char) + 1);
 
 	//abort if memory allocation failed
 	if (target->content == NULL) {
@@ -23,15 +24,119 @@ int newBoard(struct board* target, unsigned int width, unsigned int height)
 
 	//board is ready, now clear it
 	clearBoard(target);
+
+	return 1;
 }
 
 void clearBoard(struct board* target) {
 	//fills the whole board with space chars
-	int i = 0;
-	while (i < target->numberOfFields) {
-		char* field = (target->content+i);
-		*field = 'p';
-		printf("%i:%c\n",(int)field,*field);
-		i++;
+	int i;
+	for (i = 0; i < target->numberOfFields; i++) {
+		*((target->content) + i) = FIELD_EMPTY;
 	}
+	//add null terminator which allows direct board content debug output
+	*(target->content + i) = '\0';
+}
+
+char* calcFieldAddress(struct board* target, int x, int y) {
+	int offset = y*(target->width) + x;
+	return (target->content + offset);
+}
+
+char getField(struct board* target, int x, int y) {
+	return *calcFieldAddress(target, x, y);
+}
+
+void setField(struct board* target, int x, int y, char value) {
+	*calcFieldAddress(target, x, y) = value;
+}
+
+void freeBoard(struct board* target) {
+	free(target->content);
+}
+
+void drawBoard(struct board* target) {
+	//calculate dimensions of output and reserve memory
+	char* canvas;
+
+	//4 chars wide per field plus ending bar and newline
+	int charsWidth  = target->width*4 + 2;
+	//4 chars wide per field plus stand
+	int charsHeight = target->height*2 + 3;
+	//multiply by 6 for full UTF-8 eventualities plus 1 for string terminator \0
+	int totalSize = charsWidth*charsHeight*6 + 1;
+
+	canvas = malloc(totalSize * sizeof(char));
+
+	if (canvas==NULL) {
+		printf("Memory allocation for graphics failed.");
+		return;
+	}
+
+	//writing-to-canvas setup
+	canvas[0] = '\0';
+
+	int fieldX;
+	int fieldY;
+
+	//loop over rows and build 2 console lines (grid + values) per loop
+	for(fieldY = target->height - 1; fieldY >= 0; fieldY--) {
+
+		//grid row
+		for(fieldX = 0; fieldX < target->width; fieldX++) {
+			if (fieldY == target->height - 1 && fieldX == 0) {
+				strcat(canvas,"/");
+			} else if (fieldY == target->height - 1) {
+				strcat(canvas,"~");
+			} else if (fieldX == 0) {
+				strcat(canvas,"(");
+			} else {
+				strcat(canvas,"+");
+			}
+			strcat(canvas,"---");
+		}
+
+		//end of grid row
+		if (fieldY == target->height - 1) {
+			strcat(canvas,"\\");
+		} else {
+			strcat(canvas,")");
+		}
+		strcat(canvas,"\n");
+
+		//value row
+		for(fieldX = 0; fieldX < target->width; fieldX++) {
+			strcat(canvas,"| ");
+			char field = getField(target,fieldX,fieldY);
+			if (field==FIELD_EMPTY)   strcat(canvas," ");
+			if (field==FIELD_PLAYER1) strcat(canvas,"X");
+			if (field==FIELD_PLAYER2) strcat(canvas,"O");
+			strcat(canvas," ");
+		}
+
+		//finish value row
+		strcat(canvas,"|\n");
+
+	}
+
+	//build stand
+	for(fieldX = 0; fieldX < target->width; fieldX++) {
+		if (fieldX == 0) {
+			strcat(canvas,"(---");
+		} else {
+			strcat(canvas,"~---");
+		}
+	}
+	strcat(canvas,")\n");
+	for(fieldX = 0; fieldX < target->width; fieldX++) {
+		if (fieldX == 0) {
+			strcat(canvas,"\\---");
+		} else {
+			strcat(canvas,"----");
+		}
+	}
+	strcat(canvas,"/\n");
+
+	//we're done, output the whole thing
+	printf("%s",canvas);
 }
