@@ -24,14 +24,14 @@ void gamefunction(){
 	_Bool end = 0;
 
     //Get names of the players
-    printf("Please, enter a name for player 1: "); //Get name of player 1
-    scanf("%s", &name1);
-    printf("Please, enter a name for player 2: "); //Get name of player 2
-    scanf("%s", &name2);
+	fprintf(stdout, "Please enter a name for Player 1: \n");
+	fscanf(stdin, "%s", &name1);
+	fprintf(stdout, "Please enter a name for Player 2: \n");
+	fscanf(stdin, "%s", &name2);
 
     //Loop till the game is done
     while(end==0){
-		//Rufe Funktion Animation -> animation();-> Bewege Pfeil, Abwurf
+		//animation(); -> animation();-> Bewege Pfeil, Abwurf
 		//Rufe Funktion EingabeVerarbeiten -> EingabeVerarbeiten(); -> drop chip, nächster Spieler ist an der Reihe
 		//Rufe Funktion EingebenBisGültig (returns end=1 und Loop ist vorbei? Oder wie gedacht?) -> EingebenBisGültig();
 		//Setze Variablen winner und looser
