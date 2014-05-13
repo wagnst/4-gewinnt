@@ -4,6 +4,13 @@
 
 struct board myBoard;
 
+/**
+* Creates new clean and usable board (including memory allocation)
+* Warning: To resize an existing board call freeBoard() before to prevent memory leak
+* @param target Pointer to a fresh board structure.
+* @param width Board width (>=4).
+* @param height Board height (>=4).
+*/
 int newBoard(struct board* target, unsigned int width, unsigned int height)
 {
 	//sanity check
@@ -28,6 +35,10 @@ int newBoard(struct board* target, unsigned int width, unsigned int height)
 	return 1;
 }
 
+/**
+* Removes all chips from the board
+* @param target Already existing board.
+*/
 void clearBoard(struct board* target) {
 	//fills the whole board with space chars
 	int i;
@@ -38,23 +49,50 @@ void clearBoard(struct board* target) {
 	*(target->content + i) = '\0';
 }
 
+/**
+* Internal helper method to calculate the data offset of a given field on the board
+* @param target Board to base calculations on.
+* @param x X-coordinate.
+* @param y Y-coordinate.
+*/
 char* calcFieldAddress(struct board* target, int x, int y) {
 	int offset = y*(target->width) + x;
 	return (target->content + offset);
 }
 
+/**
+* Gets what is on a given field of the board (see FIELD_XYZ constants)
+* @param target Board to read.
+* @param x X-coordinate.
+* @param y Y-coordinate.
+*/
 char getField(struct board* target, int x, int y) {
 	return *calcFieldAddress(target, x, y);
 }
 
+/**
+* Sets what is on a given field of the board (see FIELD_XYZ constants)
+* @param target Board to change.
+* @param x X-coordinate.
+* @param y Y-coordinate.
+* @param value Field value (FIELD_EMPTY/FIELD_PLAYER1/FIELD_PLAYER2).
+*/
 void setField(struct board* target, int x, int y, char value) {
 	*calcFieldAddress(target, x, y) = value;
 }
 
+/**
+* Frees memory taken by a board (warning: makes it unusable until newBoard() has been called again)
+* @param target Board to free memory.
+*/
 void freeBoard(struct board* target) {
 	free(target->content);
 }
 
+/**
+* Outputs a graphical representation of the given board to the console
+* @param target Board to draw.
+*/
 void drawBoard(struct board* target) {
 	//calculate dimensions of output and reserve memory
 	char* canvas;
