@@ -55,7 +55,6 @@ int mainMenu(){
 		break;
 }
 	#else
-	userInput="";
 	scanf("%c", &userInput);
 	 switch(userInput){
             //dummy for key up
@@ -98,6 +97,7 @@ int mainMenu(){
       //  system("clear");
     }
     printf("Programm ended \n");
+    return 0;
 }
 
 
