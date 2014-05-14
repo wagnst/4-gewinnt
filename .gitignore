@@ -23,7 +23,7 @@
 *.hex
 
 # Apple -.-
-*.DS_Store
+.DS_Store
 /Debug/4-gewinnt
 
 # CodeBlocks specific
