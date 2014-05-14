@@ -25,9 +25,9 @@ void gamefunction(){
 
     //Get names of the players
     printf("Please, enter a name for player 1: "); //Get name of player 1
-    scanf("%s", &name1);
+    scanf("%19s", name1);
     printf("Please, enter a name for player 2: "); //Get name of player 2
-    scanf("%s", &name2);
+    scanf("%19s", name2);
 
     //Loop till the game is done
     while(end==0){
