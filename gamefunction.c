@@ -29,6 +29,7 @@ void gamefunction(){
 	fprintf(stdout, "Please enter a name for Player 2: \n");
 	fscanf(stdin, "%s", &name2);
 
+
     //Loop till the game is done
     while(end==0){
 		//ZeichneFeld();

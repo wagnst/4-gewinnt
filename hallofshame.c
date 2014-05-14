@@ -2,7 +2,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+* This function prints the HallOfShame.txt to the console.
+*/
 void showHallOfShame(){
 	FILE *fh;
 	    char line[60];
@@ -14,7 +16,7 @@ void showHallOfShame(){
 
 	    fh = fopen("HallOfShame.txt", "r");
 
-	    while((fscanf(fh,"%s",&line)) != EOF ) {
+	    while((fscanf(fh,"%59s",&line)) != EOF ) {
 
 	    	// divide line into interessting parts
 	        partOfLine = strtok(line, delimiter);
@@ -40,46 +42,82 @@ void showHallOfShame(){
 	        printf("%s busted %s with %s moves\n",victor,victim,moves);
 	    }
 	    fclose(fh);
-//	    return 0;
 }
 
+
+/**
+* This functions uses the 3 parameters to update and save the Hall of Shame.
+* The 3 parameters will be interpreted as a line which has to be inserted to
+* the HallOfShame.txt document. A kind of Insertion Sort is used to put the
+* line on the right place.
+* @param victor Name of player who won the game.
+* @param vicitim Name of player who lost.
+* @param moves Number of steps after the game has finished.
+*/
 void updateSaveHoS(char* victor,char* victim,int moves){
 	char line[60];
 	FILE *fh;
-	char* buffer = malloc( (getOldFileLength()+strlen(victor)+strlen(victim)+3)*sizeof(char));
+	char* buffer = malloc((getOldFileLength()+strlen(victor)+strlen(victim))*sizeof(char)+3);
+	if(buffer == NULL){
+		printf("Allocation failed!");
+	}
+	buffer[0]='\0';
+
+
 	int inserted =0;
-	fh = fopen("HallOfShame1.txt", "r");
-	while((fscanf(fh,"%s",&line)) != EOF ) {
-		printf("Line: %s \n",line);
+	fh = fopen("HallOfShame.txt", "r");
+	// while End-Of-File not reached line per line
+	while((fscanf(fh,"%59s",&line)) != EOF ) {
+
 		int currentMoves = extractMoves(line);
+		// compare both
 		if(currentMoves <= moves){
+			strcat(line,"\n");
 			strcat (buffer,line);
 		}else{
 			if(inserted==0){
-				sprintf(buffer,"%s,%s,%s\n%s",victor,victim,moves,line);
-//				strcat (buffer,line);
+				char insertLine[120];
+
+				sprintf(insertLine,"%s,%s,%d\n%s\n",victor,victim,moves,line);
+				strcat (buffer,insertLine);
 				inserted = 1;
 			}
 			else{
+				strcat(line,"\n");
 				strcat (buffer,line);
 			}
 		}
-		printf("%s\n",buffer);
 	}
+	printf("Buffer at the end: %s \n", buffer);
+	char lastLine[60];
+	// this is the case when the new lines goes at the end
 	if(inserted ==0){
-		sprintf(buffer,"%s,%s,%d\n",victor,victim,moves);
+		sprintf(lastLine,"%s,%s,%d\n",victor,victim,moves);
+		strcat(buffer,lastLine);
 	}
+	//close the current file mode just for reading
 	fclose(fh);
-	fh = fopen("HallOfShame1.txt","w");
+	//open file again in new mode, txt will be blank at the opening moment
+	//so everything will be overwritten
+	fh = fopen("HallOfShame.txt","w");
 	fprintf(fh,buffer);
 	fclose(fh);
+	//do not forget to free your allocated memory
+	free(buffer);
 
 }
 
+/**
+* This function extracts the number of moves of the parameter line.
+* @param line Pointer to char array (string).
+* @return moves Just the moves as an int.
+*/
 int extractMoves(char* line){
+	char work[60];
+	strcpy(work,line);
 	int moves =0;
 	char *partOfLine;
-	partOfLine = strtok(line, ",");
+	partOfLine = strtok(work, ",");
 	int i =0 ;
 	while(partOfLine != NULL) {
 		switch (i%3) {
@@ -94,6 +132,11 @@ int extractMoves(char* line){
 	}
 	return moves;
 }
+
+/**
+* Determine the length of the current HallOfShame.txt file.
+* @return len Just the length of the HoS as an int.
+*/
 int getOldFileLength()
 {
     FILE *f = fopen("HallOfShame.txt", "rb");
