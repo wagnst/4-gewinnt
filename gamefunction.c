@@ -4,13 +4,12 @@
 #include <string.h>
 #include <conio.h>
 
-// global variables Inga
+// global variables
 char name1[20];
 char name2[20];
 char winner[20];
 char looser[20];
 
-//global variables Steffen
 struct board gameField;
 int gameFieldWidth = 7;
 int gameFieldHeigth = 6;
