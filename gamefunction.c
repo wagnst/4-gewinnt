@@ -58,6 +58,7 @@ void gameFunction(){
 void clearAll() {
 	//clear board
 	clearBoard(&gameField);
+	freeBoard(&gameField);
 	//reset some variables
 	gameFieldCreated = 0; //set to 0, because board was deleted
 	playersTurn = 0; //player1 starts the game
@@ -87,9 +88,11 @@ void playerAction() {
 	//check which players turn it is and sets the coin
 	playersCoin[0] = '\0';
 	if (playersTurn == 0) {
+		memset(playersCoin, 0, sizeof playersCoin);
 		printf("%s's turn\n\n", name1);
 		strcat(playersCoin,"X");
 	}else{
+		memset(playersCoin, 0, sizeof playersCoin);
 		printf("%s's turn\n\n", name2);
 		strcat(playersCoin,"O");
 	}
@@ -118,13 +121,42 @@ void playerAction() {
 			break;
 		//let coin fall
 		case 13: //enter key
-			//Todo
-			//if row not full -> coin fall
-			//check if user has won
-			//switch to other player
+			throwCoin(coinPosition, playersCoin);
 			break;
 	}
 	return 0;
+}
+
+/**
+* Checks if a row is full, otherwise throw coin
+* @param pos position of where coin should be placed (board begins at 0 and coinpos at 1!)
+*/
+void throwCoin(int pos, char player[1]) {
+	int lowestCoin = 0;
+	/*
+	//----TODO----
+	//-check if user has won
+	//-switch to other player
+	//------------
+	*/
+
+	//get the lowest field
+	// LOOP DOWN
+
+	//check if most upper field is filled with coin
+	if (getField(&gameField,pos-1,5)) {
+		return 0;
+	}else{
+		//loop down to find the lowest coin or bottom
+		if(strcmp(player, player) == 0 ){ //if strings same player 1
+			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER1);
+		}else if(strcmp(player,'O') == 0 ){ //if player 2
+			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER2);
+		}
+	}
+
+	//switch to player 2
+	playersTurn = 1;
 }
 
 /**
@@ -165,6 +197,7 @@ void drawCoin(int pos, char CoinType[1]){
 	}
 	return 0;
 }
+
 /*
 Function will create a new Board, clears it, draws it and calls playerAction()
 */
