@@ -51,9 +51,8 @@ int mainMenu(){
 			case 13: // key enter
 				mainMenuReactToEnter();
 				break;
-			case '\n':
-				mainMenuReactToEnter();
-				break;
+			case 27: //escape
+				exit(0);
 		}
 		//other systems
 		#else
@@ -73,7 +72,6 @@ int mainMenu(){
 				break;
 		}
 		#endif
-
 		if(pPos>4){
 			//cursor is "below" the menu-->get him back
 			pPos=0;
@@ -83,8 +81,6 @@ int mainMenu(){
 		}
 		printf("\n");
     }
-    printf("Programm ended \n");
-    return 0;
 }
 
 void consoleClear(){
@@ -106,6 +102,7 @@ void mainMenuReactToEnter(){
 			//replace printf with corresponding call
 			//printf("Starting new Game(Dummy)\nPress any key to return to main\n");
 			gameFunction();
+			con=0;
 			break;
 		case 1:
 			 consoleClear();
@@ -120,12 +117,13 @@ void mainMenuReactToEnter(){
 		case 3:
 			 consoleClear();
 			//replace printf with corresponding call
-		   //printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
-			 showHallOfShame();
+		    //printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
+			showHallOfShame();
+			con=0;
 			break;
 		case 4:
-			 //end game
-			 con=0;
-			break;
+			//end game
+			con=0;
+			exit(0);
 		}
 }
