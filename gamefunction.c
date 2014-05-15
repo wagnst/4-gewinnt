@@ -136,27 +136,29 @@ void throwCoin(int pos, char player[1]) {
 	/*
 	//----TODO----
 	//-check if user has won
-	//-switch to other player
+	//-loop to get lowest coin
 	//------------
 	*/
 
 	//get the lowest field
-	// LOOP DOWN
+	// LOOP DOWN if found, set lowestCoin
 
 	//check if most upper field is filled with coin
-	if (getField(&gameField,pos-1,5)) {
+	if (getField(&gameField,pos-1,gameFieldHeigth-1)==FIELD_PLAYER2 || getField(&gameField,pos-1,gameFieldHeigth-1)==FIELD_PLAYER1) {
 		return 0;
 	}else{
 		//loop down to find the lowest coin or bottom
-		if(strcmp(player, player) == 0 ){ //if strings same player 1
+		if(strcmp(player, "X") == 0 ){ //if strings same player 1
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER1);
-		}else if(strcmp(player,'O') == 0 ){ //if player 2
+		}else if(strcmp(player,"O") == 0 ){ //if player 2
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER2);
 		}
 	}
 
-	//switch to player 2
-	playersTurn = 1;
+	//switch to player 2 or back to 1
+	if (playersTurn == 1)
+		playersTurn = 0;
+	else playersTurn = 1;
 }
 
 /**
