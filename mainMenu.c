@@ -29,7 +29,7 @@ void drawMainMenu(int pPos){
 
 int mainMenu(){
     //describes where the cursor is, default location is 0(NEW GAME)
-    pPos=0;
+    int pPos=0;
     //as long as this variable is one the loop won't finish
     con=1;
     // menu loop
@@ -49,7 +49,7 @@ int mainMenu(){
 			case 75:    // key left
 				break;
 			case 13: // key enter
-				mainMenuReactToEnter();
+				mainMenuReactToEnter(pPos);
 				break;
 			case 27: //escape
 				exit(0);
@@ -68,7 +68,7 @@ int mainMenu(){
 				break;
 			//dummy for return key
 			case 'e':
-				mainMenuReactToEnter();
+				mainMenuReactToEnter(pPos);
 				break;
 		}
 		#endif
@@ -95,7 +95,7 @@ void consoleClear(){
 
 }
 
-void mainMenuReactToEnter(){
+void mainMenuReactToEnter(int pPos){
 	switch(pPos){
 		case 0:
 			consoleClear();

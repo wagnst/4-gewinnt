@@ -4,7 +4,7 @@ void HelloWorld();
 void drawMainMenu();
 int mainMenu();
 void consoleClear();
-void mainMenuReactToEnter();
+void mainMenuReactToEnter(int pPos);
 //hallofshame.c
 void showHallOfShame();
 void updateSaveHoS(char* victor,char* victim,int moves);
