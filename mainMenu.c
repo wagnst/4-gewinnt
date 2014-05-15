@@ -119,7 +119,6 @@ void mainMenuReactToEnter(int pPos){
 			//replace printf with corresponding call
 		    //printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
 			showHallOfShame();
-			con=0;
 			break;
 		case 4:
 			//end game

@@ -6,18 +6,17 @@
 * This function prints the HallOfShame.txt to the console.
 */
 void showHallOfShame(){
-	FILE *fh;
-	    char line[60];
-	    char delimiter[] = ",";
-	    char *partOfLine;
-	    char victor[25];
-	    char victim[25];
+		FILE *fh;
+		char line[60];
+		char delimiter[] = ",";
+		char *partOfLine;
+		char victor[20];
+	    char victim[20];
 	    char moves[3];
-
+		line[0]='\0';
 	    fh = fopen("HallOfShame.txt", "r");
-
-	    while((fscanf(fh,"%59s",&line)) != EOF ) {
-
+		printf("\n\tWelcome to our Hall of Shame...\n");
+	    while((fscanf(fh,"%s",line)) != EOF ) {
 	    	// divide line into interessting parts
 	        partOfLine = strtok(line, delimiter);
 	        int i =0 ;
@@ -39,9 +38,11 @@ void showHallOfShame(){
 	         	partOfLine = strtok(NULL, delimiter);
 	         	i++;
 	        }
-	        printf("%s busted %s with %s moves\n",victor,victim,moves);
+	        printf("\t\t%s busted %s with %s moves\n",victor,victim,moves);
 	    }
 	    fclose(fh);
+	    getch();
+	    mainMenu();
 }
 
 
@@ -67,7 +68,7 @@ void updateSaveHoS(char* victor,char* victim,int moves){
 	int inserted =0;
 	fh = fopen("HallOfShame.txt", "r");
 	// while End-Of-File not reached line per line
-	while((fscanf(fh,"%59s",&line)) != EOF ) {
+	while((fscanf(fh,"%s",line)) != EOF ) {
 
 		int currentMoves = extractMoves(line);
 		// compare both
@@ -88,7 +89,6 @@ void updateSaveHoS(char* victor,char* victim,int moves){
 			}
 		}
 	}
-	printf("Buffer at the end: %s \n", buffer);
 	char lastLine[60];
 	// this is the case when the new lines goes at the end
 	if(inserted ==0){
