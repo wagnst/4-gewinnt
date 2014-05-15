@@ -22,4 +22,5 @@ void drawBoard(struct board* target);
 void gameFunction();
 void playerAction();
 void drawCoin(int pos, char CoinType[1]);
+void throwCoin(int pos, char player[1]);
 void startGame();
