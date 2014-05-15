@@ -19,4 +19,7 @@ void setField(struct board* target, int x, int y, char value);
 void freeBoard(struct board* target);
 void drawBoard(struct board* target);
 // gamefunction.c
-void gamefunction();
+void gameFunction();
+void playerAction();
+void drawCoin(int pos, char CoinType[1]);
+void startGame();
