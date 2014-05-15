@@ -53,6 +53,21 @@ void gameFunction(){
     printf("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
     //getch();
     //hallOfShame();
+    return 0;
+}
+
+void clearAll() {
+	//clear board
+	clearBoard(&gameField);
+	//reset some variables
+	gameFieldCreated = 0; //set to 0, because board was deleted
+	playersTurn = 0; //player1 starts the game
+	coinPosition = 1; //where the coin is actually placed
+	memset(name1, 0, sizeof name1);
+	memset(name2, 0, sizeof name2);
+	memset(winner, 0, sizeof winner);
+	memset(looser, 0, sizeof looser);
+	return 0;
 }
 
 /*
@@ -96,6 +111,12 @@ void playerAction() {
 			if (coinPosition < gameFieldWidth)
 				coinPosition++;
 			break;
+		case 27: //escape
+			//clear gamestats
+			clearAll();
+			//go back to menu
+			return mainMenu();
+			break;
 		//let coin fall
 		case 13: //enter key
 			//Todo
@@ -104,6 +125,7 @@ void playerAction() {
 			//switch to other player
 			break;
 	}
+	return 0;
 }
 
 /**
@@ -142,6 +164,7 @@ void drawCoin(int pos, char CoinType[1]){
 		//we're done, output the whole thing
 		printf("%s",canvas);
 	}
+	return 0;
 }
 /*
 Function will create a new Board, clears it, draws it and calls playerAction()
@@ -161,4 +184,5 @@ void startGame(){
 	}
 	//call playerAction to let game begin
 	playerAction();
+	return 0;
 }
