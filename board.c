@@ -107,7 +107,7 @@ void drawBoard(struct board* target) {
 	canvas = malloc(totalSize * sizeof(char));
 
 	if (canvas==NULL) {
-		printf("Memory allocation for graphics failed.");
+		output("Memory allocation for graphics failed.");
 		return;
 	}
 
@@ -176,5 +176,5 @@ void drawBoard(struct board* target) {
 	strcat(canvas,"/\n");
 
 	//we're done, output the whole thing
-	printf("%s",canvas);
+	output("%s",canvas);
 }

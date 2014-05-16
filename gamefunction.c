@@ -46,7 +46,7 @@ void gameFunction(){
 
     consoleClear();
     //print the winner of the actual game
-    //printf("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
+    //output("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
     //Hall of shame update and print hall of shame
     //hallOfShame();
     return 0;
@@ -83,11 +83,11 @@ void playerAction() {
 	playersCoin[0] = '\0';
 	if (playersTurn == 0) {
 		memset(playersCoin, 0, sizeof playersCoin);
-		printf("%s's turn\n\n", player1);
+		output("%s's turn\n\n", player1);
 		strcat(playersCoin,"X");
 	}else{
 		memset(playersCoin, 0, sizeof playersCoin);
-		printf("%s's turn\n\n", player2);
+		output("%s's turn\n\n", player2);
 		strcat(playersCoin,"O");
 	}
 	//draw the coin
@@ -165,7 +165,7 @@ void drawCoin(int pos, char CoinType[1]){
 	canvas = malloc((gameFieldWidth * 4) * sizeof(char));
 	//if alloc failed return
 	if (canvas==NULL) {
-		printf("Memory allocation for graphics failed.");
+		output("Memory allocation for graphics failed.");
 		return;
 	}
 	//writing-to-canvas setup (clear string)
@@ -186,7 +186,7 @@ void drawCoin(int pos, char CoinType[1]){
 		}
 		strcat(canvas,")\n");
 		//we're done, output the whole thing
-		printf("%s",canvas);
+		output("%s",canvas);
 	}
 	return 0;
 }

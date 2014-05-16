@@ -8,19 +8,19 @@ void drawMainMenu(int pPos){
     consoleClear();
  switch(pPos){
     case 0:
-        printf("-->NEW GAME<--\nSETTINGS\nRULES\nHALL OF SHAME\nQUIT\n");
+        output("-->NEW GAME<--\nSETTINGS\nRULES\nHALL OF SHAME\nQUIT\n");
         break;
     case 1:
-        printf("NEW GAME\n-->SETTINGS<--\nRULES\nHALL OF SHAME\nQUIT\n");
+        output("NEW GAME\n-->SETTINGS<--\nRULES\nHALL OF SHAME\nQUIT\n");
         break;
     case 2:
-        printf("NEW GAME\nSETTINGS\n-->RULES<--\nHALL OF SHAME\nQUIT\n");
+        output("NEW GAME\nSETTINGS\n-->RULES<--\nHALL OF SHAME\nQUIT\n");
         break;
     case 3:
-        printf("NEW GAME\nSETTINGS\nRULES\n-->HALL OF SHAME<--\nQUIT\n");
+        output("NEW GAME\nSETTINGS\nRULES\n-->HALL OF SHAME<--\nQUIT\n");
         break;
     case 4:
-        printf("NEW GAME\nSETTINGS\nRULES\nHALL OF SHAME\n-->QUIT<--\n");
+        output("NEW GAME\nSETTINGS\nRULES\nHALL OF SHAME\n-->QUIT<--\n");
         break;
     default:
     	break;
@@ -79,7 +79,7 @@ int mainMenu(){
 			//cursor is the "over" the menu-->get him back
 			pPos=4;
 		}
-		printf("\n");
+		output("\n");
     }
 }
 
@@ -100,24 +100,24 @@ void mainMenuReactToEnter(int pPos){
 		case 0:
 			consoleClear();
 			//replace printf with corresponding call
-			//printf("Starting new Game(Dummy)\nPress any key to return to main\n");
+			//output("Starting new Game(Dummy)\nPress any key to return to main\n");
 			gameFunction();
 			con=0;
 			break;
 		case 1:
 			 consoleClear();
 			//replace printf with corresponding call
-			printf("Settings Menu(Dummy)\nPress any key to return to main\n");
+			output("Settings Menu(Dummy)\nPress any key to return to main\n");
 			break;
 		case 2:
 			 consoleClear();
 			//replace printf with corresponding call
-			printf("Rules (Dummy)\nPress any key to return to main\n");
+			output("Rules (Dummy)\nPress any key to return to main\n");
 			break;
 		case 3:
 			 consoleClear();
 			//replace printf with corresponding call
-		    //printf("Hall of Shame (Dummy)\nPress any key to return to main\n");
+		    //output("Hall of Shame (Dummy)\nPress any key to return to main\n");
 			showHallOfShame();
 			break;
 		case 4:
