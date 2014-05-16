@@ -15,8 +15,8 @@ void showHallOfShame(){
 	    char moves[3];
 		line[0]='\0';
 	    fh = fopen("HallOfShame.txt", "r");
-		printf("\n\tWelcome to our Hall of Shame...\n");
-		int somethingPrinted =0;
+
+		output("\n\tWelcome to our Hall of Shame...\n");
 	    while((fscanf(fh,"%s",line)) != EOF ) {
 	    	// divide line into interessting parts
 	        partOfLine = strtok(line, delimiter);
@@ -39,12 +39,13 @@ void showHallOfShame(){
 	         	partOfLine = strtok(NULL, delimiter);
 	         	i++;
 	        }
-	        printf("\t\t%s busted %s with %s moves\n",victor,victim,moves);
 	        somethingPrinted =1;
+=======
+	        output("\t\t%s busted %s with %s moves\n",victor,victim,moves);
 	    }
 	    fclose(fh);
 	    if(somethingPrinted == 0){
-			("\t\tNo entries. Press any key to continue...");
+			output("\t\tNo entries. Press any key to continue...");
 	    }
 	    getch();
 	    mainMenu();
@@ -65,7 +66,7 @@ void updateSaveHoS(char* victor,char* victim,int moves){
 	FILE *fh;
 	char* buffer = malloc((getOldFileLength()+strlen(victor)+strlen(victim))*sizeof(char)+3);
 	if(buffer == NULL){
-		printf("Allocation failed!");
+		output("Allocation failed!");
 	}
 	buffer[0]='\0';
 
