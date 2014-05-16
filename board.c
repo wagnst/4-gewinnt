@@ -61,12 +61,16 @@ char* calcFieldAddress(struct board* target, int x, int y) {
 }
 
 /**
-* Gets what is on a given field of the board (see FIELD_XYZ constants)
+* Gets what is on a given field of the board (returns FIELD_XYZ constant)
 * @param target Board to read.
 * @param x X-coordinate.
 * @param y Y-coordinate.
 */
 char getField(struct board* target, int x, int y) {
+	if (x<0 || y<0 || x>=target->width || y>=target->height)
+	{
+		return FIELD_OUTOFBOUNDS;
+	}
 	return *calcFieldAddress(target, x, y);
 }
 
