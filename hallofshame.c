@@ -16,6 +16,7 @@ void showHallOfShame(){
 		line[0]='\0';
 	    fh = fopen("HallOfShame.txt", "r");
 		printf("\n\tWelcome to our Hall of Shame...\n");
+		int somethingPrinted =0;
 	    while((fscanf(fh,"%s",line)) != EOF ) {
 	    	// divide line into interessting parts
 	        partOfLine = strtok(line, delimiter);
@@ -39,8 +40,12 @@ void showHallOfShame(){
 	         	i++;
 	        }
 	        printf("\t\t%s busted %s with %s moves\n",victor,victim,moves);
+	        somethingPrinted =1;
 	    }
 	    fclose(fh);
+	    if(somethingPrinted == 0){
+			("\t\tNo entries. Press any key to continue...");
+	    }
 	    getch();
 	    mainMenu();
 }
