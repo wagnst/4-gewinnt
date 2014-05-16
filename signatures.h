@@ -1,5 +1,7 @@
 ﻿//dummy.c
 void HelloWorld();
+//system.c
+int output(const char* input, ...);
 //mainMenu.c
 void drawMainMenu();
 int mainMenu();
