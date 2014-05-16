@@ -12,3 +12,15 @@ int output(const char* input, ...)
 	va_end(args);
 	return result;
 }
+
+void consoleClear(){
+	//should clear the console on most plattforms
+	#ifdef _WIN32
+	//detected windows System (both 32 and 64bit)-->use windows clear
+		system("CLS");
+	#else
+	//detected other (non windows) System-->unse Unix-clear
+		system("clear");
+	#endif
+
+}

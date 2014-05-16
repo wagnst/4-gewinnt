@@ -2,10 +2,10 @@
 void HelloWorld();
 //system.c
 int output(const char* input, ...);
+void consoleClear();
 //mainMenu.c
 void drawMainMenu();
 int mainMenu();
-void consoleClear();
 void mainMenuReactToEnter(int pPos);
 //hallofshame.c
 void showHallOfShame();

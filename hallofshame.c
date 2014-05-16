@@ -6,49 +6,48 @@
 * This function prints the HallOfShame.txt to the console.
 */
 void showHallOfShame(){
-		FILE *fh;
-		char line[60];
-		char delimiter[] = ",";
-		char *partOfLine;
-		char victor[20];
-	    char victim[20];
-	    char moves[3];
-		line[0]='\0';
-	    fh = fopen("HallOfShame.txt", "r");
+	FILE *fh;
+	char line[60];
+	char delimiter[] = ",";
+	char *partOfLine;
+	char victor[20];
+	char victim[20];
+	char moves[3];
+	line[0]='\0';
+	fh = fopen("HallOfShame.txt", "r");
+	output("\n\tWelcome to our Hall of Shame...\n");
+	int somethingPrinted =0;
+	while((fscanf(fh,"%s",line)) != EOF ) {
+		// divide line into interessting parts
+		partOfLine = strtok(line, delimiter);
+		int i =0 ;
+		while(partOfLine != NULL) {
 
-		output("\n\tWelcome to our Hall of Shame...\n");
-	    while((fscanf(fh,"%s",line)) != EOF ) {
-	    	// divide line into interessting parts
-	        partOfLine = strtok(line, delimiter);
-	        int i =0 ;
-	        while(partOfLine != NULL) {
-
-	        	switch (i%3) {
-	         	case 0:
-	         		strcpy(victor, partOfLine);
-	         		break;
-	         	case 1:
-	         		strcpy(victim, partOfLine);
-	         		break;
-	         	case 2:
-	         		strcpy(moves, partOfLine);
-	         		break;
-	         	default:
-	         		break;
-	         	}
-	         	partOfLine = strtok(NULL, delimiter);
-	         	i++;
-	        }
-	        somethingPrinted =1;
-=======
-	        output("\t\t%s busted %s with %s moves\n",victor,victim,moves);
-	    }
-	    fclose(fh);
-	    if(somethingPrinted == 0){
-			output("\t\tNo entries. Press any key to continue...");
-	    }
-	    getch();
-	    mainMenu();
+			switch (i%3) {
+			case 0:
+				strcpy(victor, partOfLine);
+				break;
+			case 1:
+				strcpy(victim, partOfLine);
+				break;
+			case 2:
+				strcpy(moves, partOfLine);
+				break;
+			default:
+				break;
+			}
+			partOfLine = strtok(NULL, delimiter);
+			i++;
+		}
+		somethingPrinted =1;
+		output("\t\t%s busted %s with %s moves\n",victor,victim,moves);
+	}
+	fclose(fh);
+	if(somethingPrinted == 0){
+		output("\t\tNo entries. Press any key to continue...");
+	}
+	getch();
+	mainMenu();
 }
 
 
