@@ -7,8 +7,6 @@
 // global variables
 char player1[20];
 char player2[20];
-char winner[20];
-char looser[20];
 
 struct board gameField;
 int gameFieldWidth = 7;
