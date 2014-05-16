@@ -42,13 +42,12 @@ void gameFunction(){
     //Loop till the game is done
     while(end==0){
 		startGame(); // start the game flow
-		//animation(); -> animation();-> Bewege Pfeil, Abwurf
-		//Setze Variablen winner und looser
     }
 
     consoleClear();
+    //print the winner of the actual game
     //printf("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
-    //getch();
+    //Hall of shame update and print hall of shame
     //hallOfShame();
     return 0;
 }
