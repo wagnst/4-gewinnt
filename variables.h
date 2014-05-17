@@ -1,6 +1,18 @@
 ﻿/***Global variable declaration file***/
 //dummy.c
 extern int testerVariable;
+//system.c
+struct lineItem {
+	int length;
+	int chars;
+	char* text;
+	struct lineItem* next;
+};
+struct outBuffer {
+	struct lineItem* lines;
+	int maxTextWidth;
+	int align;
+};
 //mainMenu.c
 int con;
 unsigned char userInput;
