@@ -61,12 +61,16 @@ char* calcFieldAddress(struct board* target, int x, int y) {
 }
 
 /**
-* Gets what is on a given field of the board (see FIELD_XYZ constants)
+* Gets what is on a given field of the board (returns FIELD_XYZ constant)
 * @param target Board to read.
 * @param x X-coordinate.
 * @param y Y-coordinate.
 */
 char getField(struct board* target, int x, int y) {
+	if (x<0 || y<0 || x>=target->width || y>=target->height)
+	{
+		return FIELD_OUTOFBOUNDS;
+	}
 	return *calcFieldAddress(target, x, y);
 }
 
@@ -107,7 +111,7 @@ void drawBoard(struct board* target) {
 	canvas = malloc(totalSize * sizeof(char));
 
 	if (canvas==NULL) {
-		printf("Memory allocation for graphics failed.");
+		output("Memory allocation for graphics failed.");
 		return;
 	}
 
@@ -176,5 +180,5 @@ void drawBoard(struct board* target) {
 	strcat(canvas,"/\n");
 
 	//we're done, output the whole thing
-	printf("%s",canvas);
+	output("%s",canvas);
 }

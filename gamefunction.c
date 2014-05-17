@@ -5,10 +5,8 @@
 #include <conio.h>
 
 // global variables
-char name1[20];
-char name2[20];
-char winner[20];
-char looser[20];
+char player1[20];
+char player2[20];
 
 struct board gameField;
 int gameFieldWidth = 7;
@@ -30,27 +28,26 @@ void gameFunction(){
 		1 das erste ungleiche Zeichen in str1 ist größer als in str2
 		-1 das erste ungleiche Zeichen in str1 ist kleiner als in str2
 	*/
-	while (strcmp(name1, name2)==0) {
+	while (strcmp(player1, player2)==0) {
 		//clear the console
 		consoleClear();
-		name1[0] = '\0';
-		name2[0] = '\0';
+		player1[0] = '\0';
+		player2[0] = '\0';
 		//Get names of the players
 		fprintf(stdout, "Please enter a name for Player 1: \n");
-		fscanf(stdin, "%s", &name1);
+		fscanf(stdin, "%s", &player1);
 		fprintf(stdout, "Please enter a name for Player 2: \n");
-		fscanf(stdin, "%s", &name2);
+		fscanf(stdin, "%s", &player2);
 	}
     //Loop till the game is done
     while(end==0){
-		startGame(); // start the game flor
-		//animation(); -> animation();-> Bewege Pfeil, Abwurf
-		//Setze Variablen winner und looser
+		startGame(); // start the game flow
     }
 
     consoleClear();
-    printf("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
-    //getch();
+    //print the winner of the actual game
+    //output("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
+    //Hall of shame update and print hall of shame
     //hallOfShame();
     return 0;
 }
@@ -63,10 +60,9 @@ void clearAll() {
 	gameFieldCreated = 0; //set to 0, because board was deleted
 	playersTurn = 0; //player1 starts the game
 	coinPosition = 1; //where the coin is actually placed
-	memset(name1, 0, sizeof name1);
-	memset(name2, 0, sizeof name2);
-	memset(winner, 0, sizeof winner);
-	memset(looser, 0, sizeof looser);
+	//clear the arrays
+	memset(player1, 0, sizeof player1);
+	memset(player2, 0, sizeof player2);
 	return 0;
 }
 
@@ -81,22 +77,19 @@ according to https://github.com/wagnst/4-gewinnt/issues/10
 
 */
 void playerAction() {
-
 	//clear the console
 	consoleClear();
-
 	//check which players turn it is and sets the coin
 	playersCoin[0] = '\0';
 	if (playersTurn == 0) {
 		memset(playersCoin, 0, sizeof playersCoin);
-		printf("%s's turn\n\n", name1);
+		output("%s's turn\n\n", player1);
 		strcat(playersCoin,"X");
 	}else{
 		memset(playersCoin, 0, sizeof playersCoin);
-		printf("%s's turn\n\n", name2);
+		output("%s's turn\n\n", player2);
 		strcat(playersCoin,"O");
 	}
-
 	//draw the coin
 	drawCoin(coinPosition, playersCoin);
 	//draw the board
@@ -132,29 +125,28 @@ void playerAction() {
 * @param pos position of where coin should be placed (board begins at 0 and coinpos at 1!)
 */
 void throwCoin(int pos, char player[1]) {
-	int lowestCoin = 0;
-	/*
-	//----TODO----
-	//-check if user has won
-	//-loop to get lowest coin
-	//------------
-	*/
-
+	int lowestCoin = 0, i;
 	//get the lowest field
 	// LOOP DOWN if found, set lowestCoin
-
+	for(i = 0; i <= gameFieldHeigth-1; i++) {
+		// if we found an empty field, leave this loop and set lowest coin
+		// to the found field, so that game flow can set the next coin here
+		if (getField(&gameField,pos-1,i) == FIELD_EMPTY){
+			lowestCoin = i;
+			break;
+		}
+	}
 	//check if most upper field is filled with coin
 	if (getField(&gameField,pos-1,gameFieldHeigth-1)==FIELD_PLAYER2 || getField(&gameField,pos-1,gameFieldHeigth-1)==FIELD_PLAYER1) {
 		return 0;
 	}else{
-		//loop down to find the lowest coin or bottom
+		//set the coin for player 1 or 2 to the lowest possible column
 		if(strcmp(player, "X") == 0 ){ //if strings same player 1
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER1);
 		}else if(strcmp(player,"O") == 0 ){ //if player 2
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER2);
 		}
 	}
-
 	//switch to player 2 or back to 1
 	if (playersTurn == 1)
 		playersTurn = 0;
@@ -173,12 +165,11 @@ void drawCoin(int pos, char CoinType[1]){
 	canvas = malloc((gameFieldWidth * 4) * sizeof(char));
 	//if alloc failed return
 	if (canvas==NULL) {
-		printf("Memory allocation for graphics failed.");
+		output("Memory allocation for graphics failed.");
 		return;
 	}
 	//writing-to-canvas setup (clear string)
 	canvas[0] = '\0';
-
 	//keep boundaries
 	if (pos < gameFieldWidth || pos > 1) {
 		strcat(canvas,"(");
@@ -195,7 +186,7 @@ void drawCoin(int pos, char CoinType[1]){
 		}
 		strcat(canvas,")\n");
 		//we're done, output the whole thing
-		printf("%s",canvas);
+		output("%s",canvas);
 	}
 	return 0;
 }

@@ -39,12 +39,12 @@ void showHallOfShame(){
 			partOfLine = strtok(NULL, delimiter);
 			i++;
 		}
-		somethingPrinted =1;
 		output("\t\t%s busted %s with %s moves\n",victor,victim,moves);
+		somethingPrinted =1;
 	}
 	fclose(fh);
 	if(somethingPrinted == 0){
-		output("\t\tNo entries. Press any key to continue...");
+		("\t\tNo entries. Press any key to continue...");
 	}
 	getch();
 	mainMenu();
