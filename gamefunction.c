@@ -15,7 +15,7 @@ int gameFieldCreated = 0;
 int playersTurn = 0; //player1 starts the game
 int coinPosition = 1; //where the coin is actually placed
 char playersCoin[1]; //contains X or O
-
+char victor;
 //game loop
 void gameFunction(){
 
@@ -42,9 +42,13 @@ void gameFunction(){
     //Loop till the game is done
     while(end==0){
 		startGame(); // start the game flow
+		if( victor == FIELD_PLAYER1 || victor == FIELD_PLAYER2){
+				end = 1;
+				printf("Found winner");
+		}
     }
 
-    consoleClear();
+//    consoleClear();
     //print the winner of the actual game
     //output("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
     //Hall of shame update and print hall of shame
@@ -126,6 +130,7 @@ void playerAction() {
 */
 void throwCoin(int pos, char player[1]) {
 	int lowestCoin = 0, i;
+	char victor;
 	//get the lowest field
 	// LOOP DOWN if found, set lowestCoin
 	for(i = 0; i <= gameFieldHeigth-1; i++) {
@@ -143,10 +148,14 @@ void throwCoin(int pos, char player[1]) {
 		//set the coin for player 1 or 2 to the lowest possible column
 		if(strcmp(player, "X") == 0 ){ //if strings same player 1
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER1);
+			//added looking for winner here
+			victor = checkForWinner(pos-1, lowestCoin,player);
 		}else if(strcmp(player,"O") == 0 ){ //if player 2
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER2);
+			victor = checkForWinner(pos-1, lowestCoin,player);
 		}
 	}
+
 	//switch to player 2 or back to 1
 	if (playersTurn == 1)
 		playersTurn = 0;
@@ -195,7 +204,7 @@ void drawCoin(int pos, char CoinType[1]){
 Function will create a new Board, clears it, draws it and calls playerAction()
 */
 void startGame(){
-	//checks if field already exists
+		//checks if field already exists
 	if (gameFieldCreated == 0) {
 		//create new game board
 		if (newBoard(&gameField,gameFieldWidth,gameFieldHeigth)) {
@@ -210,4 +219,58 @@ void startGame(){
 	//call playerAction to let game begin
 	playerAction();
 	return 0;
+}
+
+char checkForWinner(int x, int y, char player){
+	 // horizontal check first right then left summarized together
+	 int lineCount = 0;
+	 lineCount = 1 + neighbourRow(x+1,y,+1,0,player) + neighbourRow(x-1,y,-1,0,player);
+	 if(lineCount >= 4){
+		return player;
+	 }
+	 else{
+		lineCount=0;
+	 }
+
+	 // vertical check first up and then down summarized together
+	 lineCount = 1 + neighbourRow(x,y+1,0,1,player) + neighbourRow(x,y-1,0,-1,player);
+	 if(lineCount >= 4){
+		return player;
+	 }
+	 else{
+		lineCount=0;
+	 }
+
+	 // diagonal checks
+
+	 // first variant /
+	 lineCount = 1 + neighbourRow(x-1,y+1,-1,1,player) + neighbourRow(x+1,y-1,1,-1,player);
+	 if(lineCount >= 4){
+		return player;
+	 }
+	 else{
+		lineCount=0;
+	 }
+	 //second variant
+	 lineCount = 1 + neighbourRow(x+1,y+1,1,1,player) + neighbourRow(x-1,y-1,-1,-1,player);
+	 if(lineCount >= 4){
+		return player;
+	 }
+	 else{
+		lineCount=0;
+	 }
+
+
+}
+
+int neighbourRow(int x, int y ,int xMovement, int yMovement, char player){
+	if((getField(&gameField,x,y)) != player){
+		return 0;
+	}
+	else if (getField(&gameField,x,y) == player){
+		return 1 + neighbourRow(x+xMovement,y+yMovement,xMovement,yMovement,player);
+	}
+	else{
+		return 0;
+	}
 }
