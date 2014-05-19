@@ -15,5 +15,6 @@
 
 int main()
 {
+	initBuffer(42);
 	return mainMenu();
 }

@@ -1,18 +1,24 @@
 ﻿/***Global variable declaration file***/
+//EXITCODES
+const int EXITCODE_OUTOFMEMORY = 13;
 //dummy.c
 extern int testerVariable;
 //system.c
-struct lineItem {
+struct LineItem {
 	int length;
-	int chars;
-	char* text;
-	struct lineItem* next;
-};
-struct outBuffer {
-	struct lineItem* lines;
-	int maxTextWidth;
+	int byteSize;
 	int align;
+	struct LineItem* prev;
+	struct LineItem* next;
+	char* text;
 };
+struct OutBuffer {
+	struct LineItem* first;
+	struct LineItem* last;
+	int maxTextLength;
+};
+const int OUTPUT_MAXBUFFER = 4096;
+extern struct OutBuffer display;
 //mainMenu.c
 int con;
 unsigned char userInput;
@@ -41,4 +47,3 @@ extern int gameFieldCreated;
 extern int playersTurn; //player1 starts the game
 extern int coinPosition; //where the coin is actually placed
 extern char playersCoin[1]; //contains X or O
-
