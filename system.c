@@ -69,6 +69,7 @@ void deleteLineItem(struct LineItem* line, int deleteAllBelow){
 int copyChar(char* src, char* dst){
 	//TODO: UTF8 handling!
     *dst = *src;
+    *(dst+1) = '\0';
     return 1;
 }
 
@@ -91,7 +92,7 @@ int output(const char* input, ...){
 
 	//loop through buffer and copy to lines
 	while(buffer[i]!='\0'){
-		if (current->length < display.maxTextLength){
+		if (current->length < display.maxTextLength && buffer[i]!='\n'){
 			//line not full yet, copy char
 			int increase = copyChar(buffer+i, current->text+current->byteSize);
 			i += increase;
@@ -99,7 +100,11 @@ int output(const char* input, ...){
 			//TODO: UTF8 aware:
 			current->length = strlen(current->text);
 		} else {
-			//line full, create new one
+			//end line in input: start new line
+			if (buffer[i]=='\n'){
+				i++;
+			}
+			//end line or line full, create new one
 			current->next = insertNewLineItem(current->prev, NULL, -1, display.maxTextLength);
 			current = current->next;
 			display.last = current;
