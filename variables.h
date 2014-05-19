@@ -16,6 +16,7 @@ struct OutBuffer {
 	struct LineItem* first;
 	struct LineItem* last;
 	int maxTextLength;
+	int lineCount;
 };
 const int OUTPUT_MAXBUFFER = 4096;
 extern struct OutBuffer display;
