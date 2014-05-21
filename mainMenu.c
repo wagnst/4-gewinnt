@@ -3,28 +3,31 @@
 #include <stdio.h>
 #include <string.h>
 #include <conio.h>
+/**
+This method manipulates the array so the left arrow to indicate the cursor position is added to the array.
+*/
+void drawLeftArrow(char* menu,int pPos){
+			menu[pPos*20]='-';
+			menu[pPos*20+1]='-';
+			menu[pPos*20+2]='>';
+}
+void drawRightArrow(char* menu,int pPos){
+			menu[(pPos+1)*20-2]='-';
+			menu[(pPos+1)*20-3]='-';
+			menu[(pPos+1)*20-4]='<';
+}
+
 
 void drawMainMenu(int pPos){
 	emptyBuffer();
-	switch(pPos){
-		case 0:
-			output("-->NEW GAME<--\nSETTINGS\nRULES\nHALL OF SHAME\nQUIT\n");
-			break;
-		case 1:
-			output("NEW GAME\n-->SETTINGS<--\nRULES\nHALL OF SHAME\nQUIT\n");
-			break;
-		case 2:
-			output("NEW GAME\nSETTINGS\n-->RULES<--\nHALL OF SHAME\nQUIT\n");
-			break;
-		case 3:
-			output("NEW GAME\nSETTINGS\nRULES\n-->HALL OF SHAME<--\nQUIT\n");
-			break;
-		case 4:
-			output("NEW GAME\nSETTINGS\nRULES\nHALL OF SHAME\n-->QUIT<--\n");
-			break;
-		default:
-			break;
-	}
+	/**
+	every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
+	*/
+	char mainMenu[5*20+1] = {"   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   QUIT            \n"};
+			drawLeftArrow(mainMenu,pPos);
+			drawRightArrow(mainMenu,pPos);
+			output(&mainMenu);
+
 	flushBuffer();
 }
 

@@ -13,6 +13,8 @@ void consoleClear();
 void drawMainMenu();
 int mainMenu();
 void mainMenuReactToEnter(int pPos);
+void drawLeftArrow(char* menu,int pPos);
+void drawRightArrow(char* menu,int pPos);
 //hallofshame.c
 void showHallOfShame();
 void updateSaveHoS(char* victor,char* victim,int moves);
