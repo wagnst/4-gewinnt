@@ -18,7 +18,7 @@ void showHallOfShame(){
 	fh = fopen("HallOfShame.txt", "r");
 	output("\n\tWelcome to our Hall of Shame...\n");
 	int somethingPrinted =0;
-	while((fscanf(fh,"%s",line)) != EOF ) {
+	while((fscanf(fh,"%59s",line)) != EOF ) {
 		// divide line into interessting parts
 		partOfLine = strtok(line, delimiter);
 		int i =0 ;
@@ -73,7 +73,7 @@ void updateSaveHoS(char* victor,char* victim,int moves){
 	int inserted =0;
 	fh = fopen("HallOfShame.txt", "r");
 	// while End-Of-File not reached line per line
-	while((fscanf(fh,"%s",line)) != EOF ) {
+	while((fscanf(fh,"%59s",line)) != EOF ) {
 
 		int currentMoves = extractMoves(line);
 		// compare both
