@@ -31,8 +31,8 @@ void drawBoard(struct board* target);
 // gamefunction.c
 void gameFunction();
 void playerAction();
-void drawCoin(int pos, char CoinType[1]);
-void throwCoin(int pos, char player[1]);
+void drawCoin(int pos, char CoinType);
+void throwCoin(int pos, char player);
 void startGame();
 int neighbourRow(int x, int y ,int xMovement, int yMovement, char player);
 char checkForWinner(int x, int y, char player);

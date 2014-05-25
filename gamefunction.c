@@ -14,13 +14,13 @@ int gameFieldHeigth = 6;
 int gameFieldCreated = 0;
 int playersTurn = 0; //player1 starts the game
 int coinPosition = 1; //where the coin is actually placed
-char playersCoin[1]; //contains X or O
+char playersCoin; //contains X or O
 char victor;
+int moves;
 //game loop
 void gameFunction(){
-
-	_Bool end = 0;
-
+	moves = 0;
+	int end = 0;
 	//check that names are not the same
 	/*
 		strcomp results:
@@ -28,31 +28,42 @@ void gameFunction(){
 		1 das erste ungleiche Zeichen in str1 ist größer als in str2
 		-1 das erste ungleiche Zeichen in str1 ist kleiner als in str2
 	*/
-	while (strcmp(player1, player2)==0) {
+	do {
 		//clear the console
 		consoleClear();
-		player1[0] = '\0';
-		player2[0] = '\0';
+		player1[0] = "\0";
+		player2[0] = "\0";
 		//Get names of the players
 		fprintf(stdout, "Please enter a name for Player 1: \n");
-		fscanf(stdin, "%s", &player1);
+		fscanf(stdin, "%19s", &player1);
 		fprintf(stdout, "Please enter a name for Player 2: \n");
-		fscanf(stdin, "%s", &player2);
-	}
+		fscanf(stdin, "%19s", &player2);
+	}while((strcmp(player1, player2)==0) );
     //Loop till the game is done
     while(end==0){
 		startGame(); // start the game flow
-		if( victor == FIELD_PLAYER1 || victor == FIELD_PLAYER2){
-				end = 1;
-				printf("Found winner");
+
+		if( victor == FIELD_PLAYER1){
+			end=1;
+			moves = (moves/2)+(moves%2);
+			consoleClear();
+			drawBoard(&gameField);
+			updateSaveHoS(player1,player2,moves);
+
+		}
+		else if( victor == FIELD_PLAYER2){
+			end = 1;
+			moves = (moves/2)+(moves%2);
+			consoleClear();
+			drawBoard(&gameField);
+			updateSaveHoS(player2,player1,moves);
 		}
     }
+    output("Press any key to continue to Hall of Shame...");
 
-//    consoleClear();
-    //print the winner of the actual game
-    //output("Congratulations! %s you made the game and defeated %s. \nPress enter to enter the famous 'Hall of Shame'...", winner, looser);
-    //Hall of shame update and print hall of shame
-    //hallOfShame();
+    getch();
+    showHallOfShame();
+    consoleClear();
     return 0;
 }
 
@@ -65,8 +76,6 @@ void clearAll() {
 	playersTurn = 0; //player1 starts the game
 	coinPosition = 1; //where the coin is actually placed
 	//clear the arrays
-	memset(player1, 0, sizeof player1);
-	memset(player2, 0, sizeof player2);
 	return 0;
 }
 
@@ -84,15 +93,14 @@ void playerAction() {
 	//clear the console
 	consoleClear();
 	//check which players turn it is and sets the coin
-	playersCoin[0] = '\0';
+	playersCoin = '\0';
 	if (playersTurn == 0) {
-		memset(playersCoin, 0, sizeof playersCoin);
+		playersCoin = FIELD_EMPTY;
 		output("%s's turn\n\n", player1);
-		strcat(playersCoin,"X");
+		playersCoin = FIELD_PLAYER1;
 	}else{
-		memset(playersCoin, 0, sizeof playersCoin);
 		output("%s's turn\n\n", player2);
-		strcat(playersCoin,"O");
+		playersCoin = FIELD_PLAYER2;
 	}
 	//draw the coin
 	drawCoin(coinPosition, playersCoin);
@@ -119,6 +127,7 @@ void playerAction() {
 		//let coin fall
 		case 13: //enter key
 			throwCoin(coinPosition, playersCoin);
+			moves++;
 			break;
 	}
 	return 0;
@@ -127,10 +136,10 @@ void playerAction() {
 /**
 * Checks if a row is full, otherwise throw coin
 * @param pos position of where coin should be placed (board begins at 0 and coinpos at 1!)
+* @param player Char which contains X oder O according to the player
 */
-void throwCoin(int pos, char player[1]) {
+void throwCoin(int pos, char player) {
 	int lowestCoin = 0, i;
-	char victor;
 	//get the lowest field
 	// LOOP DOWN if found, set lowestCoin
 	for(i = 0; i <= gameFieldHeigth-1; i++) {
@@ -146,14 +155,15 @@ void throwCoin(int pos, char player[1]) {
 		return 0;
 	}else{
 		//set the coin for player 1 or 2 to the lowest possible column
-		if(strcmp(player, "X") == 0 ){ //if strings same player 1
+		if(player == FIELD_PLAYER1){
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER1);
 			//added looking for winner here
-			victor = checkForWinner(pos-1, lowestCoin,player);
-		}else if(strcmp(player,"O") == 0 ){ //if player 2
+			victor = checkForWinner(pos-1, lowestCoin,FIELD_PLAYER1);
+		}else if(player == FIELD_PLAYER2){ //if player 2
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER2);
-			victor = checkForWinner(pos-1, lowestCoin,player);
+			victor = checkForWinner(pos-1, lowestCoin,FIELD_PLAYER2);
 		}
+		moves++;
 	}
 
 	//switch to player 2 or back to 1
@@ -167,7 +177,7 @@ void throwCoin(int pos, char player[1]) {
 * @param pos which position should the coin be drawn to.
 * @param coinType which coin should be drawn.
 */
-void drawCoin(int pos, char CoinType[1]){
+void drawCoin(int pos, char CoinType){
 	char* canvas;
 	int i;
 	//allocate memory for coin output
@@ -186,7 +196,12 @@ void drawCoin(int pos, char CoinType[1]){
 			//if the coin should be placed draw it
 			if (i == pos) {
 				strcat(canvas," ");
-				strcat(canvas,CoinType);
+				if(CoinType == FIELD_PLAYER1){
+					strcat(canvas,"X");
+				}else{
+					strcat(canvas,"O");
+				}
+
 				strcat(canvas," ");
 			}else{
 				//draw empty
@@ -259,15 +274,12 @@ char checkForWinner(int x, int y, char player){
 	 else{
 		lineCount=0;
 	 }
-
+	return FIELD_EMPTY;
 
 }
 
 int neighbourRow(int x, int y ,int xMovement, int yMovement, char player){
-	if((getField(&gameField,x,y)) != player){
-		return 0;
-	}
-	else if (getField(&gameField,x,y) == player){
+	if (getField(&gameField,x,y) == player){
 		return 1 + neighbourRow(x+xMovement,y+yMovement,xMovement,yMovement,player);
 	}
 	else{
