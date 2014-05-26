@@ -31,13 +31,13 @@ void gameFunction(){
 	do {
 		//clear the console
 		consoleClear();
-		player1[0] = "\0";
-		player2[0] = "\0";
+		player1[0] = '\0';
+		player2[0] = '\0';
 		//Get names of the players
 		fprintf(stdout, "Please enter a name for Player 1: \n");
-		fscanf(stdin, "%19s", &player1);
+		fscanf(stdin, "%19s", player1);
 		fprintf(stdout, "Please enter a name for Player 2: \n");
-		fscanf(stdin, "%19s", &player2);
+		fscanf(stdin, "%19s", player2);
 	}while((strcmp(player1, player2)==0) );
     //Loop till the game is done
     while(end == 0){
@@ -80,7 +80,7 @@ void clearAll() {
 	clearBoard(&gameField);
 	freeBoard(&gameField);
 	//reset some variables
-	victor = "\0";
+	victor = '\0';
 	gameFieldCreated = 0; //set to 0, because board was deleted
 	playersTurn = 0; //player1 starts the game
 	coinPosition = 1; //where the coin is actually placed

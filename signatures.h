@@ -36,3 +36,4 @@ void throwCoin(int pos, char player);
 void startGame();
 int neighbourRow(int x, int y ,int xMovement, int yMovement, char player);
 char checkForWinner(int x, int y, char player);
+void clearAll();
