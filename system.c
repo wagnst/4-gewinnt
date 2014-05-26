@@ -9,7 +9,7 @@ void initBuffer(int maxTextLength){
 	//set text size maximum and insert a first empty line
 	display.maxTextLength = maxTextLength;
 	display.lineCount = 0;
-	display.first = insertNewLineItem(NULL,NULL,-1,300);
+	display.first = insertNewLineItem(NULL,NULL,-1,maxTextLength);
 }
 
 struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int align, int maxTextLength){
@@ -95,7 +95,7 @@ int output(const char* input, ...){
 	//writing to string buffer
 	char buffer[OUTPUT_MAXBUFFER+1];
 	buffer[0] = '\0';
-	snprintf(buffer, OUTPUT_MAXBUFFER+1, input, args);
+	result = vsnprintf(buffer, OUTPUT_MAXBUFFER+1, input, args);
 
 	//keep track of string buffer position and the current line to write to
 	int i = 0;
