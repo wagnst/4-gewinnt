@@ -146,10 +146,10 @@ void flushBuffer(){
 		current = current->next;
 	}
 
-	emptyBuffer();
+	startBuffer();
 }
 
-void emptyBuffer(){
+void startBuffer(){
 	deleteLineItem(display.first, 1);
 	initBuffer(display.maxTextLength);
 }

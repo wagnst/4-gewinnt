@@ -6,7 +6,7 @@
 * This function prints the HallOfShame.txt to the console.
 */
 void showHallOfShame(){
-	emptyBuffer();
+	startBuffer();
 	FILE *fh;
 	char line[60];
 	char delimiter[] = ",";
