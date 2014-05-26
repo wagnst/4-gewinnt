@@ -40,15 +40,17 @@ void gameFunction(){
 		fscanf(stdin, "%19s", &player2);
 	}while((strcmp(player1, player2)==0) );
     //Loop till the game is done
-    while(end==0){
+    while(end == 0){
 		startGame(); // start the game flow
 
 		if( victor == FIELD_PLAYER1){
-			end=1;
+			end = 1;
 			moves = (moves/2)+(moves%2);
 			consoleClear();
 			drawBoard(&gameField);
 			updateSaveHoS(player1,player2,moves);
+			//output victor
+			output("%s has won!\n\n", player1);
 
 		}
 		else if( victor == FIELD_PLAYER2){
@@ -57,14 +59,20 @@ void gameFunction(){
 			consoleClear();
 			drawBoard(&gameField);
 			updateSaveHoS(player2,player1,moves);
+			//output victor
+			output("%s has won!\n\n", player2);
 		}
     }
     output("Press any key to continue to Hall of Shame...");
-
+	//wait for any keystroke
     getch();
+    //continue to hall of shame
     showHallOfShame();
     consoleClear();
-    return 0;
+    //free our game-board
+    end = 0;
+    clearAll();
+    return;
 }
 
 void clearAll() {
@@ -72,11 +80,11 @@ void clearAll() {
 	clearBoard(&gameField);
 	freeBoard(&gameField);
 	//reset some variables
+	victor = "\0";
 	gameFieldCreated = 0; //set to 0, because board was deleted
 	playersTurn = 0; //player1 starts the game
 	coinPosition = 1; //where the coin is actually placed
-	//clear the arrays
-	return 0;
+	return;
 }
 
 /*
@@ -90,6 +98,7 @@ according to https://github.com/wagnst/4-gewinnt/issues/10
 
 */
 void playerAction() {
+	int i = 0;
 	//clear the console
 	consoleClear();
 	//check which players turn it is and sets the coin
@@ -130,7 +139,7 @@ void playerAction() {
 			moves++;
 			break;
 	}
-	return 0;
+	return;
 }
 
 /**
@@ -170,6 +179,7 @@ void throwCoin(int pos, char player) {
 	if (playersTurn == 1)
 		playersTurn = 0;
 	else playersTurn = 1;
+	return;
 }
 
 /**
@@ -178,9 +188,8 @@ void throwCoin(int pos, char player) {
 * @param coinType which coin should be drawn.
 */
 void drawCoin(int pos, char CoinType){
-	char* canvas;
 	int i;
-	//allocate memory for coin output
+	char *canvas;
 	canvas = malloc((gameFieldWidth * 4) * sizeof(char));
 	//if alloc failed return
 	if (canvas==NULL) {
@@ -212,7 +221,9 @@ void drawCoin(int pos, char CoinType){
 		//we're done, output the whole thing
 		output("%s",canvas);
 	}
-	return 0;
+	//free memory
+	free(canvas);
+	return;
 }
 
 /*
@@ -233,7 +244,7 @@ void startGame(){
 	}
 	//call playerAction to let game begin
 	playerAction();
-	return 0;
+	return;
 }
 
 char checkForWinner(int x, int y, char player){
