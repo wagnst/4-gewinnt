@@ -99,6 +99,13 @@ according to https://github.com/wagnst/4-gewinnt/issues/10
 */
 void playerAction() {
 	int i = 0;
+	char *spaceBetweenNames;
+	spaceBetweenNames = malloc((gameFieldWidth * 3) * sizeof(char));
+	//if alloc failed return
+	if (spaceBetweenNames==NULL) {
+		output("Memory allocation for graphics failed.");
+		return;
+	}
 	//clear the console
 	consoleClear();
 	//check which players turn it is and sets the coin
@@ -108,7 +115,16 @@ void playerAction() {
 		output("%s's turn\n\n", player1);
 		playersCoin = FIELD_PLAYER1;
 	}else{
-		output("%s's turn\n\n", player2);
+		//set nilbyte
+		spaceBetweenNames[0] = '\0';
+		do{
+			//as long as length of name and space not bigger than overall gamefield, add space before name
+			if ((strlen(player2)+strlen(spaceBetweenNames))<gameFieldWidth*3)
+				strcat(spaceBetweenNames, " ");
+				i++;
+		}while(i<=gameFieldWidth*3);
+
+		output("%s%s's turn\n\n", spaceBetweenNames, player2);
 		playersCoin = FIELD_PLAYER2;
 	}
 	//draw the coin
@@ -139,6 +155,7 @@ void playerAction() {
 			moves++;
 			break;
 	}
+	free(spaceBetweenNames);
 	return;
 }
 
