@@ -24,8 +24,8 @@ void drawMainMenu(int pPos){
 	every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
 	*/
 	char mainMenu[5*20+1] = "   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   QUIT            \n";
-			drawLeftArrow(&mainMenu,pPos);
-			drawRightArrow(&mainMenu,pPos);
+			drawLeftArrow(mainMenu,pPos);
+			drawRightArrow(mainMenu,pPos);
 			output("%s",mainMenu);
 	flushBuffer();
 }

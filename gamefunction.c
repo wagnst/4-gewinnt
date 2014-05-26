@@ -103,8 +103,7 @@ void playerAction() {
 	spaceBetweenNames = malloc((gameFieldWidth * 3) * sizeof(char));
 	//if alloc failed return
 	if (spaceBetweenNames==NULL) {
-		output("Memory allocation for graphics failed.");
-		return;
+		exit(EXITCODE_OUTOFMEMORY);
 	}
 	//clear the console
 	consoleClear();
@@ -147,7 +146,8 @@ void playerAction() {
 			//clear gamestats
 			clearAll();
 			//go back to menu
-			return mainMenu();
+			mainMenu();
+			return;
 			break;
 		//let coin fall
 		case 13: //enter key
@@ -177,7 +177,7 @@ void throwCoin(int pos, char player) {
 	}
 	//check if most upper field is filled with coin
 	if (getField(&gameField,pos-1,gameFieldHeigth-1)==FIELD_PLAYER2 || getField(&gameField,pos-1,gameFieldHeigth-1)==FIELD_PLAYER1) {
-		return 0;
+		return;
 	}else{
 		//set the coin for player 1 or 2 to the lowest possible column
 		if(player == FIELD_PLAYER1){
@@ -209,8 +209,7 @@ void drawCoin(int pos, char CoinType){
 	canvas = malloc((gameFieldWidth * 4) * sizeof(char));
 	//if alloc failed return
 	if (canvas==NULL) {
-		output("Memory allocation for graphics failed.");
-		return;
+		exit(EXITCODE_OUTOFMEMORY);
 	}
 	//writing-to-canvas setup (clear string)
 	canvas[0] = '\0';
@@ -258,7 +257,6 @@ void startGame(){
 	}
 	//call playerAction to let game begin
 	playerAction();
-	return;
 }
 
 char checkForWinner(int x, int y, char player){

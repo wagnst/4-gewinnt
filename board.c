@@ -111,8 +111,7 @@ void drawBoard(struct board* target) {
 	canvas = malloc(totalSize * sizeof(char));
 
 	if (canvas==NULL) {
-		output("Memory allocation for graphics failed.");
-		return;
+		exit(EXITCODE_OUTOFMEMORY);
 	}
 
 	//writing-to-canvas setup
