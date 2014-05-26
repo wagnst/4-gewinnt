@@ -156,7 +156,6 @@ void playerAction() {
 			break;
 	}
 	free(spaceBetweenNames);
-	return;
 }
 
 /**
@@ -249,10 +248,8 @@ Function will create a new Board, clears it, draws it and calls playerAction()
 void startGame(){
 		//checks if field already exists
 	if (gameFieldCreated == 0) {
-		//create new game board
+		//create new game board (includes clear)
 		if (newBoard(&gameField,gameFieldWidth,gameFieldHeigth)) {
-			//clear Board
-			clearBoard(&gameField);
 			//draw the board
 			drawBoard(&gameField);
 			//set gameFieldCreated to 1
