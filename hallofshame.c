@@ -6,7 +6,7 @@
 * This function prints the HallOfShame.txt to the console.
 */
 void showHallOfShame(){
-	consoleClear();
+	emptyBuffer();
 	FILE *fh;
 	char line[60];
 	char delimiter[] = ",";
@@ -40,13 +40,14 @@ void showHallOfShame(){
 			partOfLine = strtok(NULL, delimiter);
 			i++;
 		}
-		printf("\t\t%s busted %s with %s moves\n",victor,victim,moves);
+		output("\t\t%s busted %s with %s moves\n",victor,victim,moves);
 		somethingPrinted =1;
 	}
 	fclose(fh);
 	if(somethingPrinted == 0){
-		printf("\t\tNo entries. Press any key to continue...");
+		output("\t\tNo entries. Press any key to continue...");
 	}
+	flushBuffer();
 	getch();
 }
 
