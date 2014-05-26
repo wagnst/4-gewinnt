@@ -74,7 +74,6 @@ void mainMenuReactToEnter(int pPos){
 	switch(pPos){
 		case 0:
 			gameFunction();
-			con=0;
 			break;
 		case 1:
 			//replace printf with corresponding call
