@@ -12,22 +12,18 @@ struct board gameField;
 int gameFieldWidth = 7;
 int gameFieldHeigth = 6;
 int gameFieldCreated = 0;
-int playersTurn = 0; //player1 starts the game
 int coinPosition = 1; //where the coin is actually placed
+int playersTurn;
 char playersCoin; //contains X or O
 char victor;
 int moves;
+
 //game loop
 void gameFunction(){
 	moves = 0;
 	int end = 0;
+	playersTurn = irand(0,1);
 	//check that names are not the same
-	/*
-		strcomp results:
-		0 die Strings sind gleich
-		1 das erste ungleiche Zeichen in str1 ist größer als in str2
-		-1 das erste ungleiche Zeichen in str1 ist kleiner als in str2
-	*/
 	do {
 		//clear the console
 		consoleClear();
@@ -38,14 +34,14 @@ void gameFunction(){
 		fscanf(stdin, "%19s", player1);
 		fprintf(stdout, "Please enter a name for Player 2: \n");
 		fscanf(stdin, "%19s", player2);
-	}while((strcmp(player1, player2)==0) );
+	}while((strcmp(player1, player2)==0));
     //Loop till the game is done
     while(end == 0){
 		startGame(); // start the game flow
 
 		if( victor == FIELD_PLAYER1){
 			end = 1;
-			moves = (moves/2)+(moves%2);
+			moves =  (moves/2)+playersTurn;
 			consoleClear();
 			drawBoard(&gameField);
 			updateSaveHoS(player1,player2,moves);
@@ -55,12 +51,18 @@ void gameFunction(){
 		}
 		else if( victor == FIELD_PLAYER2){
 			end = 1;
-			moves = (moves/2)+(moves%2);
+			moves = (moves/2)+playersTurn;
 			consoleClear();
 			drawBoard(&gameField);
 			updateSaveHoS(player2,player1,moves);
 			//output victor
 			output("%s has won!\n\n", player2);
+		}
+		if(checkDraw() == 0){
+			end = 1;
+			consoleClear();
+			drawBoard(&gameField);
+			output("Game ended with a draw...\n");
 		}
     }
     output("Press any key to continue to Hall of Shame...");
@@ -188,7 +190,7 @@ void throwCoin(int pos, char player) {
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER2);
 			victor = checkForWinner(pos-1, lowestCoin,FIELD_PLAYER2);
 		}
-		moves++;
+
 	}
 
 	//switch to player 2 or back to 1
@@ -259,6 +261,16 @@ void startGame(){
 	playerAction();
 }
 
+
+/**
+* Look for a winner of the current game.
+* First vertically, then horizontally and then the 2 diagonal rows.
+* lineCount is the number of Coins which are neighbours.
+* @param x X-Position of last dropped coin.
+* @param y Y-Position of last dropped coin.
+* @param player The last coin which was dropped to the game, as the starting point of this algorithm.
+* @returns The winnig coin type is returned X or O.
+*/
 char checkForWinner(int x, int y, char player){
 	 // horizontal check first right then left summarized together
 	 int lineCount = 0;
@@ -300,7 +312,15 @@ char checkForWinner(int x, int y, char player){
 	return FIELD_EMPTY;
 
 }
-
+/**
+* Recursive function to sum up the coins which are connected in a row.
+* @param x X-Position of last dropped coin.
+* @param y Y-Position of last dropped coin.
+* @param xMovement This is used to build a "vector"
+* @param yMovement This is used to build a "vector"
+* @param player The cointype to count in a row.
+* @returns Number of coins which are connected.
+*/
 int neighbourRow(int x, int y ,int xMovement, int yMovement, char player){
 	if (getField(&gameField,x,y) == player){
 		return 1 + neighbourRow(x+xMovement,y+yMovement,xMovement,yMovement,player);
@@ -308,4 +328,27 @@ int neighbourRow(int x, int y ,int xMovement, int yMovement, char player){
 	else{
 		return 0;
 	}
+}
+
+/**
+* Checks if the board is full. Only possible if nobody has won earlier.
+* @returns 1 for game can go on - 0 for game ended with a draw
+*/
+int checkDraw(){
+	int i =0;
+	for(i=0;i<gameFieldWidth;i++){
+		if(getField(&gameField,i,gameFieldHeigth-1) == FIELD_EMPTY){
+			return 1;
+		}
+	}
+	return 0;
+}
+/** Get random integer a<=x<=e
+* @param a Lowest value for x.
+* @param e Highest value for x.
+* @returns Random integer
+*/
+int irand( int a, int e){
+    double r = e - a + 1;
+    return a + (int)(r * rand()/(RAND_MAX+1.0));
 }
