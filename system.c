@@ -24,6 +24,7 @@ void initBuffer(int maxTextLength){
 * @param next Pointer to the next line struct, NULL if this is the last element (most used case).
 * @param align Text align for the new line, -1 is left aligned, 0 is centered, +1 is right aligned.
 * @param maxTextLength Maximum number of characters for this line.
+* @return Pointer to new created struct.
 */
 struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int align, int maxTextLength){
 
@@ -100,6 +101,7 @@ void deleteLineItem(struct LineItem* line, int deleteAllBelow){
 * Warning/TODO: Not yet UTF8 aware!
 * @param src Source string pointer.
 * @param dst Destination string pointer.
+* @return Returns always 1, unless the world ends or it crashes.
 */
 int copyChar(char* src, char* dst){
     *dst = *src;
@@ -111,6 +113,7 @@ int copyChar(char* src, char* dst){
 * Add text to output buffer, use EXACTLY like printf()
 * @param input Format string, see printf().
 * @param ... Parameters, see printf().
+* @return Return value of internal vsnprintf().
 */
 int output(const char* input, ...){
 	int result;

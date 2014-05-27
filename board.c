@@ -10,6 +10,7 @@ struct board myBoard;
 * @param target Pointer to a fresh board structure.
 * @param width Board width (>=4).
 * @param height Board height (>=4).
+* @return 1 on success, otherwise 0.
 */
 int newBoard(struct board* target, unsigned int width, unsigned int height)
 {
@@ -26,7 +27,7 @@ int newBoard(struct board* target, unsigned int width, unsigned int height)
 
 	//abort if memory allocation failed
 	if (target->content == NULL) {
-		return 0;
+		exit(EXITCODE_OUTOFMEMORY);
 	}
 
 	//board is ready, now clear it
@@ -54,6 +55,7 @@ void clearBoard(struct board* target) {
 * @param target Board to base calculations on.
 * @param x X-coordinate.
 * @param y Y-coordinate.
+* @return Pointer to requested field.
 */
 char* calcFieldAddress(struct board* target, int x, int y) {
 	int offset = y*(target->width) + x;
@@ -65,6 +67,7 @@ char* calcFieldAddress(struct board* target, int x, int y) {
 * @param target Board to read.
 * @param x X-coordinate.
 * @param y Y-coordinate.
+* @return Value of requested field.
 */
 char getField(struct board* target, int x, int y) {
 	if (x<0 || y<0 || x>=target->width || y>=target->height)
