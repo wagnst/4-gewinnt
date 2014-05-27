@@ -61,6 +61,11 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="rules.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="signatures.h" />
 		<Unit filename="system.c">
 			<Option compilerVar="CC" />

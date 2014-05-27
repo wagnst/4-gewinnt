@@ -20,7 +20,7 @@ void addFrame(char* word){
 
 	}else{
 		//malloc failed-->fallback approach just output the supplied String without any formating
-		output(word);
+		output("%s",word);
 	}
 
 	//clean up
@@ -33,15 +33,16 @@ Method to show the rules.User can leave this screen by pressing any key
 */
 void showRules(){
 	/**
-	Alternative implementation with "frame"
-	output(" ___________________________\n");
-	output("| RULES:                    |\n");
-	output("|");
+	*Alternative implementation with "frame"
+	*output("%s"," ___________________________\n");
+	*output("%s","| RULES:                    |\n");
+	*output("%s","|___________________________|\n");
 	*/
-	output("             RULES\n This a implementation of the famous two player game \"Connect Four\".So you'll need a friend to play this game :) Towin you simply have to connect four of your chips in a row. This row can be horizontal,vertical or diagonal, it doesn't matter as long as there are no \"enemy\" chips betwenn your chips.\n The game will automatically win if one you won and take you to the \"Hall of Shame\"\n");
-	flushBuffer();
-	addFrame("HALL OF SHAME");
-	output("Press any key to return to main menu.\n");
+	startBuffer(70);
+	output("%s","             RULES:\nThis a implementation of the famous two player game \"Connect Four\".\nSo you'll need a friend to play this game :) To win you simply have to\nconnect four of your chips in a row. This row can be horizontal,\nvertical or diagonal,it doesn't matter as long as there are no \"enemy\"\nchips between your chips.\nThe game will automatically end if one you won and take you to the\n\"Hall of Shame\"\n\n");
+	//flushBuffer();
+	//addFrame("HALL OF SHAME");
+	output("%s","Press any key to return to main menu.\n");
 	flushBuffer();
 	getch();
 }
