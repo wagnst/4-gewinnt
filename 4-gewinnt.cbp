@@ -14,11 +14,12 @@
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-DDEBUG" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
 				<Option output="Release/4-gewinnt.exe" prefix_auto="1" extension_auto="0" />
-				<Option object_output="Release/" />
+				<Option object_output="." />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -30,8 +31,8 @@
 				</Linker>
 			</Target>
 			<Target title="winlauncher">
-				<Option output="Debug/launcher" prefix_auto="1" extension_auto="1" />
-				<Option object_output="Debug/" />
+				<Option output="Release/launcher" prefix_auto="1" extension_auto="1" />
+				<Option object_output="." />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>

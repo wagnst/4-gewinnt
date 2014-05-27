@@ -66,7 +66,7 @@ void updateSaveHoS(char* victor,char* victim,int moves){
 	FILE *fh;
 	char* buffer = malloc((getOldFileLength()+strlen(victor)+strlen(victim))*sizeof(char)+3);
 	if(buffer == NULL){
-		output("Allocation failed!");
+		exit(EXITCODE_OUTOFMEMORY);
 	}
 	buffer[0]='\0';
 

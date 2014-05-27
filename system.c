@@ -126,8 +126,10 @@ int output(const char* input, ...){
 	int result;
 	va_list args;
 	va_start(args, input);
-	//TODO: add buffer handling everywhere and remove direct print
+#ifdef DEBUG
+	printf("[DEBUGPRINT:]");
 	result = vprintf(input, args);
+#endif
 	va_end(args);
 
 	//writing to string buffer
@@ -171,9 +173,10 @@ void flushBuffer(){
 	}
 
 	consoleClear();
-	static int flushed = 0;
 
 	/*### DEBUGGING START ###*/
+#ifdef DEBUG
+	static int flushed = 0;
 	printf("DEBUG: printing %d-line buffer (%d.)",display.lineCount,++flushed);
 	struct LineItem* debugchain = display.first;
 	printf(", chain: %d",(int)debugchain);
@@ -182,6 +185,7 @@ void flushBuffer(){
 		debugchain = debugchain->next;
 	} while (debugchain!=NULL);
 	printf(". [END:%d]\n--------------------------------------------------\n",(int)display.last);
+#endif // DEBUG
 	/*### DEBUGGING END ###*/
 
 
