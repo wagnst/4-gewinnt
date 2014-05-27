@@ -92,22 +92,17 @@ int mainMenu(){
 *@param pPos contains the current position (0:Top,4:bottom)
 */
 void mainMenuReactToEnter(int pPos){
-	startBuffer(42);
 	switch(pPos){
 		case 0:
 			gameFunction();
 			break;
 		case 1:
-			//replace printf with corresponding call
+			startBuffer(60);
 			output("Settings Menu(Dummy)\nPress any key to return to main\n");
 			flushBuffer();
 			getch();
 			break;
 		case 2:
-			//replace printf with corresponding call
-			//output("Rules (Dummy)\nPress any key to return to main\n");
-			//flushBuffer();
-			//getch();
 			showRules();
 			break;
 		case 3:

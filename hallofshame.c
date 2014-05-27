@@ -45,8 +45,9 @@ void showHallOfShame(){
 	}
 	fclose(fh);
 	if(somethingPrinted == 0){
-		output("   No entries. Press any key to continue...");
+		output("   No entries.");
 	}
+	output("\n      [...Press any key to continue...]");
 	flushBuffer();
 	getch();
 }
