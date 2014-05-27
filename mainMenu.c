@@ -19,7 +19,7 @@ void drawRightArrow(char* menu,int pPos){
 
 
 void drawMainMenu(int pPos){
-	startBuffer();
+	startBuffer(25);
 	/**
 	every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
 	*/
@@ -69,7 +69,7 @@ int mainMenu(){
 }
 
 void mainMenuReactToEnter(int pPos){
-	startBuffer();
+	startBuffer(42);
 	switch(pPos){
 		case 0:
 			gameFunction();

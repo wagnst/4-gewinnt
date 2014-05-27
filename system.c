@@ -181,9 +181,11 @@ void flushBuffer(){
 }
 
 /**
-* Starts a new screen, empties the buffer
+* Starts a new screen and sets line limit, empties the buffer
+* @param maxTextLength See initBuffer().
 */
-void startBuffer(){
+void startBuffer(int maxTextLength){
+	display.maxTextLength = maxTextLength;
 	deleteLineItem(display.first, 1);
 	initBuffer(display.maxTextLength);
 }
