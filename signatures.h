@@ -37,3 +37,5 @@ void startGame();
 int neighbourRow(int x, int y ,int xMovement, int yMovement, char player);
 char checkForWinner(int x, int y, char player);
 void clearAll();
+int checkDraw();
+int irand( int a, int e);
