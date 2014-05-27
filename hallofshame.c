@@ -6,7 +6,7 @@
 * This function prints the HallOfShame.txt to the console.
 */
 void showHallOfShame(){
-	startBuffer();
+	startBuffer(74);
 	FILE *fh;
 	char line[60];
 	char delimiter[] = ",";
@@ -16,7 +16,7 @@ void showHallOfShame(){
 	char moves[3];
 	line[0]='\0';
 	fh = fopen("HallOfShame.txt", "r");
-	output("\n\tWelcome to our Hall of Shame...\n");
+	output("\nWelcome to our Hall of Shame...\n");
 	int somethingPrinted =0;
 	while((fscanf(fh,"%59s",line)) != EOF ) {
 		// divide line into interessting parts
@@ -40,12 +40,12 @@ void showHallOfShame(){
 			partOfLine = strtok(NULL, delimiter);
 			i++;
 		}
-		output("\t\t%s busted %s with %s moves\n",victor,victim,moves);
+		output("   %s busted %s with %s moves\n",victor,victim,moves);
 		somethingPrinted =1;
 	}
 	fclose(fh);
 	if(somethingPrinted == 0){
-		output("\t\tNo entries. Press any key to continue...");
+		output("   No entries. Press any key to continue...");
 	}
 	flushBuffer();
 	getch();

@@ -4,32 +4,49 @@
 #include <string.h>
 #include <conio.h>
 /**
-This method manipulates the array so the left arrow to indicate the cursor position is added to the array.
+*This method manipulates the array so the left arrow (to indicate the cursor position) is added to the array.
+*@param menu contains the pointer to the char-array containing main menu in it's current status
+*@param pPos contains the cursor Position of the cursor
 */
 void drawLeftArrow(char* menu,int pPos){
 			menu[pPos*20]='-';
 			menu[pPos*20+1]='-';
 			menu[pPos*20+2]='>';
 }
+/**
+*This method manipulates the array so the right arrow (to indicate the cursor position) is added to the array.
+*@param menu contains the pointer to the char-array containing main menu in it's current status
+*@param pPos contains the cursor Position of the cursor
+*/
 void drawRightArrow(char* menu,int pPos){
 			menu[(pPos+1)*20-2]='-';
 			menu[(pPos+1)*20-3]='-';
 			menu[(pPos+1)*20-4]='<';
 }
 
-
+/**
+*This method is responsible for drawing the mainMenu
+*The raw form of the menu is defined here-->it can not be changed easily because the array size is dependent on the length of the String
+*@param pPos current position of cursor within mainMenu
+*@param mainMenu the char Array containing the mainMenu
+*/
 void drawMainMenu(int pPos){
-	startBuffer();
+	startBuffer(25);
 	/**
-	every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
+	*every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
 	*/
 	char mainMenu[5*20+1] = "   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   QUIT            \n";
 			drawLeftArrow(mainMenu,pPos);
 			drawRightArrow(mainMenu,pPos);
 			output("%s",mainMenu);
+
 	flushBuffer();
 }
-
+/**
+*
+*@param con
+*@param pPos
+*/
 int mainMenu(){
     //describes where the cursor is, default location is 0(NEW GAME)
     int pPos=0;
@@ -53,7 +70,9 @@ int mainMenu(){
 				mainMenuReactToEnter(pPos);
 				break;
 			case 27: //escape
-				exit(0);
+			//	exit(0);
+				con=0;
+				break;
 		}
 		fflush(stdin);
 		if(pPos>4){
@@ -67,9 +86,12 @@ int mainMenu(){
     }
     return 0;
 }
-
+/**
+*this method handles the game flow by calling the function corresponding to the cursor posotion within the menu
+*@param pPos contains the current position (0:Top,4:bottom)
+*/
 void mainMenuReactToEnter(int pPos){
-	startBuffer();
+	startBuffer(42);
 	switch(pPos){
 		case 0:
 			gameFunction();
@@ -82,9 +104,10 @@ void mainMenuReactToEnter(int pPos){
 			break;
 		case 2:
 			//replace printf with corresponding call
-			output("Rules (Dummy)\nPress any key to return to main\n");
-			flushBuffer();
-			getch();
+			//output("Rules (Dummy)\nPress any key to return to main\n");
+			//flushBuffer();
+			//getch();
+			showRules();
 			break;
 		case 3:
 			showHallOfShame();
@@ -92,6 +115,6 @@ void mainMenuReactToEnter(int pPos){
 		case 4:
 			//end game
 			con=0;
-			exit(0);
+			//exit(0);
 	}
 }

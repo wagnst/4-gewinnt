@@ -5,6 +5,11 @@
 
 struct OutBuffer display;
 
+/**
+* Initializes buffering
+* Warning: Only call once at program start
+* @param maxTextLength Maximum character length of every single line, auto-wrap occurs after this number is reached.
+*/
 void initBuffer(int maxTextLength){
 	//set text size maximum and insert a first empty line
 	display.maxTextLength = maxTextLength;
@@ -12,6 +17,14 @@ void initBuffer(int maxTextLength){
 	display.first = insertNewLineItem(NULL,NULL,-1,maxTextLength);
 }
 
+/**
+* Add a new line to the buffer, may be inserted in the middle or appended to the end
+* Warning: Use output() to add text, this method is only used internally
+* @param prev Pointer to the previous line struct, NULL appends line to start of buffer.
+* @param next Pointer to the next line struct, NULL if this is the last element (most used case).
+* @param align Text align for the new line, -1 is left aligned, 0 is centered, +1 is right aligned.
+* @param maxTextLength Maximum number of characters for this line.
+*/
 struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int align, int maxTextLength){
 
 	//allocate memory for line item
@@ -57,6 +70,11 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 	return newLine;
 }
 
+/**
+* Delete the given line from the buffer
+* @param line Pointer to the line struct to delete.
+* @param deleteAllBelow Delete all the following lines as well (1) or just the given line (0).
+*/
 void deleteLineItem(struct LineItem* line, int deleteAllBelow){
 	if (!deleteAllBelow){
 		//fix the chain by connecting the following line to the previous
@@ -77,13 +95,23 @@ void deleteLineItem(struct LineItem* line, int deleteAllBelow){
 	display.lineCount--;
 }
 
+/**
+* Copy one character from the source string to the target string and append a null byte afterwards
+* Warning/TODO: Not yet UTF8 aware!
+* @param src Source string pointer.
+* @param dst Destination string pointer.
+*/
 int copyChar(char* src, char* dst){
-	//TODO: UTF8 handling!
     *dst = *src;
     *(dst+1) = '\0';
     return 1;
 }
 
+/**
+* Add text to output buffer, use EXACTLY like printf()
+* @param input Format string, see printf().
+* @param ... Parameters, see printf().
+*/
 int output(const char* input, ...){
 	int result;
 	va_list args;
@@ -124,6 +152,9 @@ int output(const char* input, ...){
 	return result;
 }
 
+/**
+* Prints the screen (output buffer) and clears the buffer
+*/
 void flushBuffer(){
 	consoleClear();
 	static int flushed = 0;
@@ -149,11 +180,19 @@ void flushBuffer(){
 	startBuffer();
 }
 
-void startBuffer(){
+/**
+* Starts a new screen and sets line limit, empties the buffer
+* @param maxTextLength See initBuffer().
+*/
+void startBuffer(int maxTextLength){
+	display.maxTextLength = maxTextLength;
 	deleteLineItem(display.first, 1);
 	initBuffer(display.maxTextLength);
 }
 
+/**
+* Clears the console
+*/
 void consoleClear(){
 	//should clear the console on most plattforms
 	#ifdef _WIN32

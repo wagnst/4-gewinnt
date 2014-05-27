@@ -12,6 +12,7 @@
 #include "hallofshame.c"
 #include "board.c"
 #include "gamefunction.c"
+#include "rules.c"
 
 int main()
 {

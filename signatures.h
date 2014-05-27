@@ -39,3 +39,5 @@ char checkForWinner(int x, int y, char player);
 void clearAll();
 int checkDraw();
 int irand( int a, int e);
+//rules.c
+void showRules();
