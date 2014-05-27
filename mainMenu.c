@@ -39,6 +39,7 @@ void drawMainMenu(int pPos){
 			drawLeftArrow(mainMenu,pPos);
 			drawRightArrow(mainMenu,pPos);
 			output("%s",mainMenu);
+			output("%s","\n");
 
 	flushBuffer();
 }
@@ -82,7 +83,7 @@ int mainMenu(){
 			//cursor is the "over" the menu-->get him back
 			pPos=4;
 		}
-		output("\n");
+
     }
     return 0;
 }
