@@ -3,7 +3,7 @@ void HelloWorld();
 //system.c
 void initBuffer(int maxTextLength);
 void printBuffer();
-void startBuffer();
+void emptyBuffer();
 int copyChar(char* src, char* dst);
 int output(const char* input, ...);
 struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int align, int maxTextLength);
@@ -37,3 +37,5 @@ void startGame();
 int neighbourRow(int x, int y ,int xMovement, int yMovement, char player);
 char checkForWinner(int x, int y, char player);
 void clearAll();
+//rules.c
+void showRules();
