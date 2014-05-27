@@ -42,6 +42,9 @@
 				</Compiler>
 			</Target>
 		</Build>
+		<VirtualTargets>
+			<Add alias="Z_BUILD_ALL :)" targets="Debug;Release;winlauncher;" />
+		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
