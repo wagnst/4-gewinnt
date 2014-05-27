@@ -16,7 +16,6 @@
 
 int main()
 {
-	initBuffer(74);
 	return mainMenu();
 }
 

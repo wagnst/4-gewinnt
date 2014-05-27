@@ -8,13 +8,12 @@ struct OutBuffer display;
 /**
 * Initializes buffering
 * Warning: Only call once at program start
-* @param maxTextLength Maximum character length of every single line, auto-wrap occurs after this number is reached.
 */
-void initBuffer(int maxTextLength){
+void initBuffer(){
 	//set text size maximum and insert a first empty line
-	display.maxTextLength = maxTextLength;
+	display.first = NULL;
+	display.last = NULL;
 	display.lineCount = 0;
-	display.first = insertNewLineItem(NULL,NULL,-1,maxTextLength);
 }
 
 /**
@@ -77,6 +76,10 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 * @param deleteAllBelow Delete all the following lines as well (1) or just the given line (0).
 */
 void deleteLineItem(struct LineItem* line, int deleteAllBelow){
+	if (line==NULL){
+		return;
+	}
+
 	if (!deleteAllBelow){
 		//fix the chain by connecting the following line to the previous
 		if (line->prev!=NULL){
@@ -116,6 +119,10 @@ int copyChar(char* src, char* dst){
 * @return Return value of internal vsnprintf().
 */
 int output(const char* input, ...){
+	if (display.first==NULL || display.last==NULL){
+        exit(EXITCODE_BUFFERERROR);
+	}
+
 	int result;
 	va_list args;
 	va_start(args, input);
@@ -159,6 +166,10 @@ int output(const char* input, ...){
 * Prints the screen (output buffer) and clears the buffer
 */
 void flushBuffer(){
+	if (display.first==NULL || display.last==NULL){
+        exit(EXITCODE_BUFFERERROR);
+	}
+
 	consoleClear();
 	static int flushed = 0;
 
@@ -180,7 +191,8 @@ void flushBuffer(){
 		current = current->next;
 	}
 
-	startBuffer();
+	deleteLineItem(display.first, 1);
+	initBuffer();
 }
 
 /**
@@ -188,9 +200,14 @@ void flushBuffer(){
 * @param maxTextLength See initBuffer().
 */
 void startBuffer(int maxTextLength){
+	if (display.first!=NULL || display.last!=NULL){
+        exit(EXITCODE_BUFFERERROR);
+	}
+
 	display.maxTextLength = maxTextLength;
 	deleteLineItem(display.first, 1);
-	initBuffer(display.maxTextLength);
+	display.lineCount = 0;
+	display.first = insertNewLineItem(NULL,NULL,-1,maxTextLength);
 }
 
 /**

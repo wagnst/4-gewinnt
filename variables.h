@@ -1,6 +1,7 @@
 ﻿/***Global variable declaration file***/
 //EXITCODES
 const int EXITCODE_OUTOFMEMORY = 13;
+const int EXITCODE_BUFFERERROR = 17;
 //dummy.c
 extern int testerVariable;
 //system.c
