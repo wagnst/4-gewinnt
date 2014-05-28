@@ -32,17 +32,17 @@ void addFrame(char* word){
 Method to show the rules.User can leave this screen by pressing any key
 */
 void showRules(){
-	/**
+	/*
 	*Alternative implementation with "frame"
 	*output("%s"," ___________________________\n");
 	*output("%s","| RULES:                    |\n");
 	*output("%s","|___________________________|\n");
 	*/
 	startBuffer(70);
-	output("%s","             RULES:\nThis a implementation of the famous two player game \"Connect Four\".\nSo you'll need a friend to play this game :) To win you simply have to\nconnect four of your chips in a row. This row can be horizontal,\nvertical or diagonal,it doesn't matter as long as there are no \"enemy\"\nchips between your chips.\nThe game will automatically end if one you won and take you to the\n\"Hall of Shame\"\n\n");
+	output("[ RULES ]:\n\nThis a implementation of the famous two player game \"Connect Four\".\nSo you'll need a friend to play this game :) To win you simply have to\nconnect four of your chips in a row. This row can be horizontal,\nvertical or diagonal,it doesn't matter as long as there are no \"enemy\"\nchips between your chips.\nThe game will automatically end if one you won and take you to the\n\"Hall of Shame\"\n\n");
 	//flushBuffer();
 	//addFrame("HALL OF SHAME");
-	output("%s","Press any key to return to main menu.\n");
+	output("Press any key to return to main menu.\n");
 	flushBuffer();
 	getch();
 }
