@@ -271,6 +271,7 @@ void consoleClear(){
 /**
 * convert string to upper string
 * @param ch1 string to be uppered
+* @return ch2 is upper case char
 */
 char lower_to_upper(char ch1)
 {

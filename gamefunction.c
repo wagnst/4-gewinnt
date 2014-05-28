@@ -19,7 +19,12 @@ char victor;
 int moves;
 int end = 0;
 
-//game loop
+/**
+* gameFunction first forces users to enter their names and checks them for different mistakes
+* after that startGame() is called within the gameloop, which processes the main game flow
+* last but not least we check for a winner or check for draw and continue to Hall of Shame.
+* @return no return because of void
+*/
 void gameFunction(){
 	moves = 0;
 	playersTurn = irand(0,1);
@@ -157,6 +162,11 @@ void gameFunction(){
     return;
 }
 
+/**
+* Clears all elements which are used within the gameflow
+* Board, loop condition, positions
+* @return no return because of void
+*/
 void clearAll() {
 	//clear board
 	clearBoard(&gameField);
@@ -170,15 +180,15 @@ void clearAll() {
 	return;
 }
 
-/*
-playerAction...
-	- checks which player's turn it is
-	- shows X or O for a game-chip
-		- player1 (X) or player2 (O) can move the coin to the left or right (check boundaries, also if row is full) and let it fall (space)
-		- stop coin at highest existing coin
-		- check if any user has won (function needs to be implemented)
-according to https://github.com/wagnst/4-gewinnt/issues/10
-
+/**
+* playerAction()
+*	- checks which player's turn it is
+*	- shows X or O for a game-chip
+*		- player1 (X) or player2 (O) can move the coin to the left or right (check boundaries, also if row is full) and let it fall (space)
+*		- stop coin at highest existing coin
+*		- check if any user has won (function needs to be implemented)
+* according to https://github.com/wagnst/4-gewinnt/issues/10
+* @return no return because of void
 */
 void playerAction() {
 	int i = 0;
@@ -244,6 +254,7 @@ void playerAction() {
 * Checks if a row is full, otherwise throw coin
 * @param pos position of where coin should be placed (board begins at 0 and coinpos at 1!)
 * @param player Char which contains X oder O according to the player
+* @return no return because of void
 */
 void throwCoin(int pos, char player) {
 	int lowestCoin = 0, i;
@@ -282,6 +293,7 @@ void throwCoin(int pos, char player) {
 * Draws the Coin above the board
 * @param pos which position should the coin be drawn to.
 * @param coinType which coin should be drawn.
+* @return no return because of void
 */
 void drawCoin(int pos, char CoinType){
 	int i;
@@ -321,8 +333,9 @@ void drawCoin(int pos, char CoinType){
 	return;
 }
 
-/*
-Function will create a new Board, clears it, draws it and calls playerAction()
+/**
+* Function will create a new Board, clears it and calls playerAction()
+* @return no return because of void
 */
 void startGame(){
 	//checks if field already exists
@@ -345,7 +358,7 @@ void startGame(){
 * @param x X-Position of last dropped coin.
 * @param y Y-Position of last dropped coin.
 * @param player The last coin which was dropped to the game, as the starting point of this algorithm.
-* @returns The winnig coin type is returned X or O.
+* @return The winnig coin type is returned X or O.
 */
 char checkForWinner(int x, int y, char player){
 	 // horizontal check first right then left summarized together
@@ -395,7 +408,7 @@ char checkForWinner(int x, int y, char player){
 * @param xMovement This is used to build a "vector"
 * @param yMovement This is used to build a "vector"
 * @param player The cointype to count in a row.
-* @returns Number of coins which are connected.
+* @return Number of coins which are connected.
 */
 int neighbourRow(int x, int y ,int xMovement, int yMovement, char player){
 	if (getField(&gameField,x,y) == player){
@@ -422,7 +435,7 @@ int checkDraw(){
 /** Get random integer a<=x<=e
 * @param a Lowest value for x.
 * @param e Highest value for x.
-* @returns Random integer
+* @return Random integer
 */
 int irand( int a, int e){
     double r = e - a + 1;
