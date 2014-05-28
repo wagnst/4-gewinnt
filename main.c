@@ -20,8 +20,10 @@
 //shows gamerules
 #include "rules.c"
 
-int main()
+int main(int argc, char *argv[])
 {
+	FANCY_FONT = (argc>=2 && strcmp(argv[1],"FANCY")==0);
+
 	return mainMenu();
 }
 

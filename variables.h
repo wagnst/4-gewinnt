@@ -5,6 +5,7 @@ const int EXITCODE_BUFFERERROR = 17;
 //dummy.c
 extern int testerVariable;
 //system.c
+extern int FANCY_FONT;
 struct LineItem {
 	int length;
 	int byteSize;

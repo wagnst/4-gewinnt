@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <string.h>
 
+int FANCY_FONT;
 struct OutBuffer display;
 
 /**
