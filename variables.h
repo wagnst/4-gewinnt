@@ -50,3 +50,4 @@ extern int playersTurn; //player1 starts the game
 extern int coinPosition; //where the coin is actually placed
 extern char playersCoin; //contains X or O
 extern int moves;
+extern int end;
