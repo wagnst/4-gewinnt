@@ -1,8 +1,8 @@
-=================================================================================
-DHBW Projektmanagement: 4-gewinnt in C
-=================================================================================
+#DHBW Projektmanagement 1&2: 
+##4-gewinnt in C
 
-Projektziel:
+###Projektziel:
+***
 Der Klassiker "4 gewinnt" soll als Konsolenanwendung bis zum 1.6.2014 in der Programmiersprache C entwickelt werden. 
 
 Begleitende Projektziele: 
@@ -11,14 +11,12 @@ Begleitende Projektziele:
 
 Alle Ziele wurden gemeinsam erarbeitet und von allen Teammitgliedern anerkannt. 
 
-========================================
-
-Budget:
+###Budget:
+***
 - frei verfügbare Software
 
-========================================
-
-Zeit / Ablaufplan:
+###Zeit / Ablaufplan:
+***
 - Ziele definieren, Team einteilen und grobe Rollenverteilung
 - Specification entwerfen 
 - Design/Modellierung (Architektur, Programmlogik, UI-Konzept) -> Rücksprache mit PO
@@ -32,20 +30,15 @@ Zeit / Ablaufplan:
 - Anwendungsdokumentation fertigstellen
 - Feedback
 
-========================================
-
-Ressourcen:
+###Ressourcen:
+***
 - Personal: Steffen Wagner, Niko Berkmann, Inga Miadowicz, Marvin Klose, Michael Wieneke
 - github educational (free for students)
 - freie IDE CodeBlocks (Gnu GPLv3)
 - Dokumentenverwaltung dropbox (Free-Account)
 
-========================================
-
-Qualität:
+###Qualität:
+***
 - sauberer Code durch Code Conventions
 - technische Dokumentation (Kommentare im Code und eigenes Dokument)
 - Anwendungsdokumentation
-
-========================================
-
