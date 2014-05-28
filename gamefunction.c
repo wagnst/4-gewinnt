@@ -23,18 +23,79 @@ int end = 0;
 void gameFunction(){
 	moves = 0;
 	playersTurn = irand(0,1);
-	//check that names are not the same
+	char keyStrokeName[2];
+	keyStrokeName[1] = '\0';
+	player1[0] = '\0';
+	player2[0] = '\0';
+	/*
+		player1 name
+		loop as long player did not press enter
+	*/
 	do {
-		//clear the console
-		consoleClear();
-		player1[0] = '\0';
-		player2[0] = '\0';
-		//Get names of the players
-		fprintf(stdout, "Please enter a name for Player 1: \n");
-		fscanf(stdin, "%19s", player1);
-		fprintf(stdout, "Please enter a name for Player 2: \n");
-		fscanf(stdin, "%19s", player2);
-	}while((strcmp(player1, player2)==0));
+		//check length
+		if (strlen(player1)>=19)
+			break;
+		//buffer
+		startBuffer(50);
+		output("Please enter a name for Player 1: \n");
+		output("> %s_\n", player1);
+		//flush buffer
+		flushBuffer();
+		//wait for a new char and give it to var
+		keyStrokeName[0] = getch();
+		//check for special inputs
+		if ((keyStrokeName[0] == '\b') && (strlen(player1)) > 0) {
+			//if backspace was entered
+			player1[strlen(player1)-1] = '\0'; //set nilbyte to pointer-1
+		}
+		else if (keyStrokeName[0] == '\r') {} //if enter do nothing
+		else if ((keyStrokeName[0] == '\b') && (strlen(player1)) == 0) {} //if string empty and backspace entered do nothing
+		else {
+			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
+			strcat(player1, keyStrokeName);
+		}
+	} while((keyStrokeName[0] != '\r') && (player1[0] != '\0') && !(strlen(player1)>15) || (strlen(player1)<3));
+	/*
+		player2 name
+		loop as long player did not press enter
+	*/
+	do {
+		//check length
+		if (strlen(player1)>=19)
+			break;
+		//buffer
+		startBuffer(55);
+		output("Please enter a name for Player 1: \n");
+		output("%s\n\n", player1);
+		output("Please enter a name for Player 2: \n");
+		output("> %s_\n", player2);
+		//flush buffer
+		flushBuffer();
+		//wait for a new char and give it to var
+		keyStrokeName[0] = getch();
+		//check for special inputs
+		if ((keyStrokeName[0] == '\b') && (strlen(player2)) > 0) {
+			//if backspace was entered
+			player2[strlen(player2)-1] = '\0'; //set nilbyte to pointer-1
+		}
+		else if (keyStrokeName[0] == '\r') {} //if enter do nothing
+		else if ((keyStrokeName[0] == '\b') && (strlen(player2)) > 0) {} //if string empty and backspace entered do nothing
+		else {
+			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
+			strcat(player2, keyStrokeName);
+		}
+	} while((keyStrokeName[0] != '\r') && (player2[0] != '\0') && !(strlen(player2)>15) || (strlen(player2)<3));
+	//check that player1 and player2 names are not the same
+	if (strcmp(player1, player2)==0) {
+		player2[(strlen(player2))] = '1'; // add a symbolic 1 to the end of the name ;-)
+		player2[(strlen(player2))+1] = '\0';
+	}
+	//start buffer for completion
+	startBuffer(55);
+	output("Thank you %s and %s! The game will start now.\n\nPlease press enter to continue...", player1, player2);
+	flushBuffer();
+	//wait for a key
+	getch();
     //Loop till the game is done
     while(end == 0){
 		// start the game flow
