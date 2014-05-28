@@ -3,7 +3,6 @@
 #include <stdarg.h>
 #include <string.h>
 
-int FANCY_FONT;
 struct OutBuffer display;
 
 /**
@@ -197,32 +196,38 @@ void flushBuffer(){
 	int i;
 
 	//draw header line
-		strcat(collector," ╔");
+		strcat(collector," ");
+		strcat(collector,FONT_DPIPE_TOP_LEFT);
 		for (i = 0; i < display.maxTextLength; i++){
-			strcat(collector,"═");
+			strcat(collector,FONT_DPIPE_HORI_BAR);
 		}
-		strcat(collector,"╗ ");
+		strcat(collector,FONT_DPIPE_TOP_RIGHT);
+		strcat(collector," ");
 		strcat(collector,"\n");
 	//draw lines
 	while (current!=NULL){
 		//left border
-		strcat(collector," ║");
+		strcat(collector," ");
+		strcat(collector,FONT_DPIPE_VERT_BAR);
 		//text
 		strcat(collector,current->text);
 		//right padding and right border
 		for (i = 0; i < display.maxTextLength - current->length; i++){
 			strcat(collector," ");
 		}
-		strcat(collector,"║ ");
+		strcat(collector,FONT_DPIPE_VERT_BAR);
+		strcat(collector," ");
 		strcat(collector,"\n");
 		current = current->next;
 	}
 	//draw footer line
-	strcat(collector," ╚");
+	strcat(collector," ");
+	strcat(collector,FONT_DPIPE_BOTTOM_LEFT);
 	for (i = 0; i < display.maxTextLength; i++){
-		strcat(collector,"═");
+		strcat(collector,FONT_DPIPE_HORI_BAR);
 	}
-	strcat(collector,"╝ ");
+	strcat(collector,FONT_DPIPE_BOTTOM_RIGHT);
+	strcat(collector," ");
 
 #ifndef DEBUG
 	consoleClear();

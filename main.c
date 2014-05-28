@@ -5,6 +5,8 @@
 #include "variables.h"
 //Insert function signatures here:
 #include "signatures.h"
+//special character handling
+#include "fancyfont.c"
 //and include function files themselves:
 #include "dummy.c"
 //system functions
@@ -23,6 +25,10 @@
 int main(int argc, char *argv[])
 {
 	FANCY_FONT = (argc>=2 && strcmp(argv[1],"FANCY")==0);
+#ifdef DEBUG
+	FANCY_FONT = 0;
+#endif // DEBUG
+	setFancy(FANCY_FONT);
 
 	return mainMenu();
 }

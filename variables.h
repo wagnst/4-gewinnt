@@ -4,8 +4,10 @@ const int EXITCODE_OUTOFMEMORY = 13;
 const int EXITCODE_BUFFERERROR = 17;
 //dummy.c
 extern int testerVariable;
-//system.c
+//fancyfont.c
+/*for font constants see file*/
 extern int FANCY_FONT;
+//system.c
 struct LineItem {
 	int length;
 	int byteSize;

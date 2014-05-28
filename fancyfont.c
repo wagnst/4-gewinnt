@@ -1,0 +1,29 @@
+﻿#pragma once
+
+int FANCY_FONT;
+char* FONT_DPIPE_TOP_LEFT;
+char* FONT_DPIPE_TOP_RIGHT;
+char* FONT_DPIPE_BOTTOM_LEFT;
+char* FONT_DPIPE_BOTTOM_RIGHT;
+char* FONT_DPIPE_VERT_BAR;
+char* FONT_DPIPE_HORI_BAR;
+
+void setFancy(int fancyActivated)
+{
+	if (fancyActivated){
+		FONT_DPIPE_TOP_LEFT = "╔";
+		FONT_DPIPE_TOP_RIGHT = "╗";
+		FONT_DPIPE_BOTTOM_LEFT = "╚";
+		FONT_DPIPE_BOTTOM_RIGHT = "╝";
+		FONT_DPIPE_VERT_BAR = "║";
+		FONT_DPIPE_HORI_BAR = "═";
+	} else {
+		FONT_DPIPE_TOP_LEFT = "/";
+		FONT_DPIPE_TOP_RIGHT = "\\";
+		FONT_DPIPE_BOTTOM_LEFT = "\\";
+		FONT_DPIPE_BOTTOM_RIGHT = "/";
+		FONT_DPIPE_VERT_BAR = "|";
+		FONT_DPIPE_HORI_BAR = "=";
+	}
+
+}

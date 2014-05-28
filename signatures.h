@@ -1,5 +1,7 @@
 ﻿//dummy.c
 void HelloWorld();
+//fancyfont.c
+void setFancy();
 //system.c
 void initBuffer();
 void startBuffer(int maxTextLength);
