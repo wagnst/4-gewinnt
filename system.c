@@ -189,24 +189,39 @@ void flushBuffer(){
 	/*### DEBUGGING END ###*/
 
 	struct LineItem* current = display.first;
-	char* collector = malloc(display.lineCount * display.maxTextLength * sizeof(char) * UTF_MULTIPLIER + 1);
+	const int MAX_CHARS_BORDER = 4;
+	const int MAX_BYTES_PER_LINE = (display.maxTextLength + MAX_CHARS_BORDER + 1) * sizeof(char) * UTF_MULTIPLIER;
+	char* collector = malloc(display.lineCount * MAX_BYTES_PER_LINE + 1);
 	collector[0] = '\0';
 	int i;
 
+	//draw header line
+		strcat(collector," ╔");
+		for (i = 0; i < display.maxTextLength; i++){
+			strcat(collector,"═");
+		}
+		strcat(collector,"╗ ");
+		strcat(collector,"\n");
 	//draw lines
 	while (current!=NULL){
 		//left border
-		strcat(collector," |");
+		strcat(collector," ║");
 		//text
 		strcat(collector,current->text);
 		//right padding and right border
 		for (i = 0; i < display.maxTextLength - current->length; i++){
 			strcat(collector," ");
 		}
-		strcat(collector,"| ");
+		strcat(collector,"║ ");
 		strcat(collector,"\n");
 		current = current->next;
 	}
+	//draw footer line
+	strcat(collector," ╚");
+	for (i = 0; i < display.maxTextLength; i++){
+		strcat(collector,"═");
+	}
+	strcat(collector,"╝ ");
 
 #ifndef DEBUG
 	consoleClear();
