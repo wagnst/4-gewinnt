@@ -183,4 +183,5 @@ void drawBoard(struct board* target) {
 
 	//we're done, output the whole thing
 	output("%s",canvas);
+	free(canvas);
 }
