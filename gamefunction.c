@@ -17,11 +17,11 @@ int playersTurn;
 char playersCoin; //contains X or O
 char victor;
 int moves;
+int end = 0;
 
 //game loop
 void gameFunction(){
 	moves = 0;
-	int end = 0;
 	playersTurn = irand(0,1);
 	//check that names are not the same
 	do {
@@ -37,42 +37,61 @@ void gameFunction(){
 	}while((strcmp(player1, player2)==0));
     //Loop till the game is done
     while(end == 0){
-		startGame(); // start the game flow
-
+		// start the game flow
+		startGame();
+		//check for winners or draw
 		if( victor == FIELD_PLAYER1){
 			end = 1;
 			moves =  (moves/2)+playersTurn;
 			consoleClear();
+			startBuffer(50);
 			drawBoard(&gameField);
 			updateSaveHoS(player1,player2,moves);
 			//output victor
 			output("%s has won!\n\n", player1);
-
+			output("Press any key to continue to Hall of Shame...\n");
+			//show all
+			flushBuffer();
+			//wait for any keystroke
+			getch();
+			//continue to hall of shame
+			showHallOfShame();
 		}
 		else if( victor == FIELD_PLAYER2){
 			end = 1;
 			moves = (moves/2)+playersTurn;
 			consoleClear();
+			startBuffer(50);
 			drawBoard(&gameField);
 			updateSaveHoS(player2,player1,moves);
 			//output victor
 			output("%s has won!\n\n", player2);
+			output("Press any key to continue to Hall of Shame...\n");
+			//show all
+			flushBuffer();
+			//wait for any keystroke
+			getch();
+			//continue to hall of shame
+			showHallOfShame();
 		}
 		if(checkDraw() == 0){
 			end = 1;
 			consoleClear();
+			startBuffer(50);
 			drawBoard(&gameField);
-			output("Game ended with a draw...\n");
+			//output draw
+			output("Game ended with a draw...\n\n");
+			output("Press any key to continue to Hall of Shame...\n");
+			//show all
+			flushBuffer();
+			//wait for any keystroke
+			getch();
+			//continue to hall of shame
+			showHallOfShame();
 		}
     }
-    output("Press any key to continue to Hall of Shame...");
-	//wait for any keystroke
-    getch();
-    //continue to hall of shame
-    showHallOfShame();
-    consoleClear();
+
     //free our game-board
-    end = 0;
     clearAll();
     return;
 }
@@ -81,6 +100,7 @@ void clearAll() {
 	//clear board
 	clearBoard(&gameField);
 	freeBoard(&gameField);
+	end = 0;
 	//reset some variables
 	victor = '\0';
 	gameFieldCreated = 0; //set to 0, because board was deleted
@@ -107,10 +127,10 @@ void playerAction() {
 	if (spaceBetweenNames==NULL) {
 		exit(EXITCODE_OUTOFMEMORY);
 	}
-	//clear the console
-	consoleClear();
 	//check which players turn it is and sets the coin
 	playersCoin = '\0';
+	//output buffer
+	startBuffer(50);
 	if (playersTurn == 0) {
 		playersCoin = FIELD_EMPTY;
 		output("%s's turn\n\n", player1);
@@ -132,6 +152,8 @@ void playerAction() {
 	drawCoin(coinPosition, playersCoin);
 	//draw the board
 	drawBoard(&gameField);
+	//end buffer
+	flushBuffer();
 	userInput = getch();
 	switch(userInput){
 		//dummy for key left
@@ -145,11 +167,8 @@ void playerAction() {
 				coinPosition++;
 			break;
 		case 27: //escape
-			//clear gamestats
-			clearAll();
 			//go back to menu
-			mainMenu();
-			return;
+			end = 1;
 			break;
 		//let coin fall
 		case 13: //enter key
@@ -190,9 +209,7 @@ void throwCoin(int pos, char player) {
 			setField(&gameField,pos-1,lowestCoin,FIELD_PLAYER2);
 			victor = checkForWinner(pos-1, lowestCoin,FIELD_PLAYER2);
 		}
-
 	}
-
 	//switch to player 2 or back to 1
 	if (playersTurn == 1)
 		playersTurn = 0;
@@ -247,12 +264,10 @@ void drawCoin(int pos, char CoinType){
 Function will create a new Board, clears it, draws it and calls playerAction()
 */
 void startGame(){
-		//checks if field already exists
+	//checks if field already exists
 	if (gameFieldCreated == 0) {
 		//create new game board (includes clear)
 		if (newBoard(&gameField,gameFieldWidth,gameFieldHeigth)) {
-			//draw the board
-			drawBoard(&gameField);
 			//set gameFieldCreated to 1
 			gameFieldCreated = 1;
 		}
