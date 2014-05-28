@@ -1,0 +1,2 @@
+#include "resource.h"
+IDI_ICON ICON "4-gewinnt.ico"
