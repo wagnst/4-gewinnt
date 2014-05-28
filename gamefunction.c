@@ -421,7 +421,7 @@ int neighbourRow(int x, int y ,int xMovement, int yMovement, char player){
 
 /**
 * Checks if the board is full. Only possible if nobody has won earlier.
-* @returns 1 for game can go on - 0 for game ended with a draw
+* @return 1 for game can go on - 0 for game ended with a draw
 */
 int checkDraw(){
 	int i =0;
