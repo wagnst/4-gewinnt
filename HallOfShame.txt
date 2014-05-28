@@ -1,7 +1,0 @@
-Peter,Paul,1
-Me,You,4
-Marvin,Stf,7
-Marvin,Steffen,10
-Peter,Paul,15
-Michael,Steffen,22
-Peter,Paul,39

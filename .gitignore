@@ -29,3 +29,6 @@
 # CodeBlocks specific
 *.layout
 *.depend
+
+#Game files
+HallOfShame.txt
