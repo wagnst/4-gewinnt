@@ -172,6 +172,8 @@ void flushBuffer(){
         exit(EXITCODE_BUFFERERROR);
 	}
 
+	consoleClear();
+
 	/*### DEBUGGING START ###*/
 #ifdef DEBUG
 	consoleClear();
@@ -192,18 +194,26 @@ void flushBuffer(){
 	const int MAX_CHARS_BORDER = 4;
 	const int MAX_BYTES_PER_LINE = (display.maxTextLength + MAX_CHARS_BORDER + 1) * sizeof(char) * UTF_MULTIPLIER;
 	char* collector = malloc(display.lineCount * MAX_BYTES_PER_LINE + 1);
+	if (collector==NULL){
+		exit(EXITCODE_OUTOFMEMORY);
+	}
 	collector[0] = '\0';
 	int i;
 
 	//draw header line
-		strcat(collector," ");
-		strcat(collector,FONT_DPIPE_TOP_LEFT);
-		for (i = 0; i < display.maxTextLength; i++){
-			strcat(collector,FONT_DPIPE_HORI_BAR);
-		}
-		strcat(collector,FONT_DPIPE_TOP_RIGHT);
-		strcat(collector," ");
-		strcat(collector,"\n");
+	strcat(collector," ");
+	strcat(collector,FONT_DPIPE_TOP_LEFT);
+	for (i = 0; i < display.maxTextLength; i++){
+		strcat(collector,FONT_DPIPE_HORI_BAR);
+	}
+	strcat(collector,FONT_DPIPE_TOP_RIGHT);
+	strcat(collector," ");
+	strcat(collector,"\n");
+
+	//temporary:
+	printf("%s",collector);
+	collector[0] = '\0';
+
 	//draw lines
 	while (current!=NULL){
 		//left border
@@ -219,6 +229,9 @@ void flushBuffer(){
 		strcat(collector," ");
 		strcat(collector,"\n");
 		current = current->next;
+		//temporary:
+		printf("%s",collector);
+		collector[0] = '\0';
 	}
 	//draw footer line
 	strcat(collector," ");
@@ -229,10 +242,9 @@ void flushBuffer(){
 	strcat(collector,FONT_DPIPE_BOTTOM_RIGHT);
 	strcat(collector," ");
 
-#ifndef DEBUG
-	consoleClear();
-#endif // DEBUG
 	printf("%s",collector);
+	collector[0] = '\0';
+
 	free(collector);
 
 	deleteLineItem(display.first, 1);
