@@ -35,7 +35,7 @@ void drawMainMenu(int pPos){
 	/**
 	*every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
 	*/
-	char mainMenu[5*20+1] = "   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   QUIT            \n";
+	char mainMenu[6*20+1] = "   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   CREDITS         \n   QUIT            \n";
 			drawLeftArrow(mainMenu,pPos);
 			drawRightArrow(mainMenu,pPos);
 			output("%s",mainMenu);
@@ -76,12 +76,12 @@ int mainMenu(){
 				break;
 		}
 		fflush(stdin);
-		if(pPos>4){
+		if(pPos>5){
 			//cursor is "below" the menu-->get him back
 			pPos=0;
 		} else if(pPos<0){
 			//cursor is the "over" the menu-->get him back
-			pPos=4;
+			pPos=5;
 		}
 
     }
@@ -109,6 +109,9 @@ void mainMenuReactToEnter(int pPos){
 			showHallOfShame();
 			break;
 		case 4:
+			showCredits();
+			break;
+		case 5:
 			//end game
 			con=0;
 			//exit(0);

@@ -21,6 +21,8 @@
 #include "gamefunction.c"
 //shows gamerules
 #include "rules.c"
+//shows credits
+#include "credits.c"
 
 int main(int argc, char *argv[])
 {

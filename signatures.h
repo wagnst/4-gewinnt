@@ -43,3 +43,7 @@ int checkDraw();
 int irand( int a, int e);
 //rules.c
 void showRules();
+//system.c
+char lower_to_upper(char ch1);
+//credits.c
+void showCredits();
