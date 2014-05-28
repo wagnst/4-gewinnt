@@ -48,12 +48,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="4-gewinnt.ico" />
 		<Unit filename="board.c">
 			<Option compilerVar="CC" />
 			<Option compile="0" />
 			<Option link="0" />
 			<Option target="Debug" />
 			<Option target="Release" />
+		</Unit>
+		<Unit filename="credits.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="dummy.c">
 			<Option compilerVar="CC" />
@@ -66,10 +72,6 @@
 			<Option compilerVar="CC" />
 			<Option compile="0" />
 			<Option link="0" />
-			<Option target="Debug" />
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="fancyfont.h">
 			<Option target="Debug" />
 			<Option target="Release" />
 		</Unit>
@@ -98,6 +100,10 @@
 			<Option link="0" />
 			<Option target="Debug" />
 			<Option target="Release" />
+		</Unit>
+		<Unit filename="resource.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="rules.c">
 			<Option compilerVar="CC" />
