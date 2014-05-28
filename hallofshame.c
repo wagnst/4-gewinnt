@@ -16,7 +16,7 @@ void showHallOfShame(){
 	char moves[3];
 	line[0]='\0';
 	fh = fopen("HallOfShame.txt", "r");
-	output("\nWelcome to our Hall of Shame...\n");
+	output("[ Hall of Shame ]:\n\nWelcome to our Hall of Shame...\n");
 	int somethingPrinted =0;
 	while((fscanf(fh,"%59s",line)) != EOF ) {
 		// divide line into interessting parts
