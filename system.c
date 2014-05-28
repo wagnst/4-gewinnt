@@ -268,3 +268,21 @@ void consoleClear(){
 	#endif
 
 }
+/**
+* convert string to upper string
+* @param ch1 string to be uppered
+*/
+char lower_to_upper(char ch1)
+{
+      char ch2;
+
+      if(ch1 >= 'a' && ch1 <= 'z'){
+            ch2 = ('A' + ch1 - 'a');
+            return ch2;
+      }
+      else{
+            ch2 = ch1;
+            return ch2;
+      }
+}
+
