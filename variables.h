@@ -21,6 +21,7 @@ struct OutBuffer {
 };
 const int OUTPUT_MAXBUFFER = 4096;
 extern struct OutBuffer display;
+const int UTF_MULTIPLIER = 6;
 //mainMenu.c
 int con;
 unsigned char userInput;

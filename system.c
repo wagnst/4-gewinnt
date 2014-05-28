@@ -34,7 +34,7 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 	}
 
 	//allocate memory for text
-	newLine->text = malloc(maxTextLength * sizeof(char) * 6 + 1);
+	newLine->text = malloc(maxTextLength * sizeof(char) * UTF_MULTIPLIER + 1);
 	if (newLine->text==NULL){
 		exit(EXITCODE_OUTOFMEMORY);
 	}
@@ -172,10 +172,10 @@ void flushBuffer(){
         exit(EXITCODE_BUFFERERROR);
 	}
 
-	consoleClear();
-
 	/*### DEBUGGING START ###*/
 #ifdef DEBUG
+	consoleClear();
+
 	static int flushed = 0;
 	printf("DEBUG: printing %d-line buffer (%d.)",display.lineCount,++flushed);
 	struct LineItem* debugchain = display.first;
@@ -188,12 +188,31 @@ void flushBuffer(){
 #endif // DEBUG
 	/*### DEBUGGING END ###*/
 
-
 	struct LineItem* current = display.first;
+	char* collector = malloc(display.lineCount * display.maxTextLength * sizeof(char) * UTF_MULTIPLIER + 1);
+	collector[0] = '\0';
+	int i;
+
+	//draw lines
 	while (current!=NULL){
-		printf("%s\n",current->text);
+		//left border
+		strcat(collector," |");
+		//text
+		strcat(collector,current->text);
+		//right padding and right border
+		for (i = 0; i < display.maxTextLength - current->length; i++){
+			strcat(collector," ");
+		}
+		strcat(collector,"| ");
+		strcat(collector,"\n");
 		current = current->next;
 	}
+
+#ifndef DEBUG
+	consoleClear();
+#endif // DEBUG
+	printf("%s",collector);
+	free(collector);
 
 	deleteLineItem(display.first, 1);
 	initBuffer();
