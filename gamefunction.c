@@ -79,7 +79,7 @@ void gameFunction(){
 			player2[strlen(player2)-1] = '\0'; //set nilbyte to pointer-1
 		}
 		else if (keyStrokeName[0] == '\r') {} //if enter do nothing
-		else if ((keyStrokeName[0] == '\b') && (strlen(player2)) > 0) {} //if string empty and backspace entered do nothing
+		else if ((keyStrokeName[0] == '\b') && (strlen(player2)) == 0) {} //if string empty and backspace entered do nothing
 		else {
 			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
 			strcat(player2, keyStrokeName);
