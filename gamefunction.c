@@ -102,17 +102,18 @@ void gameFunction(){
 	//wait for a key
 	getch();
     //Loop till the game is done
+    int winnerLine =NO_HIGHLIGHT;
     while(end == 0){
 		// start the game flow
 		startGame();
 		//check for winners or draw
 		if( victor == FIELD_PLAYER1){
 			end = 1;
-			moves =  (moves/2)+playersTurn;
+			moves =  (moves/2)+(moves%2);
 			consoleClear();
 			startBuffer(50);
 			drawBoard(&gameField);
-			updateSaveHoS(player1,player2,moves);
+			winnerLine = updateSaveHoS(player1,player2,moves);
 			//output victor
 			output("%s has won!\n\n", player1);
 			output("Press any key to continue to Hall of Shame...\n");
@@ -121,15 +122,15 @@ void gameFunction(){
 			//wait for any keystroke
 			getch();
 			//continue to hall of shame
-			showHallOfShame();
+			showHallOfShame(winnerLine,0);
 		}
 		else if( victor == FIELD_PLAYER2){
 			end = 1;
-			moves = (moves/2)+playersTurn;
+			moves = (moves/2)+(moves%2);
 			consoleClear();
 			startBuffer(50);
 			drawBoard(&gameField);
-			updateSaveHoS(player2,player1,moves);
+			winnerLine = updateSaveHoS(player2,player1,moves);
 			//output victor
 			output("%s has won!\n\n", player2);
 			output("Press any key to continue to Hall of Shame...\n");
@@ -138,7 +139,7 @@ void gameFunction(){
 			//wait for any keystroke
 			getch();
 			//continue to hall of shame
-			showHallOfShame();
+			showHallOfShame(winnerLine, 0);
 		}
 		if(checkDraw() == 0){
 			end = 1;
@@ -153,7 +154,7 @@ void gameFunction(){
 			//wait for any keystroke
 			getch();
 			//continue to hall of shame
-			showHallOfShame();
+			showHallOfShame(NO_HIGHLIGHT,0);
 		}
     }
 

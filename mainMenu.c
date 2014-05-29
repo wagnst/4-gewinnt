@@ -106,7 +106,7 @@ void mainMenuReactToEnter(int pPos){
 			showRules();
 			break;
 		case 3:
-			showHallOfShame();
+			showHallOfShame(NO_HIGHLIGHT,0);
 			break;
 		case 4:
 			showCredits();

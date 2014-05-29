@@ -18,8 +18,8 @@ void mainMenuReactToEnter(int pPos);
 void drawLeftArrow(char* menu,int pPos);
 void drawRightArrow(char* menu,int pPos);
 //hallofshame.c
-void showHallOfShame();
-void updateSaveHoS(char* victor,char* victim,int moves);
+void showHallOfShame(int highlight,int startFrom);
+int updateSaveHoS(char* victor,char* victim,int moves);
 int extractMoves(char* line);
 int getOldFileLength();
 //board.c

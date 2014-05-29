@@ -33,6 +33,7 @@ const char FIELD_EMPTY = '.';
 const char FIELD_PLAYER1 = 'X';
 const char FIELD_PLAYER2 = 'O';
 const char FIELD_OUTOFBOUNDS = '\0';
+
 struct board {
 	unsigned int width;
 	unsigned int height;
@@ -55,3 +56,6 @@ extern int coinPosition; //where the coin is actually placed
 extern char playersCoin; //contains X or O
 extern int moves;
 extern int end;
+//HallOfShame.c
+const int  HOS_LINES = 10;
+const int  NO_HIGHLIGHT = -1;

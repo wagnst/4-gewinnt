@@ -3,53 +3,106 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* This function prints the HallOfShame.txt to the console.
+* This function prints a certain number (c.f. HOS_LINES) of lines of
+* the HallOfShame.txt to the console.
+* @param highlight Highlight a special line with "-->"
+* @param startFrom The output is reduced to a constant number of lines
+* 		 (c.f. variables.h HOS_LINES). The parameter controls
+*		 which lines actually are printed.
 */
-void showHallOfShame(){
-	startBuffer(74);
-	FILE *fh;
-	char line[60];
-	char delimiter[] = ",";
-	char *partOfLine;
-	char victor[20];
-	char victim[20];
-	char moves[3];
-	line[0]='\0';
-	fh = fopen("HallOfShame.txt", "r");
-	output("[ Hall of Shame ]:\n\nWelcome to our Hall of Shame...\n");
-	int somethingPrinted =0;
-	while((fscanf(fh,"%59s",line)) != EOF ) {
-		// divide line into interessting parts
-		partOfLine = strtok(line, delimiter);
-		int i =0 ;
-		while(partOfLine != NULL) {
-
-			switch (i%3) {
-			case 0:
-				strcpy(victor, partOfLine);
-				break;
-			case 1:
-				strcpy(victim, partOfLine);
-				break;
-			case 2:
-				strcpy(moves, partOfLine);
-				break;
-			default:
+void showHallOfShame(int highlight,int startFrom){
+	int viewHoS = 1;
+	while(viewHoS){
+			//decalartions
+		startBuffer(70);
+		FILE *fh;
+		char line[60];
+		char delimiter[] = ",";
+		char *partOfLine;
+		char victor[20];
+		char victim[20];
+		char moves[3];
+		//clear line
+		line[0]='\0';
+		//counting the lines
+		int lineCounter = 0;
+		//open file in read mode
+		//or leave loop
+		fh = fopen("HallOfShame.txt", "r");
+		if (fh == NULL || ferror(fh)){
+			if (fh){
+				fclose(fh);
 				break;
 			}
-			partOfLine = strtok(NULL, delimiter);
-			i++;
 		}
-		output("   %s busted %s with %s moves\n",victor,victim,moves);
-		somethingPrinted =1;
+
+		output("[ Hall of Shame ]:\n\nWelcome to our Hall of Shame...\n");
+		// notice if HoS is empty
+		int somethingPrinted =0;
+		while((fscanf(fh,"%59s",line)) != EOF ) {
+
+			// divide line into interessting parts
+			partOfLine = strtok(line, delimiter);
+			int i =0 ;
+			while(partOfLine != NULL) {
+
+				switch (i%3) {
+				case 0:
+					strcpy(victor, partOfLine);
+					break;
+				case 1:
+					strcpy(victim, partOfLine);
+					break;
+				case 2:
+					strcpy(moves, partOfLine);
+					break;
+				default:
+					break;
+				}
+				partOfLine = strtok(NULL, delimiter);
+				i++;
+			}
+
+			if(lineCounter>=startFrom && lineCounter<startFrom+HOS_LINES){
+				if(highlight==lineCounter){
+				output("-->%d. %s busted %s with %s moves\n",lineCounter+1,victor,victim,moves);
+				somethingPrinted =1;
+				}
+				else{
+				output(" %d.   %s busted %s with %s moves\n",lineCounter+1,victor,victim,moves);
+				somethingPrinted =1;
+				}
+			}
+
+			lineCounter++;
+		}
+		fclose(fh);
+		if(somethingPrinted == 0){
+			output("   No entries.");
+		}
+		output("\n      [...Press up/down for scrolling...]");
+		output("\n      [...Press  Enter/Escape to exit...]");
+		flushBuffer();
+		fflush(stdin);
+		char userInput = getch();
+		switch(userInput) {
+				case 72:    // key up
+					startFrom = startFrom-1 > 0 ? startFrom-1 : 0;
+					break;
+				case 80:    // key down
+					startFrom = startFrom+1 < lineCounter-HOS_LINES ? startFrom+1 : startFrom;
+					break;
+
+				case 13: // key enter
+					viewHoS=0;
+				break;
+				case 27: //escape
+					viewHoS =0;
+				//default:
+				//	viewHoS=0;
+		}
+		fflush(stdin);
 	}
-	fclose(fh);
-	if(somethingPrinted == 0){
-		output("   No entries.");
-	}
-	output("\n      [...Press any key to continue...]");
-	flushBuffer();
-	getch();
 }
 
 
@@ -61,11 +114,13 @@ void showHallOfShame(){
 * @param victor Name of player who won the game.
 * @param vicitim Name of player who lost.
 * @param moves Number of steps after the game has finished.
+* @return The line number of the inserted one.
 */
-void updateSaveHoS(char* victor,char* victim,int moves){
+int updateSaveHoS(char* victor,char* victim,int moves){
 	char line[60];
 	FILE *fh;
 	char* buffer = malloc((getOldFileLength()+strlen(victor)+strlen(victim))*sizeof(char)+3);
+	int insertedLineNumber = 0;
 	if(buffer == NULL){
 		exit(EXITCODE_OUTOFMEMORY);
 	}
@@ -82,6 +137,7 @@ void updateSaveHoS(char* victor,char* victim,int moves){
 		if(currentMoves <= moves){
 			strcat(line,"\n");
 			strcat (buffer,line);
+			insertedLineNumber++;
 		}else{
 			if(inserted==0){
 				char insertLine[120];
@@ -111,7 +167,7 @@ void updateSaveHoS(char* victor,char* victim,int moves){
 	fclose(fh);
 	//do not forget to free your allocated memory
 	free(buffer);
-
+	return insertedLineNumber;
 }
 
 /**
