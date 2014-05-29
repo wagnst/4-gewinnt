@@ -12,6 +12,8 @@
 */
 void showHallOfShame(int highlight,int startFrom){
 	int viewHoS = 1;
+	// correct the argument if necessary
+	startFrom = startFrom > 0 ? startFrom : 0;
 	while(viewHoS){
 			//decalartions
 		startBuffer(70);

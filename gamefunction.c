@@ -122,7 +122,7 @@ void gameFunction(){
 			//wait for any keystroke
 			getch();
 			//continue to hall of shame
-			showHallOfShame(winnerLine,0);
+			showHallOfShame(winnerLine,winnerLine-4);
 		}
 		else if( victor == FIELD_PLAYER2){
 			end = 1;
@@ -139,7 +139,7 @@ void gameFunction(){
 			//wait for any keystroke
 			getch();
 			//continue to hall of shame
-			showHallOfShame(winnerLine, 0);
+			showHallOfShame(winnerLine, winnerLine-4);
 		}
 		if(checkDraw() == 0){
 			end = 1;
