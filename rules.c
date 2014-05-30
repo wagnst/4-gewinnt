@@ -1,6 +1,7 @@
 ﻿#pragma once
 /**
-This method adds a frame around the passed String
+*This method adds a frame around the passed String
+*is never used in current version of game
 */
 void addFrame(char* word){
 	//25Chars+1line break per line
@@ -29,7 +30,7 @@ void addFrame(char* word){
 }
 
 /**
-Method to show the rules.User can leave this screen by pressing any key
+*Method to show the rules.User can leave this screen by pressing any key
 */
 void showRules(){
 	/*

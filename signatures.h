@@ -41,6 +41,7 @@ char checkForWinner(int x, int y, char player);
 void clearAll();
 int checkDraw();
 int irand( int a, int e);
+void animateFalling(struct board* currBoard,unsigned int yPos,char CoinType);
 //rules.c
 void showRules();
 //system.c
