@@ -59,7 +59,7 @@ void gameFunction(){
 			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
 			strcat(player1, keyStrokeName);
 		}
-	} while((keyStrokeName[0] != '\r') && (player1[0] != '\0') && !(strlen(player1)>15) || (strlen(player1)<3));
+	} while(((keyStrokeName[0] != '\r') && (player1[0] != '\0') && !(strlen(player1)>15)) || (strlen(player1)<3));
 	/*
 		player2 name
 		loop as long player did not press enter
@@ -89,7 +89,7 @@ void gameFunction(){
 			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
 			strcat(player2, keyStrokeName);
 		}
-	} while((keyStrokeName[0] != '\r') && (player2[0] != '\0') && !(strlen(player2)>15) || (strlen(player2)<3));
+	} while(((keyStrokeName[0] != '\r') && (player2[0] != '\0') && !(strlen(player2)>15)) || (strlen(player2)<3));
 	//check that player1 and player2 names are not the same
 	if (strcmp(player1, player2)==0) {
 		player2[(strlen(player2))] = '1'; // add a symbolic 1 to the end of the name ;-)
