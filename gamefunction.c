@@ -59,7 +59,7 @@ void gameFunction(){
 			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
 			strcat(player1, keyStrokeName);
 		}
-	} while((keyStrokeName[0] != '\r') && (player1[0] != '\0') && !(strlen(player1)>15) || (strlen(player1)<3));
+	} while(((keyStrokeName[0] != '\r') && (player1[0] != '\0') && !(strlen(player1)>15)) || (strlen(player1)<3));
 	/*
 		player2 name
 		loop as long player did not press enter
@@ -89,7 +89,7 @@ void gameFunction(){
 			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
 			strcat(player2, keyStrokeName);
 		}
-	} while((keyStrokeName[0] != '\r') && (player2[0] != '\0') && !(strlen(player2)>15) || (strlen(player2)<3));
+	} while(((keyStrokeName[0] != '\r') && (player2[0] != '\0') && !(strlen(player2)>15)) || (strlen(player2)<3));
 	//check that player1 and player2 names are not the same
 	if (strcmp(player1, player2)==0) {
 		player2[(strlen(player2))] = '1'; // add a symbolic 1 to the end of the name ;-)
@@ -442,3 +442,61 @@ int irand( int a, int e){
     double r = e - a + 1;
     return a + (int)(r * rand()/(RAND_MAX+1.0));
 }
+
+
+/**
+*this Method animates a falling Coin by moving the coin one field lower than wait and repeat this until there's another coin or it reaches the end of the board
+* This Method fully cleans the board up after finishing-->means: after execution the board will look like nothing ever happened. The animated coin is not saved permanetly saved on the board
+* @param xPos the row in which the coin is going to fall
+* @param currBoard the board with the current game state
+* @param CoinType variable to determine if the current Player has 'X' or '0' as Coin
+*/
+void animateFalling(struct board* currBoard,unsigned int xPos,char CoinType){
+	//determing which type of coin is going to fall
+	char coin;
+	if(CoinType == FIELD_PLAYER1){
+		coin='X';
+	}else{
+		coin='O';
+	}
+
+
+
+
+
+	unsigned int currY=currBoard->height-1;
+	char* old;
+	//(getField(currBoard,xPos,currY)!=FIELD_EMPTY)&&
+	while((currY!=0)){
+		//no deletions possible at first run of loop
+		if(currY!=currBoard->height-1){
+			//delete coin one field above
+			old=calcFieldAddress(currBoard,xPos,currY+1);
+			old=&FIELD_EMPTY;
+		}
+		//setting coin one field lower
+		char* curr=calcFieldAddress(currBoard,xPos,currY);
+			curr=&coin;
+		currY--;
+
+		drawBoard(currBoard);
+		//improvised wait Method
+		int x=0;
+		for(x=0;x<1000000;x++){
+			//funny nothing will ever happen here :D
+			x=x;
+		};
+
+
+	}
+	/**final clean up
+	*deleting the last coin
+	*if this last part of the code will be deleted the last position of the coin will be permantely saved on the supplied board
+	**/
+	old=calcFieldAddress(currBoard,xPos,currY);
+//	&old=FIELD_EMPTY;
+	old=FIELD_EMPTY;
+	//return;
+
+}
+
