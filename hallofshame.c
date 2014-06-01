@@ -18,14 +18,9 @@ void showHallOfShame(int highlight,int startFrom){
 			//decalartions
 		startBuffer(70);
 		FILE *fh;
-		char line[60];
-		char delimiter[] = ",";
-		char *partOfLine;
 		char victor[20];
 		char victim[20];
 		char moves[3];
-		//clear line
-		line[0]='\0';
 		//counting the lines
 		int lineCounter = 0;
 		//open file in read mode
@@ -41,31 +36,12 @@ void showHallOfShame(int highlight,int startFrom){
 		output("[ Hall of Shame ]:\n\nWelcome to our Hall of Shame...\n");
 		// notice if HoS is empty
 		int somethingPrinted =0;
-		while((fscanf(fh,"%59s",line)) != EOF ) {
+		while((fscanf(fh,"%19[^,],%19[^,],%2[^,^\n]",victor,victim,moves)) != EOF ) {
 
-			// divide line into interessting parts
-			partOfLine = strtok(line, delimiter);
-			int i =0 ;
-			while(partOfLine != NULL) {
-
-				switch (i%3) {
-				case 0:
-					strcpy(victor, partOfLine);
-					break;
-				case 1:
-					strcpy(victim, partOfLine);
-					break;
-				case 2:
-					strcpy(moves, partOfLine);
-					break;
-				default:
-					break;
-				}
-				partOfLine = strtok(NULL, delimiter);
-				i++;
+			while (victor[0] == '\n'){
+				memmove(victor, victor+1, strlen(victor));
 			}
-
-			if(lineCounter>=startFrom && lineCounter<startFrom+HOS_LINES){
+			if(lineCounter>=startFrom && lineCounter<=startFrom+HOS_LINES && strlen(victor)>0 && strlen(victim)>0){
 				if(highlight==lineCounter){
 				output("-->%d. %s busted %s with %s moves\n",lineCounter+1,victor,victim,moves);
 				somethingPrinted =1;
@@ -132,7 +108,7 @@ int updateSaveHoS(char* victor,char* victim,int moves){
 	int inserted =0;
 	fh = fopen("HallOfShame.txt", "r");
 	// while End-Of-File not reached line per line
-	while((fscanf(fh,"%59s",line)) != EOF ) {
+	while((fscanf(fh,"%59[^\n]\n",line)) != EOF ) {
 
 		int currentMoves = extractMoves(line);
 		// compare both
