@@ -314,9 +314,9 @@ void drawCoin(int pos, char CoinType){
 			if (i == pos) {
 				strcat(canvas," ");
 				if(CoinType == FIELD_PLAYER1){
-					strcat(canvas,"X");
+					strcat(canvas,FONT_COIN_PLAYER1);
 				}else{
-					strcat(canvas,"O");
+					strcat(canvas,FONT_COIN_PLAYER2);
 				}
 
 				strcat(canvas," ");
