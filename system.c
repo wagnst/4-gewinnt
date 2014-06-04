@@ -299,3 +299,9 @@ char lower_to_upper(char ch1)
       }
 }
 
+void strcatRepeat(char* target, const char* source, unsigned int howOften){
+	int c;
+	for(c = 0; c < howOften; c++){
+		strcat(target,source);
+	}
+}
