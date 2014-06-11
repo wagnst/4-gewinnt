@@ -12,7 +12,8 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 void deleteLineItem(struct LineItem* line, int deleteAllBelow);
 void setLineAlign(int align);
 void consoleClear();
-void printBanner(int width);
+void printfBanner(int width, int startAt);
+void animateBanner(int slideIn);
 void printEmptyBox(int w, int h);
 void animateBox(int wFrom, int hFrom, int wTo, int hTo);
 void strcatRepeat(char* target, const char* source, unsigned int howOften);

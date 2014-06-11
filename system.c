@@ -149,10 +149,6 @@ int output(const char* input, ...){
 	int result;
 	va_list args;
 	va_start(args, input);
-#ifdef DEBUG
-	printf("[DEBUGPRINT:]");
-	result = vprintf(input, args);
-#endif
 	va_end(args);
 
 	//writing to string buffer
@@ -197,6 +193,9 @@ void flushBuffer(){
 	if(GetConsoleScreenBufferInfo(GetStdHandle( STD_OUTPUT_HANDLE ),&csbi)) {
 		consoleBufferWidth = csbi.dwSize.X;
 		consoleBufferHeight = csbi.dwSize.Y;
+#ifdef DEBUG
+		consoleBufferHeight = 23;
+#endif // DEBUG
 	}
 
 	consoleClear();
@@ -220,7 +219,7 @@ void flushBuffer(){
 	if (display.vAlign==0){
 		int marginTopSize = consoleBufferHeight/2 - display.lineCount/2 -1;
 		if (marginTopSize > 5){
-			printBanner(consoleBufferWidth);
+			printfBanner(consoleBufferWidth,0);
 			marginTopSize -= 5;
 		}
 		for(i = 0; i < marginTopSize; i++){
@@ -349,7 +348,12 @@ void setLineAlign(int align){
 	display.last->align = align;
 }
 
-void printBanner(int width){
+/**
+* Printf-s ASCII art logo
+* @param width Width for padding with spaces.
+* @param startAt Value between 0 and 4 for partial display, see animateBanner().
+*/
+void printfBanner(int width, int startAt){
 	int length = 57;
 	char* banner[5];
 	banner[0] = "_________                              _____     _____ __\n";
@@ -360,11 +364,25 @@ void printBanner(int width){
 	int i;
 	char* bannerBuffer = malloc(sizeof(char)*(width+1)*5);
 	bannerBuffer[0] = '\0';
-	for(i = 0; i<5; i++){
+	for(i = startAt; i<5; i++){
 		strcatRepeat(bannerBuffer," ",width/2-length/2-1);
 		strcat(bannerBuffer,banner[i]);
 	}
 	printf("%s",bannerBuffer);
+}
+
+/**
+* Animate ASCII art logo.
+* @param slideIn Set to 1 for slide in from top, 0 for slide out.
+*/
+void animateBanner(int slideIn){
+	int i = (slideIn ? 5 : 0);
+	while(i >= 0 && i <=5){
+		consoleClear();
+		printfBanner(consoleBufferWidth,i);
+		Sleep(50);
+		i += (slideIn ? -1 : +1);
+	}
 }
 
 /**
