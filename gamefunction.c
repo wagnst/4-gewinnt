@@ -203,6 +203,7 @@ void playerAction() {
 	playersCoin = '\0';
 	//output buffer
 	startBuffer(50);
+	setLineAlign(0);
 	if (playersTurn == 0) {
 		playersCoin = FIELD_EMPTY;
 		output("%s's turn\n\n", player1);

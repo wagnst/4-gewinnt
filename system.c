@@ -23,6 +23,7 @@ void initBuffer(){
 
 /**
 * Add a new line to the buffer, may be inserted in the middle or appended to the end
+* Info: Horizontal align is inherited from previous line, default -1. Can be changed with setLineAlign()
 * Warning: Use output() to add text, this method is only used internally
 * @param prev Pointer to the previous line struct, NULL appends line to start of buffer.
 * @param next Pointer to the next line struct, NULL if this is the last element (most used case).
@@ -46,7 +47,7 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 	newLine->text[0] = '\0';
 
 	//set line properties
-	newLine->align = display.hAlign;
+	newLine->align = (prev!=NULL?prev->align:-1);
 	newLine->byteSize = 0;
 	newLine->length = 0;
 
@@ -64,7 +65,7 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 
 	//update buffer's first&last pointers
 	if (prev==NULL){
-		//display.first = newLine;
+		display.first = newLine;
 	}
 	if (next==NULL){
 		display.last = newLine;
@@ -177,7 +178,7 @@ int output(const char* input, ...){
 				i++;
 			}
 			//end line or line full, create new one
-			current->next = insertNewLineItem(current->prev, NULL, display.maxTextLength);
+			current->next = insertNewLineItem(current, NULL, display.maxTextLength);
 			current = current->next;
 		}
 	}
@@ -217,7 +218,12 @@ void flushBuffer(){
 	int i;
 
 	if (display.vAlign==0){
-		for(i = 0; i< consoleBufferHeight/2 - display.lineCount/2 -1; i++){
+		int marginTopSize = consoleBufferHeight/2 - display.lineCount/2 -1;
+		if (marginTopSize > 5){
+			printBanner(consoleBufferWidth);
+			marginTopSize -= 5;
+		}
+		for(i = 0; i < marginTopSize; i++){
 			printf("\n");
 		}
 	}
@@ -257,16 +263,24 @@ void flushBuffer(){
 	collector[0] = '\0';
 
 	//draw lines
+	int leftPaddingSize;
+	int rightPaddingSize;
+
 	while (current!=NULL){
-		//left border
+		//padding calculations
+		leftPaddingSize = 0;
+		if (current->align==0){
+			leftPaddingSize = display.maxTextLength/2 - current->length/2;
+		}
+		rightPaddingSize = display.maxTextLength - current->length - leftPaddingSize;
+		//left border and left padding
 		strcat(collector,leftMargin);
 		strcat(collector,FONT_DPIPE_VERT_BAR);
+		strcatRepeat(collector," ",leftPaddingSize);
 		//text
 		strcat(collector,current->text);
 		//right padding and right border
-		for (i = 0; i < display.maxTextLength - current->length; i++){
-			strcat(collector," ");
-		}
+		strcatRepeat(collector," ",rightPaddingSize);
 		strcat(collector,FONT_DPIPE_VERT_BAR);
 		strcat(collector,"\n");
 		current = current->next;
@@ -310,6 +324,36 @@ void startBuffer(int maxTextLength){
 	deleteLineItem(display.first, 1);
 	display.lineCount = 0;
 	display.first = insertNewLineItem(NULL,NULL,maxTextLength);
+}
+
+/**
+* Change the horizontal align of the current line within the buffer box
+* @param align Left align (-1) or centered (0).
+*/
+void setLineAlign(int align){
+	if(display.last==NULL){
+		exit(EXITCODE_BUFFERERROR);
+	}
+	display.last->align = align;
+}
+
+void printBanner(int width){
+	int length = 57;
+	char* banner[5];
+	banner[0] = "_________                              _____     _____ __\n";
+	banner[1] = "__  ____/________________________________  /_    __  // /\n";
+	banner[2] = "_  /    _  __ \\_  __ \\_  __ \\  _ \\  ___/  __/    _  // /_\n";
+	banner[3] = "/ /___  / /_/ /  / / /  / / /  __/ /__ / /_      /__  __/\n";
+	banner[4] = "\\____/  \\____//_/ /_//_/ /_/\\___/\\___/ \\__/        /_/   \n";
+	int i;
+	int j;
+	char* bannerBuffer = malloc(sizeof(char)*(width+1)*5);
+	bannerBuffer[0] = '\0';
+	for(i = 0; i<5; i++){
+		strcatRepeat(bannerBuffer," ",width/2-length/2-1);
+		strcat(bannerBuffer,banner[i]);
+	}
+	printf("%s",bannerBuffer);
 }
 
 /**

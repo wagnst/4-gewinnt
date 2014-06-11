@@ -10,7 +10,9 @@ int copyChar(char* src, char* dst);
 int output(const char* input, ...);
 struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int maxTextLength);
 void deleteLineItem(struct LineItem* line, int deleteAllBelow);
+void setLineAlign(int align);
 void consoleClear();
+void printBanner(int width);
 //mainMenu.c
 void drawMainMenu();
 int mainMenu();
