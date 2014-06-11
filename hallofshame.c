@@ -16,7 +16,7 @@ void showHallOfShame(int highlight,int startFrom){
 	startFrom = startFrom > 0 ? startFrom : 0;
 	while(viewHoS){
 			//decalartions
-		startBuffer(70);
+		startBuffer(64);
 		FILE *fh;
 		char victor[20];
 		char victim[20];

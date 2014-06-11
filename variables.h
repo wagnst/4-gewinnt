@@ -2,6 +2,7 @@
 //EXITCODES
 const int EXITCODE_OUTOFMEMORY = 13;
 const int EXITCODE_BUFFERERROR = 17;
+const int EXITCODE_WINDOWERROR = 23;
 //dummy.c
 extern int testerVariable;
 //fancyfont.c
@@ -21,6 +22,8 @@ struct OutBuffer {
 	struct LineItem* last;
 	int maxTextLength;
 	int lineCount;
+	int vAlign;
+	int hAlign;
 };
 const int OUTPUT_MAXBUFFER = 4096;
 extern struct OutBuffer display;

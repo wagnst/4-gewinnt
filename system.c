@@ -17,6 +17,8 @@ void initBuffer(){
 	display.first = NULL;
 	display.last = NULL;
 	display.lineCount = 0;
+	display.vAlign = 0;
+	display.hAlign = 0;
 }
 
 /**
@@ -28,7 +30,7 @@ void initBuffer(){
 * @param maxTextLength Maximum number of characters for this line.
 * @return Pointer to new created struct.
 */
-struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int align, int maxTextLength){
+struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int maxTextLength){
 
 	//allocate memory for line item
 	struct LineItem* newLine = malloc(sizeof(struct LineItem));
@@ -44,7 +46,7 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 	newLine->text[0] = '\0';
 
 	//set line properties
-	newLine->align = align;
+	newLine->align = display.hAlign;
 	newLine->byteSize = 0;
 	newLine->length = 0;
 
@@ -175,7 +177,7 @@ int output(const char* input, ...){
 				i++;
 			}
 			//end line or line full, create new one
-			current->next = insertNewLineItem(current->prev, NULL, -1, display.maxTextLength);
+			current->next = insertNewLineItem(current->prev, NULL, display.maxTextLength);
 			current = current->next;
 		}
 	}
@@ -198,22 +200,27 @@ void flushBuffer(){
 
 	consoleClear();
 
-
 	/*### DEBUGGING START ###*/
 #ifdef DEBUG
-	consoleClear();
-
-	static int flushed = 0;
-	printf("DEBUG: printing %d-line buffer (%d.)",display.lineCount,++flushed);
-	struct LineItem* debugchain = display.first;
-	printf(", chain: %d",(int)debugchain);
-	do {
-		printf("(%d)->%d",debugchain->length,(int)debugchain->next);
-		debugchain = debugchain->next;
-	} while (debugchain!=NULL);
-	printf(". [END:%d]\n--------------------------------------------------\n",(int)display.last);
+//	static int flushed = 0;
+//	printf("DEBUG: printing %d-line buffer (%d.)",display.lineCount,++flushed);
+//	struct LineItem* debugchain = display.first;
+//	printf(", chain: %d",(int)debugchain);
+//	do {
+//		printf("(%d)->%d",debugchain->length,(int)debugchain->next);
+//		debugchain = debugchain->next;
+//	} while (debugchain!=NULL);
+//	printf(". [END:%d]\n--------------------------------------------------\n",(int)display.last);
 #endif // DEBUG
 	/*### DEBUGGING END ###*/
+
+	int i;
+
+	if (display.vAlign==0){
+		for(i = 0; i< consoleBufferHeight/2 - display.lineCount/2 -1; i++){
+			printf("\n");
+		}
+	}
 
 	struct LineItem* current = display.first;
 	const int MAX_CHARS_BORDER = 4;
@@ -223,16 +230,26 @@ void flushBuffer(){
 		exit(EXITCODE_OUTOFMEMORY);
 	}
 	collector[0] = '\0';
-	int i;
+
+	//calculate left margin for box position
+    int leftMarginSize = 1;
+    if (display.hAlign==0){
+		leftMarginSize = consoleBufferWidth/2 - display.maxTextLength/2 - 1;
+    }
+    char* leftMargin = malloc(sizeof(char)*leftMarginSize+1);
+    if (leftMargin==NULL){
+		exit(EXITCODE_OUTOFMEMORY);
+    }
+    memset(leftMargin,' ',leftMarginSize);
+    leftMargin[leftMarginSize] = '\0';
 
 	//draw header line
-	strcat(collector," ");
+	strcat(collector,leftMargin);
 	strcat(collector,FONT_DPIPE_TOP_LEFT);
 	for (i = 0; i < display.maxTextLength; i++){
 		strcat(collector,FONT_DPIPE_HORI_BAR);
 	}
 	strcat(collector,FONT_DPIPE_TOP_RIGHT);
-	strcat(collector," ");
 	strcat(collector,"\n");
 
 	//temporary:
@@ -242,7 +259,7 @@ void flushBuffer(){
 	//draw lines
 	while (current!=NULL){
 		//left border
-		strcat(collector," ");
+		strcat(collector,leftMargin);
 		strcat(collector,FONT_DPIPE_VERT_BAR);
 		//text
 		strcat(collector,current->text);
@@ -251,7 +268,6 @@ void flushBuffer(){
 			strcat(collector," ");
 		}
 		strcat(collector,FONT_DPIPE_VERT_BAR);
-		strcat(collector," ");
 		strcat(collector,"\n");
 		current = current->next;
 		//temporary:
@@ -259,13 +275,12 @@ void flushBuffer(){
 		collector[0] = '\0';
 	}
 	//draw footer line
-	strcat(collector," ");
+	strcat(collector,leftMargin);
 	strcat(collector,FONT_DPIPE_BOTTOM_LEFT);
 	for (i = 0; i < display.maxTextLength; i++){
 		strcat(collector,FONT_DPIPE_HORI_BAR);
 	}
 	strcat(collector,FONT_DPIPE_BOTTOM_RIGHT);
-	strcat(collector," ");
 
 	printf("%s",collector);
 	collector[0] = '\0';
@@ -282,13 +297,19 @@ void flushBuffer(){
 */
 void startBuffer(int maxTextLength){
 	if (display.first!=NULL || display.last!=NULL){
+		//display not initialized
         exit(EXITCODE_BUFFERERROR);
+	}
+
+	if (maxTextLength>consoleBufferWidth-4){
+		//requested buffer too large for window size
+		exit(EXITCODE_WINDOWERROR);
 	}
 
 	display.maxTextLength = maxTextLength;
 	deleteLineItem(display.first, 1);
 	display.lineCount = 0;
-	display.first = insertNewLineItem(NULL,NULL,-1,maxTextLength);
+	display.first = insertNewLineItem(NULL,NULL,maxTextLength);
 }
 
 /**
