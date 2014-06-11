@@ -268,11 +268,19 @@ void flushBuffer(){
 
 	while (current!=NULL){
 		//padding calculations
-		leftPaddingSize = 0;
-		if (current->align==0){
+		switch (current->align){
+		case -1:
+			leftPaddingSize = 0;
+			break;
+		case 0:
 			leftPaddingSize = display.maxTextLength/2 - current->length/2;
+			break;
+		case +1:
+			leftPaddingSize = display.maxTextLength - current->length;
+			break;
 		}
 		rightPaddingSize = display.maxTextLength - current->length - leftPaddingSize;
+
 		//left border and left padding
 		strcat(collector,leftMargin);
 		strcat(collector,FONT_DPIPE_VERT_BAR);
@@ -328,7 +336,7 @@ void startBuffer(int maxTextLength){
 
 /**
 * Change the horizontal align of the current line within the buffer box
-* @param align Left align (-1) or centered (0).
+* @param align Left align (-1), centered (0) or right align (+1).
 */
 void setLineAlign(int align){
 	if(display.last==NULL){
