@@ -4,6 +4,9 @@
 #include <string.h>
 
 struct OutBuffer display;
+CONSOLE_SCREEN_BUFFER_INFO csbi;
+int consoleBufferWidth = 80;
+int consoleBufferHeight = 15;
 
 /**
 * Initializes buffering
@@ -188,7 +191,13 @@ void flushBuffer(){
         exit(EXITCODE_BUFFERERROR);
 	}
 
+	if(GetConsoleScreenBufferInfo(GetStdHandle( STD_OUTPUT_HANDLE ),&csbi)) {
+		consoleBufferWidth = csbi.dwSize.X;
+		consoleBufferHeight = csbi.dwSize.Y;
+	}
+
 	consoleClear();
+
 
 	/*### DEBUGGING START ###*/
 #ifdef DEBUG
