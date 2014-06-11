@@ -263,7 +263,7 @@ void flushBuffer(){
 	collector[0] = '\0';
 
 	//draw lines
-	int leftPaddingSize;
+	int leftPaddingSize = 0;
 	int rightPaddingSize;
 
 	while (current!=NULL){
@@ -328,6 +328,10 @@ void startBuffer(int maxTextLength){
 		exit(EXITCODE_WINDOWERROR);
 	}
 
+	if (maxTextLength<1){
+		exit(EXITCODE_BUFFERERROR);
+	}
+
 	display.maxTextLength = maxTextLength;
 	deleteLineItem(display.first, 1);
 	display.lineCount = 0;
@@ -354,7 +358,6 @@ void printBanner(int width){
 	banner[3] = "/ /___  / /_/ /  / / /  / / /  __/ /__ / /_      /__  __/\n";
 	banner[4] = "\\____/  \\____//_/ /_//_/ /_/\\___/\\___/ \\__/        /_/   \n";
 	int i;
-	int j;
 	char* bannerBuffer = malloc(sizeof(char)*(width+1)*5);
 	bannerBuffer[0] = '\0';
 	for(i = 0; i<5; i++){
@@ -362,6 +365,43 @@ void printBanner(int width){
 		strcat(bannerBuffer,banner[i]);
 	}
 	printf("%s",bannerBuffer);
+}
+
+/**
+* Change the horizontal align of the current line within the buffer box
+* @param align Left align (-1), centered (0) or right align (+1).
+*/
+void animateBox(int wFrom, int hFrom, int wTo, int hTo){
+	int w = wFrom;
+	int h = hFrom;
+	while(w < wTo){
+		printEmptyBox(w,h);
+		w++;
+	}
+	while(h < hTo){
+		printEmptyBox(w,h);
+		h++;
+	}
+	while(h > hTo){
+		printEmptyBox(w,h);
+		h--;
+	}
+	while(w > wTo){
+		printEmptyBox(w,h);
+		w--;
+	}
+}
+
+/**
+* Print an empty buffer box with the given size
+* @param w Width.
+* @param h Height.
+*/
+void printEmptyBox(int w, int h){
+	int i;
+	startBuffer(w);
+	for (i = 0; i < h; i++) output("\n");
+	flushBuffer();
 }
 
 /**
