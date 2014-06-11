@@ -192,7 +192,6 @@ void clearAll() {
 * @return no return because of void
 */
 void playerAction() {
-	int i = 0;
 	char *spaceBetweenNames;
 	spaceBetweenNames = malloc((gameFieldWidth * 3) * sizeof(char));
 	//if alloc failed return
@@ -203,24 +202,16 @@ void playerAction() {
 	playersCoin = '\0';
 	//output buffer
 	startBuffer(50);
-	setLineAlign(0);
 	if (playersTurn == 0) {
-		playersCoin = FIELD_EMPTY;
+		setLineAlign(-1);
 		output("%s's turn\n\n", player1);
 		playersCoin = FIELD_PLAYER1;
 	}else{
-		//set nilbyte
-		spaceBetweenNames[0] = '\0';
-		do{
-			//as long as length of name and space not bigger than overall gamefield, add space before name
-			if ((strlen(player2)+strlen(spaceBetweenNames))<gameFieldWidth*3)
-				strcat(spaceBetweenNames, " ");
-				i++;
-		}while(i<=gameFieldWidth*3);
-
-		output("%s%s's turn\n\n", spaceBetweenNames, player2);
+		setLineAlign(+1);
+		output("%s's turn\n\n", player2);
 		playersCoin = FIELD_PLAYER2;
 	}
+	setLineAlign(0);
 	//draw the coin
 	drawCoin(coinPosition, playersCoin);
 	//draw the board
