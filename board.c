@@ -129,57 +129,64 @@ void drawBoard(struct board* target) {
 		//grid row
 		for(fieldX = 0; fieldX < target->width; fieldX++) {
 			if (fieldY == target->height - 1 && fieldX == 0) {
-				strcat(canvas,"/");
+				strcat(canvas,FONT_DPIPE_TOP_LEFT);
 			} else if (fieldY == target->height - 1) {
-				strcat(canvas,"~");
+				strcat(canvas,FONT_DPIPE_TBAR_DOWN);
 			} else if (fieldX == 0) {
-				strcat(canvas,"(");
+				strcat(canvas,FONT_DPIPE_TBAR_RIGHT);
 			} else {
-				strcat(canvas,"+");
+				strcat(canvas,FONT_DPIPE_CROSSING);
 			}
-			strcat(canvas,"---");
+			strcatRepeat(canvas,FONT_DPIPE_HORI_BAR,3);
 		}
 
 		//end of grid row
 		if (fieldY == target->height - 1) {
-			strcat(canvas,"\\");
+			strcat(canvas,FONT_DPIPE_TOP_RIGHT);
 		} else {
-			strcat(canvas,")");
+			strcat(canvas,FONT_DPIPE_TBAR_LEFT);
 		}
 		strcat(canvas,"\n");
 
 		//value row
 		for(fieldX = 0; fieldX < target->width; fieldX++) {
-			strcat(canvas,"| ");
+			strcat(canvas,FONT_DPIPE_VERT_BAR);
+			strcat(canvas," ");
 			char field = getField(target,fieldX,fieldY);
-			if (field==FIELD_EMPTY)   strcat(canvas," ");
-			if (field==FIELD_PLAYER1) strcat(canvas,"X");
-			if (field==FIELD_PLAYER2) strcat(canvas,"O");
+			if (field==FIELD_EMPTY)   strcat(canvas,FONT_COIN_EMPTY);
+			if (field==FIELD_PLAYER1) strcat(canvas,FONT_COIN_PLAYER1);
+			if (field==FIELD_PLAYER2) strcat(canvas,FONT_COIN_PLAYER2);
 			strcat(canvas," ");
 		}
 
 		//finish value row
-		strcat(canvas,"|\n");
+		strcat(canvas,FONT_DPIPE_VERT_BAR);
+		strcat(canvas,"\n");
 
 	}
 
 	//build stand
 	for(fieldX = 0; fieldX < target->width; fieldX++) {
 		if (fieldX == 0) {
-			strcat(canvas,"(---");
+			strcat(canvas,FONT_DPIPE_TBAR_RIGHT);
+			strcatRepeat(canvas,FONT_DPIPE_HORI_BAR,3);
 		} else {
-			strcat(canvas,"~---");
+			strcat(canvas,FONT_DPIPE_TBAR_UP);
+			strcatRepeat(canvas,FONT_DPIPE_HORI_BAR,3);
 		}
 	}
-	strcat(canvas,")\n");
+	strcat(canvas,FONT_DPIPE_TBAR_LEFT);
+	strcat(canvas,"\n");
 	for(fieldX = 0; fieldX < target->width; fieldX++) {
 		if (fieldX == 0) {
-			strcat(canvas,"\\---");
+			strcat(canvas,FONT_DPIPE_BOTTOM_LEFT);
+			strcatRepeat(canvas,FONT_DPIPE_HORI_BAR,3);
 		} else {
-			strcat(canvas,"----");
+			strcatRepeat(canvas,FONT_DPIPE_HORI_BAR,4);
 		}
 	}
-	strcat(canvas,"/\n");
+	strcat(canvas,FONT_DPIPE_BOTTOM_RIGHT);
+	strcat(canvas,"\n");
 
 	//we're done, output the whole thing
 	output("%s",canvas);

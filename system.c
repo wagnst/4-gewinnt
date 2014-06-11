@@ -100,16 +100,33 @@ void deleteLineItem(struct LineItem* line, int deleteAllBelow){
 }
 
 /**
-* Copy one character from the source string to the target string and append a null byte afterwards
-* Warning/TODO: Not yet UTF8 aware!
+* Copy one character (UTF8-aware) from the source string to the target string and append a null byte afterwards
 * @param src Source string pointer.
 * @param dst Destination string pointer.
-* @return Returns always 1, unless the world ends or it crashes.
+* @return Returns how many bytes were copied
 */
 int copyChar(char* src, char* dst){
-    *dst = *src;
-    *(dst+1) = '\0';
-    return 1;
+
+	//determine the length of the string, see http://en.wikipedia.org/wiki/UTF-8#Description
+	int bytes = 0;
+	char slider = *src;
+	while ((slider & 0x80) == 0x80){
+		slider<<=1;
+		bytes++;
+	}
+	bytes+=!bytes;
+
+	//copy <bytes>-byte long character
+	int cursor = 0;
+	int length = bytes;
+	while (length--){
+		dst[cursor] = src[cursor];
+		cursor++;
+	}
+
+	//append null byte and return length of copied data
+    dst[cursor] = '\0';
+    return bytes;
 }
 
 /**
@@ -148,8 +165,7 @@ int output(const char* input, ...){
 			int increase = copyChar(buffer+i, current->text+current->byteSize);
 			i += increase;
 			current->byteSize += increase;
-			//TODO: UTF8 aware:
-			current->length = strlen(current->text);
+			current->length++;
 		} else {
 			//end line in input: start new line
 			if (buffer[i]=='\n'){
