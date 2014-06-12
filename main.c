@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 
 //Insert variable declarations here:
 #include "variables.h"
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
 	FANCY_FONT = 0;
 #endif // DEBUG
 	setFancy(FANCY_FONT);
+
 	return mainMenu();
 }
 

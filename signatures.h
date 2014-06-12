@@ -8,9 +8,16 @@ void startBuffer(int maxTextLength);
 void flushBuffer();
 int copyChar(char* src, char* dst);
 int output(const char* input, ...);
-struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int align, int maxTextLength);
+struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int maxTextLength);
 void deleteLineItem(struct LineItem* line, int deleteAllBelow);
+void setLineAlign(int align);
 void consoleClear();
+void printfBanner(int width, int startAt);
+void animateBanner(int slideIn);
+void printEmptyBox(int w, int h);
+void animateBox(int wFrom, int hFrom, int wTo, int hTo);
+void strcatRepeat(char* target, const char* source, unsigned int howOften);
+char lower_to_upper(char ch1);
 //mainMenu.c
 void drawMainMenu();
 int mainMenu();
@@ -44,7 +51,5 @@ int irand( int a, int e);
 void animateFalling(struct board* currBoard,unsigned int yPos,char CoinType);
 //rules.c
 void showRules();
-//system.c
-char lower_to_upper(char ch1);
 //credits.c
 void showCredits();

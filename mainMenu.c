@@ -10,8 +10,8 @@
 */
 void drawLeftArrow(char* menu,int pPos){
 			menu[pPos*20]='-';
-			menu[pPos*20+1]='-';
-			menu[pPos*20+2]='>';
+			menu[pPos*20+1]='>';
+			menu[pPos*20+2]=' ';
 }
 /**
 *This method manipulates the array so the right arrow (to indicate the cursor position) is added to the array.
@@ -20,8 +20,8 @@ void drawLeftArrow(char* menu,int pPos){
 */
 void drawRightArrow(char* menu,int pPos){
 			menu[(pPos+1)*20-2]='-';
-			menu[(pPos+1)*20-3]='-';
-			menu[(pPos+1)*20-4]='<';
+			menu[(pPos+1)*20-3]='<';
+			menu[(pPos+1)*20-4]=' ';
 }
 
 /**
@@ -32,14 +32,14 @@ void drawRightArrow(char* menu,int pPos){
 */
 void drawMainMenu(int pPos){
 	startBuffer(25);
+	setLineAlign(0);
 	/**
 	*every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
 	*/
-	char mainMenu[6*20+1] = "   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   CREDITS         \n   QUIT            \n";
+	char mainMenu[] = "   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   CREDITS         \n   QUIT            ";
 			drawLeftArrow(mainMenu,pPos);
 			drawRightArrow(mainMenu,pPos);
-			output("%s",mainMenu);
-			output("%s","\n");
+			output("\n%s\n",mainMenu);
 
 	flushBuffer();
 }
@@ -53,6 +53,8 @@ int mainMenu(){
     int pPos=0;
     //as long as this variable is one the loop won't finish
     con=1;
+    animateBanner(1);
+    animateBox(1,1,25,8);
     // menu loop
 	while(con){
 		drawMainMenu(pPos);
@@ -85,6 +87,8 @@ int mainMenu(){
 		}
 
     }
+	animateBox(25,8,1,1);
+    animateBanner(0);
     return 0;
 }
 /**

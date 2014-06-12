@@ -4,6 +4,9 @@
 #include <string.h>
 
 struct OutBuffer display;
+CONSOLE_SCREEN_BUFFER_INFO csbi;
+int consoleBufferWidth = 80;
+int consoleBufferHeight = 15;
 
 /**
 * Initializes buffering
@@ -14,10 +17,13 @@ void initBuffer(){
 	display.first = NULL;
 	display.last = NULL;
 	display.lineCount = 0;
+	display.vAlign = 0;
+	display.hAlign = 0;
 }
 
 /**
 * Add a new line to the buffer, may be inserted in the middle or appended to the end
+* Info: Horizontal align is inherited from previous line, default -1. Can be changed with setLineAlign()
 * Warning: Use output() to add text, this method is only used internally
 * @param prev Pointer to the previous line struct, NULL appends line to start of buffer.
 * @param next Pointer to the next line struct, NULL if this is the last element (most used case).
@@ -25,7 +31,7 @@ void initBuffer(){
 * @param maxTextLength Maximum number of characters for this line.
 * @return Pointer to new created struct.
 */
-struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int align, int maxTextLength){
+struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next, int maxTextLength){
 
 	//allocate memory for line item
 	struct LineItem* newLine = malloc(sizeof(struct LineItem));
@@ -41,7 +47,7 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 	newLine->text[0] = '\0';
 
 	//set line properties
-	newLine->align = align;
+	newLine->align = (prev!=NULL?prev->align:-1);
 	newLine->byteSize = 0;
 	newLine->length = 0;
 
@@ -59,7 +65,7 @@ struct LineItem* insertNewLineItem(struct LineItem* prev, struct LineItem* next,
 
 	//update buffer's first&last pointers
 	if (prev==NULL){
-		//display.first = newLine;
+		display.first = newLine;
 	}
 	if (next==NULL){
 		display.last = newLine;
@@ -143,10 +149,6 @@ int output(const char* input, ...){
 	int result;
 	va_list args;
 	va_start(args, input);
-#ifdef DEBUG
-	printf("[DEBUGPRINT:]");
-	result = vprintf(input, args);
-#endif
 	va_end(args);
 
 	//writing to string buffer
@@ -172,7 +174,7 @@ int output(const char* input, ...){
 				i++;
 			}
 			//end line or line full, create new one
-			current->next = insertNewLineItem(current->prev, NULL, -1, display.maxTextLength);
+			current->next = insertNewLineItem(current, NULL, display.maxTextLength);
 			current = current->next;
 		}
 	}
@@ -188,23 +190,42 @@ void flushBuffer(){
         exit(EXITCODE_BUFFERERROR);
 	}
 
+	if(GetConsoleScreenBufferInfo(GetStdHandle( STD_OUTPUT_HANDLE ),&csbi)) {
+		consoleBufferWidth = csbi.dwSize.X;
+		consoleBufferHeight = csbi.dwSize.Y;
+#ifdef DEBUG
+		consoleBufferHeight = 23;
+#endif // DEBUG
+	}
+
 	consoleClear();
 
 	/*### DEBUGGING START ###*/
 #ifdef DEBUG
-	consoleClear();
-
-	static int flushed = 0;
-	printf("DEBUG: printing %d-line buffer (%d.)",display.lineCount,++flushed);
-	struct LineItem* debugchain = display.first;
-	printf(", chain: %d",(int)debugchain);
-	do {
-		printf("(%d)->%d",debugchain->length,(int)debugchain->next);
-		debugchain = debugchain->next;
-	} while (debugchain!=NULL);
-	printf(". [END:%d]\n--------------------------------------------------\n",(int)display.last);
+//	static int flushed = 0;
+//	printf("DEBUG: printing %d-line buffer (%d.)",display.lineCount,++flushed);
+//	struct LineItem* debugchain = display.first;
+//	printf(", chain: %d",(int)debugchain);
+//	do {
+//		printf("(%d)->%d",debugchain->length,(int)debugchain->next);
+//		debugchain = debugchain->next;
+//	} while (debugchain!=NULL);
+//	printf(". [END:%d]\n--------------------------------------------------\n",(int)display.last);
 #endif // DEBUG
 	/*### DEBUGGING END ###*/
+
+	int i;
+
+	if (display.vAlign==0){
+		int marginTopSize = consoleBufferHeight/2 - display.lineCount/2 -1;
+		if (marginTopSize > 5){
+			printfBanner(consoleBufferWidth,0);
+			marginTopSize -= 5;
+		}
+		for(i = 0; i < marginTopSize; i++){
+			printf("\n");
+		}
+	}
 
 	struct LineItem* current = display.first;
 	const int MAX_CHARS_BORDER = 4;
@@ -214,16 +235,26 @@ void flushBuffer(){
 		exit(EXITCODE_OUTOFMEMORY);
 	}
 	collector[0] = '\0';
-	int i;
+
+	//calculate left margin for box position
+    int leftMarginSize = 1;
+    if (display.hAlign==0){
+		leftMarginSize = consoleBufferWidth/2 - display.maxTextLength/2 - 1;
+    }
+    char* leftMargin = malloc(sizeof(char)*leftMarginSize+1);
+    if (leftMargin==NULL){
+		exit(EXITCODE_OUTOFMEMORY);
+    }
+    memset(leftMargin,' ',leftMarginSize);
+    leftMargin[leftMarginSize] = '\0';
 
 	//draw header line
-	strcat(collector," ");
+	strcat(collector,leftMargin);
 	strcat(collector,FONT_DPIPE_TOP_LEFT);
 	for (i = 0; i < display.maxTextLength; i++){
 		strcat(collector,FONT_DPIPE_HORI_BAR);
 	}
 	strcat(collector,FONT_DPIPE_TOP_RIGHT);
-	strcat(collector," ");
 	strcat(collector,"\n");
 
 	//temporary:
@@ -231,18 +262,33 @@ void flushBuffer(){
 	collector[0] = '\0';
 
 	//draw lines
+	int leftPaddingSize = 0;
+	int rightPaddingSize;
+
 	while (current!=NULL){
-		//left border
-		strcat(collector," ");
+		//padding calculations
+		switch (current->align){
+		case -1:
+			leftPaddingSize = 0;
+			break;
+		case 0:
+			leftPaddingSize = display.maxTextLength/2 - current->length/2;
+			break;
+		case +1:
+			leftPaddingSize = display.maxTextLength - current->length;
+			break;
+		}
+		rightPaddingSize = display.maxTextLength - current->length - leftPaddingSize;
+
+		//left border and left padding
+		strcat(collector,leftMargin);
 		strcat(collector,FONT_DPIPE_VERT_BAR);
+		strcatRepeat(collector," ",leftPaddingSize);
 		//text
 		strcat(collector,current->text);
 		//right padding and right border
-		for (i = 0; i < display.maxTextLength - current->length; i++){
-			strcat(collector," ");
-		}
+		strcatRepeat(collector," ",rightPaddingSize);
 		strcat(collector,FONT_DPIPE_VERT_BAR);
-		strcat(collector," ");
 		strcat(collector,"\n");
 		current = current->next;
 		//temporary:
@@ -250,13 +296,12 @@ void flushBuffer(){
 		collector[0] = '\0';
 	}
 	//draw footer line
-	strcat(collector," ");
+	strcat(collector,leftMargin);
 	strcat(collector,FONT_DPIPE_BOTTOM_LEFT);
 	for (i = 0; i < display.maxTextLength; i++){
 		strcat(collector,FONT_DPIPE_HORI_BAR);
 	}
 	strcat(collector,FONT_DPIPE_BOTTOM_RIGHT);
-	strcat(collector," ");
 
 	printf("%s",collector);
 	collector[0] = '\0';
@@ -273,13 +318,108 @@ void flushBuffer(){
 */
 void startBuffer(int maxTextLength){
 	if (display.first!=NULL || display.last!=NULL){
+		//display not initialized
         exit(EXITCODE_BUFFERERROR);
+	}
+
+	if (maxTextLength>consoleBufferWidth-4){
+		//requested buffer too large for window size
+		exit(EXITCODE_WINDOWERROR);
+	}
+
+	if (maxTextLength<1){
+		exit(EXITCODE_BUFFERERROR);
 	}
 
 	display.maxTextLength = maxTextLength;
 	deleteLineItem(display.first, 1);
 	display.lineCount = 0;
-	display.first = insertNewLineItem(NULL,NULL,-1,maxTextLength);
+	display.first = insertNewLineItem(NULL,NULL,maxTextLength);
+}
+
+/**
+* Change the horizontal align of the current line within the buffer box
+* @param align Left align (-1), centered (0) or right align (+1).
+*/
+void setLineAlign(int align){
+	if(display.last==NULL){
+		exit(EXITCODE_BUFFERERROR);
+	}
+	display.last->align = align;
+}
+
+/**
+* Printf-s ASCII art logo
+* @param width Width for padding with spaces.
+* @param startAt Value between 0 and 4 for partial display, see animateBanner().
+*/
+void printfBanner(int width, int startAt){
+	int length = 57;
+	char* banner[5];
+	banner[0] = "_________                              _____     _____ __\n";
+	banner[1] = "__  ____/________________________________  /_    __  // /\n";
+	banner[2] = "_  /    _  __ \\_  __ \\_  __ \\  _ \\  ___/  __/    _  // /_\n";
+	banner[3] = "/ /___  / /_/ /  / / /  / / /  __/ /__ / /_      /__  __/\n";
+	banner[4] = "\\____/  \\____//_/ /_//_/ /_/\\___/\\___/ \\__/        /_/   \n";
+	int i;
+	char* bannerBuffer = malloc(sizeof(char)*(width+1)*5);
+	bannerBuffer[0] = '\0';
+	for(i = startAt; i<5; i++){
+		strcatRepeat(bannerBuffer," ",width/2-length/2-1);
+		strcat(bannerBuffer,banner[i]);
+	}
+	printf("%s",bannerBuffer);
+}
+
+/**
+* Animate ASCII art logo.
+* @param slideIn Set to 1 for slide in from top, 0 for slide out.
+*/
+void animateBanner(int slideIn){
+	int i = (slideIn ? 5 : 0);
+	while(i >= 0 && i <=5){
+		consoleClear();
+		printfBanner(consoleBufferWidth,i);
+		Sleep(50);
+		i += (slideIn ? -1 : +1);
+	}
+}
+
+/**
+* Change the horizontal align of the current line within the buffer box
+* @param align Left align (-1), centered (0) or right align (+1).
+*/
+void animateBox(int wFrom, int hFrom, int wTo, int hTo){
+	int w = wFrom;
+	int h = hFrom;
+	while(w < wTo){
+		printEmptyBox(w,h);
+		w++;
+	}
+	while(h < hTo){
+		printEmptyBox(w,h);
+		h++;
+	}
+	while(h > hTo){
+		printEmptyBox(w,h);
+		h--;
+	}
+	while(w > wTo){
+		printEmptyBox(w,h);
+		w--;
+	}
+}
+
+/**
+* Print an empty buffer box with the given size
+* @param w Width.
+* @param h Height.
+*/
+void printEmptyBox(int w, int h){
+	int i;
+	startBuffer(w);
+	for (i = 0; i < h; i++) output("\n");
+	flushBuffer();
 }
 
 /**

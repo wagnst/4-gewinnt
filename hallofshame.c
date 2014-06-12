@@ -5,7 +5,7 @@
 /**
 * This function prints a certain number (c.f. HOS_LINES) of lines of
 * the HallOfShame.txt to the console.
-* @param highlight Highlight a special line with "-->"
+* @param highlight Highlight a special line with "-> "
 * @param startFrom The output is reduced to a constant number of lines
 * 		 (c.f. variables.h HOS_LINES). The parameter controls
 *		 which lines actually are printed.
@@ -16,7 +16,7 @@ void showHallOfShame(int highlight,int startFrom){
 	startFrom = startFrom > 0 ? startFrom : 0;
 	while(viewHoS){
 			//decalartions
-		startBuffer(70);
+		startBuffer(64);
 		FILE *fh;
 		char victor[20];
 		char victim[20];
@@ -33,7 +33,9 @@ void showHallOfShame(int highlight,int startFrom){
 			}
 		}
 
-		output("[ Hall of Shame ]:\n\nWelcome to our Hall of Shame...\n");
+		setLineAlign(0);
+		output("[ HALL OF SHAME ]\n\nWelcome to our Hall of Shame...\n");
+		setLineAlign(-1);
 		// notice if HoS is empty
 		int somethingPrinted =0;
 		while((fscanf(fh,"%19[^,],%19[^,],%2[^,^\n]",victor,victim,moves)) != EOF ) {
@@ -58,8 +60,10 @@ void showHallOfShame(int highlight,int startFrom){
 		if(somethingPrinted == 0){
 			output("   No entries.");
 		}
-		output("\n      [...Press up/down for scrolling...]");
-		output("\n      [...Press  Enter/Escape to exit...]");
+		output("\n");
+		setLineAlign(0);
+		output("[...Press up/down for scrolling...]\n");
+		output("[...Press  Enter/Escape to exit...]\n");
 		flushBuffer();
 		fflush(stdin);
 		char userInput = getch();
