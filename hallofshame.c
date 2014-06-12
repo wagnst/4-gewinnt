@@ -20,7 +20,7 @@ void showHallOfShame(int highlight,int startFrom){
 		FILE *fh;
 		char victor[20];
 		char victim[20];
-		char moves[3];
+		char moves[4];
 		//counting the lines
 		int lineCounter = 0;
 		//open file in read mode
