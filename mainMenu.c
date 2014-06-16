@@ -9,6 +9,9 @@
 *@param pPos contains the cursor Position of the cursor
 */
 void drawLeftArrow(char* menu,int pPos){
+#ifndef DEBUG
+			if (pPos>1) pPos--;
+#endif // DEBUG
 			menu[pPos*20]='-';
 			menu[pPos*20+1]='>';
 			menu[pPos*20+2]=' ';
@@ -19,6 +22,9 @@ void drawLeftArrow(char* menu,int pPos){
 *@param pPos contains the cursor Position of the cursor
 */
 void drawRightArrow(char* menu,int pPos){
+#ifndef DEBUG
+			if (pPos>1) pPos--;
+#endif // DEBUG
 			menu[(pPos+1)*20-2]='-';
 			menu[(pPos+1)*20-3]='<';
 			menu[(pPos+1)*20-4]=' ';
@@ -36,7 +42,12 @@ void drawMainMenu(int pPos){
 	/**
 	*every Menu gets 21 Chars-->each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")
 	*/
+#ifndef DEBUG
+	char mainMenu[] = "   NEW GAME        \n   RULES           \n   HALL OF SHAME   \n   CREDITS         \n   QUIT            ";
+#else
 	char mainMenu[] = "   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   CREDITS         \n   QUIT            ";
+#endif // DEBUG
+
 			drawLeftArrow(mainMenu,pPos);
 			drawRightArrow(mainMenu,pPos);
 			output("\n%s\n",mainMenu);
@@ -61,9 +72,15 @@ int mainMenu(){
 		switch(getch()) {
 			case 72:    // key up
 				pPos--;
+#ifndef DEBUG
+				if (pPos==1) pPos--; //settings temporarily disabled
+#endif // DEBUG
 				break;
 			case 80:    // key down
 				pPos++;
+#ifndef DEBUG
+				if (pPos==1) pPos++; //settings temporarily disabled
+#endif // DEBUG
 				break;
 			case 77:    // key right
 				break;
