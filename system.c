@@ -193,9 +193,9 @@ void flushBuffer(){
 	if(GetConsoleScreenBufferInfo(GetStdHandle( STD_OUTPUT_HANDLE ),&csbi)) {
 		consoleBufferWidth = csbi.dwSize.X;
 		consoleBufferHeight = csbi.dwSize.Y;
-#ifdef DEBUG
-		consoleBufferHeight = 23;
-#endif // DEBUG
+		if(!FANCY_FONT){
+			consoleBufferHeight = 23;
+		}
 	}
 
 	consoleClear();
