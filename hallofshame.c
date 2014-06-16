@@ -4,7 +4,7 @@
 #include <stdlib.h>
 /**
 * This function prints a certain number (c.f. HOS_LINES) of lines of
-* the HallOfShame.txt to the console.
+* the HallOfShame.dat to the console.
 * @param highlight Highlight a special line with "-> "
 * @param startFrom The output is reduced to a constant number of lines
 * 		 (c.f. variables.h HOS_LINES). The parameter controls
@@ -25,7 +25,7 @@ void showHallOfShame(int highlight,int startFrom){
 		int lineCounter = 0;
 		//open file in read mode
 		//or leave loop
-		fh = fopen("HallOfShame.txt", "r");
+		fh = fopen("HallOfShame.dat", "r");
 		if (fh == NULL || ferror(fh)){
 			if (fh){
 				fclose(fh);
@@ -91,7 +91,7 @@ void showHallOfShame(int highlight,int startFrom){
 /**
 * This functions uses the 3 parameters to update and save the Hall of Shame.
 * The 3 parameters will be interpreted as a line which has to be inserted to
-* the HallOfShame.txt document. A kind of Insertion Sort is used to put the
+* the HallOfShame.dat document. A kind of Insertion Sort is used to put the
 * line on the right place.
 * @param victor Name of player who won the game.
 * @param vicitim Name of player who lost.
@@ -110,7 +110,7 @@ int updateSaveHoS(char* victor,char* victim,int moves){
 
 
 	int inserted =0;
-	fh = fopen("HallOfShame.txt", "r");
+	fh = fopen("HallOfShame.dat", "r");
 	// while End-Of-File not reached line per line
 	while((fscanf(fh,"%59[^\n]\n",line)) != EOF ) {
 
@@ -142,9 +142,9 @@ int updateSaveHoS(char* victor,char* victim,int moves){
 	}
 	//close the current file mode just for reading
 	fclose(fh);
-	//open file again in new mode, txt will be blank at the opening moment
+	//open file again in new mode, dat will be blank at the opening moment
 	//so everything will be overwritten
-	fh = fopen("HallOfShame.txt","w");
+	fh = fopen("HallOfShame.dat","w");
 	fprintf(fh,buffer);
 	fclose(fh);
 	//do not forget to free your allocated memory
@@ -179,12 +179,12 @@ int extractMoves(char* line){
 }
 
 /**
-* Determine the length of the current HallOfShame.txt file.
+* Determine the length of the current HallOfShame.dat file.
 * @return len Just the length of the HoS as an int.
 */
 int getOldFileLength()
 {
-    FILE *f = fopen("HallOfShame.txt", "rb");
+    FILE *f = fopen("HallOfShame.dat", "rb");
 
     if (f == NULL || ferror(f))
     {
