@@ -1,0 +1,36 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+*.res
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Apple -.-
+.DS_Store
+/Debug/4-gewinnt
+
+# CodeBlocks specific
+*.layout
+*.depend
+
+#Game files
+HallOfShame.txt
+HallOfShame.dat
