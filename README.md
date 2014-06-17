@@ -42,3 +42,4 @@ Alle Ziele wurden gemeinsam erarbeitet und von allen Teammitgliedern anerkannt.
 - sauberer Code durch Code Conventions
 - technische Dokumentation (Kommentare im Code und eigenes Dokument)
 - Anwendungsdokumentation
+- Code-Doku online: http://wagnst.github.io/4-gewinnt/documentation/
