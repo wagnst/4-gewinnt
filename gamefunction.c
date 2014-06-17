@@ -48,16 +48,19 @@ void gameFunction(){
 		flushBuffer();
 		//wait for a new char and give it to var
 		keyStrokeName[0] = getch();
-		//check for special inputs
-		if ((keyStrokeName[0] == '\b') && (strlen(player1)) > 0) {
-			//if backspace was entered
-			player1[strlen(player1)-1] = '\0'; //set nilbyte to pointer-1
-		}
-		else if (keyStrokeName[0] == '\r') {} //if enter do nothing
-		else if ((keyStrokeName[0] == '\b') && (strlen(player1)) == 0) {} //if string empty and backspace entered do nothing
-		else {
-			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
-			strcat(player1, keyStrokeName);
+		//check if input was a char
+		if(isChar(keyStrokeName[0]) || keyStrokeName[0] == 8 ){
+			//check for special inputs
+			if ((keyStrokeName[0] == '\b') && (strlen(player1)) > 0) {
+				//if backspace was entered
+				player1[strlen(player1)-1] = '\0'; //set nilbyte to pointer-1
+			}
+			else if (keyStrokeName[0] == '\r') {} //if enter do nothing
+			else if ((keyStrokeName[0] == '\b') && (strlen(player1)) == 0) {} //if string empty and backspace entered do nothing
+			else {
+				keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
+				strcat(player1, keyStrokeName);
+			}
 		}
 	} while(((keyStrokeName[0] != '\r') && (player1[0] != '\0') && !(strlen(player1)>15)) || (strlen(player1)<3));
 	/*
@@ -78,16 +81,19 @@ void gameFunction(){
 		flushBuffer();
 		//wait for a new char and give it to var
 		keyStrokeName[0] = getch();
-		//check for special inputs
-		if ((keyStrokeName[0] == '\b') && (strlen(player2)) > 0) {
-			//if backspace was entered
-			player2[strlen(player2)-1] = '\0'; //set nilbyte to pointer-1
-		}
-		else if (keyStrokeName[0] == '\r') {} //if enter do nothing
-		else if ((keyStrokeName[0] == '\b') && (strlen(player2)) == 0) {} //if string empty and backspace entered do nothing
-		else {
-			keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
-			strcat(player2, keyStrokeName);
+		//check if input was a char
+		if(isChar(keyStrokeName[0]) || keyStrokeName[0] == 8 ){
+			//check for special inputs
+			if ((keyStrokeName[0] == '\b') && (strlen(player2)) > 0) {
+				//if backspace was entered
+				player2[strlen(player2)-1] = '\0'; //set nilbyte to pointer-1
+			}
+			else if (keyStrokeName[0] == '\r') {} //if enter do nothing
+			else if ((keyStrokeName[0] == '\b') && (strlen(player2)) == 0) {} //if string empty and backspace entered do nothing
+			else {
+				keyStrokeName[0] = lower_to_upper(keyStrokeName[0]);
+				strcat(player2, keyStrokeName);
+			}
 		}
 	} while(((keyStrokeName[0] != '\r') && (player2[0] != '\0') && !(strlen(player2)>15)) || (strlen(player2)<3));
 	//check that player1 and player2 names are not the same
@@ -164,6 +170,21 @@ void gameFunction(){
     //free our game-board
     clearAll();
     return;
+}
+
+/**
+* Checks if thing is a char
+* @return thing is a char
+*/
+int isChar(char toCheck){
+	if ((toCheck >= 65 && toCheck <= 91) || (toCheck >= 97 && toCheck <=122)){
+		//true
+		return 1;
+	}
+	else{
+		//false
+		return 0;
+	}
 }
 
 /**

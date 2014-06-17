@@ -53,3 +53,4 @@ void animateFalling(struct board* currBoard,unsigned int yPos,char CoinType);
 void showRules();
 //credits.c
 void showCredits();
+int isChar(char toCheck);
