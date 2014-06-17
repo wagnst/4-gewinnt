@@ -1,0 +1,8 @@
+<map id="drawBoard" name="drawBoard">
+<area shape="rect" id="node2" href="$board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="150,5,218,32"/>
+<area shape="rect" id="node4" href="$signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="155,56,213,83"/>
+<area shape="rect" id="node7" href="$signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="136,107,232,133"/>
+<area shape="rect" id="node3" href="$board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="283,5,405,32"/>
+<area shape="rect" id="node5" href="$system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="305,56,383,83"/>
+<area shape="rect" id="node6" href="$system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="280,107,408,133"/>
+</map>

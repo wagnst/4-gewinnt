@@ -1,0 +1,5 @@
+<map id="animateBanner" name="animateBanner">
+<area shape="rect" id="node2" href="$system_8c.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="163,5,260,32"/>
+<area shape="rect" id="node3" href="$system_8c.html#a74024376169c8c9123f7ec39e1b0fa5e" title="printfBanner" alt="" coords="166,56,257,83"/>
+<area shape="rect" id="node4" href="$system_8c.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="308,56,404,83"/>
+</map>

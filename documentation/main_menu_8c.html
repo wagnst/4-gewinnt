@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>4-gewinnt: mainMenu.c-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_klein.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">4-gewinnt
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">Klassiker &quot;4-gewinnt&quot; als Konsolenanwendung</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('main_menu_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Datenstrukturen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variablen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">mainMenu.c-Dateireferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;conio.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include-Abhängigkeitsdiagramm für mainMenu.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c__incl.png" border="0" usemap="#main_menu_8c" alt=""/></div>
+<map name="main_menu_8c" id="main_menu_8c">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c__dep__incl.png" border="0" usemap="#main_menu_8cdep" alt=""/></div>
+<map name="main_menu_8cdep" id="main_menu_8cdep">
+<area shape="rect" id="node2" href="main_8c.html" title="main.c" alt="" coords="21,80,83,107"/></map>
+</div>
+</div>
+<p><a href="main_menu_8c_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:a473388e6991e4883256a5af33c2d6e7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_menu_8c.html#a473388e6991e4883256a5af33c2d6e7b">drawLeftArrow</a> (char *menu, int pPos)</td></tr>
+<tr class="separator:a473388e6991e4883256a5af33c2d6e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac34dac8ec242ee825f0f7242d6931a3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_menu_8c.html#ac34dac8ec242ee825f0f7242d6931a3f">drawRightArrow</a> (char *menu, int pPos)</td></tr>
+<tr class="separator:ac34dac8ec242ee825f0f7242d6931a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d964d13e5975266aa100826ead8737"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737">drawMainMenu</a> (int pPos)</td></tr>
+<tr class="separator:a48d964d13e5975266aa100826ead8737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8396c50bf544009fb2fc4907b00cbad3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_menu_8c.html#a8396c50bf544009fb2fc4907b00cbad3">mainMenu</a> ()</td></tr>
+<tr class="separator:a8396c50bf544009fb2fc4907b00cbad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056836a121b87f913b3a69e9956fdc76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_menu_8c.html#a056836a121b87f913b3a69e9956fdc76">mainMenuReactToEnter</a> (int pPos)</td></tr>
+<tr class="separator:a056836a121b87f913b3a69e9956fdc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a class="anchor" id="a473388e6991e4883256a5af33c2d6e7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawLeftArrow </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method manipulates the array so the left arrow (to indicate the cursor position) is added to the array. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>contains the pointer to the char-array containing main menu in it's current status </td></tr>
+    <tr><td class="paramname">pPos</td><td>contains the cursor Position of the cursor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="main_menu_8c_source.html#l00011">11</a> der Datei <a class="el" href="main_menu_8c_source.html">mainMenu.c</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="main_menu_8c_source.html#l00039">drawMainMenu()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                       {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef DEBUG</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">if</span> (pPos&gt;1) pPos--;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif // DEBUG</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            menu[pPos*20]=<span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            menu[pPos*20+1]=<span class="charliteral">&#39;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            menu[pPos*20+2]=<span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_a473388e6991e4883256a5af33c2d6e7b_icgraph.png" border="0" usemap="#main_menu_8c_a473388e6991e4883256a5af33c2d6e7b_icgraph" alt=""/></div>
+<map name="main_menu_8c_a473388e6991e4883256a5af33c2d6e7b_icgraph" id="main_menu_8c_a473388e6991e4883256a5af33c2d6e7b_icgraph">
+<area shape="rect" id="node2" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="156,5,265,32"/><area shape="rect" id="node3" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="313,5,396,32"/><area shape="rect" id="node4" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="444,5,495,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a48d964d13e5975266aa100826ead8737"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawMainMenu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method is responsible for drawing the mainMenu The raw form of the menu is defined here&ndash;&gt;it can not be changed easily because the array size is dependent on the length of the String </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPos</td><td>current position of cursor within mainMenu </td></tr>
+    <tr><td class="paramname">mainMenu</td><td>the char Array containing the mainMenu </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>every Menu gets 21 Chars&ndash;&gt;each entry starts with 3 spaces followed by the menu entry followed by some spaces to fill up the array till the end and then the line break("\n")</p>
+
+<p>Definiert in Zeile <a class="el" href="main_menu_8c_source.html#l00039">39</a> der Datei <a class="el" href="main_menu_8c_source.html">mainMenu.c</a>.</p>
+
+<p>Benutzt <a class="el" href="main_menu_8c_source.html#l00011">drawLeftArrow()</a>, <a class="el" href="main_menu_8c_source.html#l00024">drawRightArrow()</a>, <a class="el" href="system_8c_source.html#l00188">flushBuffer()</a>, <a class="el" href="main_menu_8c_source.html#l00062">mainMenu()</a>, <a class="el" href="system_8c_source.html#l00144">output()</a>, <a class="el" href="system_8c_source.html#l00344">setLineAlign()</a> und <a class="el" href="system_8c_source.html#l00319">startBuffer()</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="main_menu_8c_source.html#l00062">mainMenu()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                           {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa">startBuffer</a>(25);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7">setLineAlign</a>(0);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef DEBUG</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="main_menu_8c.html#a8396c50bf544009fb2fc4907b00cbad3">mainMenu</a>[] = <span class="stringliteral">&quot;   NEW GAME        \n   RULES           \n   HALL OF SHAME   \n   CREDITS         \n   QUIT            &quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">char</span> mainMenu[] = <span class="stringliteral">&quot;   NEW GAME        \n   SETTINGS        \n   RULES           \n   HALL OF SHAME   \n   CREDITS         \n   QUIT            &quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif // DEBUG</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="main_menu_8c.html#a473388e6991e4883256a5af33c2d6e7b">drawLeftArrow</a>(mainMenu,pPos);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="main_menu_8c.html#ac34dac8ec242ee825f0f7242d6931a3f">drawRightArrow</a>(mainMenu,pPos);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;\n%s\n&quot;</span>,mainMenu);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db">flushBuffer</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="ttc" id="main_menu_8c_html_ac34dac8ec242ee825f0f7242d6931a3f"><div class="ttname"><a href="main_menu_8c.html#ac34dac8ec242ee825f0f7242d6931a3f">drawRightArrow</a></div><div class="ttdeci">void drawRightArrow(char *menu, int pPos)</div><div class="ttdef"><b>Definition:</b> <a href="main_menu_8c_source.html#l00024">mainMenu.c:24</a></div></div>
+<div class="ttc" id="signatures_8h_html_a09ed5dcaae860a161fb8b760e6fd59f7"><div class="ttname"><a href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7">setLineAlign</a></div><div class="ttdeci">void setLineAlign(int align)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00344">system.c:344</a></div></div>
+<div class="ttc" id="signatures_8h_html_aa4be9e04bfc0423517ed15c1fc6f63db"><div class="ttname"><a href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db">flushBuffer</a></div><div class="ttdeci">void flushBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00188">system.c:188</a></div></div>
+<div class="ttc" id="signatures_8h_html_a7025362e49b3e0b8417d036ae412f1fa"><div class="ttname"><a href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa">startBuffer</a></div><div class="ttdeci">void startBuffer(int maxTextLength)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00319">system.c:319</a></div></div>
+<div class="ttc" id="main_menu_8c_html_a8396c50bf544009fb2fc4907b00cbad3"><div class="ttname"><a href="main_menu_8c.html#a8396c50bf544009fb2fc4907b00cbad3">mainMenu</a></div><div class="ttdeci">int mainMenu()</div><div class="ttdef"><b>Definition:</b> <a href="main_menu_8c_source.html#l00062">mainMenu.c:62</a></div></div>
+<div class="ttc" id="main_menu_8c_html_a473388e6991e4883256a5af33c2d6e7b"><div class="ttname"><a href="main_menu_8c.html#a473388e6991e4883256a5af33c2d6e7b">drawLeftArrow</a></div><div class="ttdeci">void drawLeftArrow(char *menu, int pPos)</div><div class="ttdef"><b>Definition:</b> <a href="main_menu_8c_source.html#l00011">mainMenu.c:11</a></div></div>
+<div class="ttc" id="signatures_8h_html_a341a00a4a37b74dfa8e7e550c1fd1c2c"><div class="ttname"><a href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a></div><div class="ttdeci">int output(const char *input,...)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00144">system.c:144</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_a48d964d13e5975266aa100826ead8737_cgraph.png" border="0" usemap="#main_menu_8c_a48d964d13e5975266aa100826ead8737_cgraph" alt=""/></div>
+<map name="main_menu_8c_a48d964d13e5975266aa100826ead8737_cgraph" id="main_menu_8c_a48d964d13e5975266aa100826ead8737_cgraph">
+<area shape="rect" id="node2" href="main_menu_8c.html#a473388e6991e4883256a5af33c2d6e7b" title="drawLeftArrow" alt="" coords="167,5,270,32"/><area shape="rect" id="node3" href="main_menu_8c.html#ac34dac8ec242ee825f0f7242d6931a3f" title="drawRightArrow" alt="" coords="163,56,275,83"/><area shape="rect" id="node4" href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="1036,259,1119,285"/><area shape="rect" id="node10" href="main_menu_8c.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="177,208,260,235"/><area shape="rect" id="node29" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="1209,816,1268,843"/><area shape="rect" id="node34" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7" title="setLineAlign" alt="" coords="1031,715,1124,741"/><area shape="rect" id="node35" href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="1037,563,1118,589"/><area shape="rect" id="node5" href="system_8c.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="1190,157,1287,184"/><area shape="rect" id="node6" href="system_8c.html#a74024376169c8c9123f7ec39e1b0fa5e" title="printfBanner" alt="" coords="1193,208,1284,235"/><area shape="rect" id="node7" href="system_8c.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="1361,208,1457,235"/><area shape="rect" id="node8" href="system_8c.html#abad66b8a8320fa60768a3433e2508029" title="deleteLineItem" alt="" coords="1185,360,1292,387"/><area shape="rect" id="node9" href="system_8c.html#a2374233b8cd8185e753ba171f3229169" title="initBuffer" alt="" coords="1203,259,1275,285"/><area shape="rect" id="node11" href="signatures_8h.html#ac262850c1cbfc0e20ab1cb807aee901a" title="animateBanner" alt="" coords="1023,157,1132,184"/><area shape="rect" id="node12" href="signatures_8h.html#af937aa3025f34bbfad7976c0ceb5b6b6" title="animateBox" alt="" coords="696,259,787,285"/><area shape="rect" id="node19" href="main_menu_8c.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="323,436,484,463"/><area shape="rect" id="node13" href="system_8c.html#a29ac42ee2f47e0797ca27b67f6c548a1" title="printEmptyBox" alt="" coords="857,309,965,336"/><area shape="rect" id="node14" href="system_8c.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="1037,309,1118,336"/><area shape="rect" id="node16" href="system_8c.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="1209,512,1268,539"/><area shape="rect" id="node18" href="system_8c.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="1036,208,1119,235"/><area shape="rect" id="node15" href="system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="1345,537,1473,564"/><area shape="rect" id="node17" href="system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="1371,689,1448,716"/><area shape="rect" id="node20" href="gamefunction_8c.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="532,1019,636,1045"/><area shape="rect" id="node33" href="hallofshame_8c.html#aa00533bd55f5e103786e415b2427bb56" title="showHallOfShame" alt="" coords="847,664,975,691"/><area shape="rect" id="node47" href="rules_8c.html#a3fc16568c796078d9294f977d0d33a83" title="showRules" alt="" coords="868,563,953,589"/><area shape="rect" id="node48" href="credits_8c.html#ac0a40af75d169dc19259d9c8426dbecd" title="showCredits" alt="" coords="537,309,631,336"/><area shape="rect" id="node21" href="gamefunction_8c.html#af50ec8f99b4ba00b14bf5cb7c7ee9f9d" title="checkDraw" alt="" coords="1366,1335,1453,1361"/><area shape="rect" id="node24" href="gamefunction_8c.html#a798729dca95209ecdc609807a653a2bf" title="clearAll" alt="" coords="709,1120,774,1147"/><area shape="rect" id="node27" href="signatures_8h.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="693,1019,790,1045"/><area shape="rect" id="node28" href="board_8c.html#a8ba56fbeff5fd3e187fdfeb8af94f517" title="drawBoard" alt="" coords="1036,1247,1119,1273"/><area shape="rect" id="node31" href="gamefunction_8c.html#ac6d4e46f272836525020623c738655cd" title="irand" alt="" coords="716,1069,767,1096"/><area shape="rect" id="node32" href="signatures_8h.html#ad9ccf6c867482e0fc011631ba855937c" title="lower_to_upper" alt="" coords="687,917,796,944"/><area shape="rect" id="node36" href="gamefunction_8c.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="700,1171,783,1197"/><area shape="rect" id="node44" href="hallofshame_8c.html#aed3a48687a8f8f59fc007b0e40db1ab3" title="updateSaveHoS" alt="" coords="684,1221,799,1248"/><area shape="rect" id="node22" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="1521,1196,1589,1223"/><area shape="rect" id="node23" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="1637,1152,1760,1179"/><area shape="rect" id="node25" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a" title="clearBoard" alt="" coords="1035,1196,1119,1223"/><area shape="rect" id="node26" href="board_8c.html#af594e2b93fd0ac869b722812724a58ba" title="freeBoard" alt="" coords="872,968,949,995"/><area shape="rect" id="node30" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="1191,1297,1287,1324"/><area shape="rect" id="node37" href="board_8c.html#aa832cfb270f47cdcb3afca65656dd964" title="newBoard" alt="" coords="871,1120,950,1147"/><area shape="rect" id="node38" href="gamefunction_8c.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="863,1019,958,1045"/><area shape="rect" id="node39" href="gamefunction_8c.html#ae397e1ee112ca2bac1e8306b2ff4f995" title="drawCoin" alt="" coords="1040,968,1115,995"/><area shape="rect" id="node40" href="gamefunction_8c.html#ad1f279dc9f093c9a39000f5a6a077216" title="throwCoin" alt="" coords="1038,1145,1117,1172"/><area shape="rect" id="node41" href="gamefunction_8c.html#a42025a8656aaf0a1e18e7597ce1ea21c" title="checkForWinner" alt="" coords="1180,1145,1297,1172"/><area shape="rect" id="node43" href="board_8c.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0" title="setField" alt="" coords="1521,1108,1589,1135"/><area shape="rect" id="node42" href="gamefunction_8c.html#ab00ce6c274e49e96ee206427e2095d5d" title="neighbourRow" alt="" coords="1358,1145,1461,1172"/><area shape="rect" id="node45" href="hallofshame_8c.html#a4b0e4e7abd07e8aa82d0edcefb415142" title="extractMoves" alt="" coords="861,1221,960,1248"/><area shape="rect" id="node46" href="hallofshame_8c.html#a93a8975b6852b8b59d8f8667f36ecba0" title="getOldFileLength" alt="" coords="851,1171,971,1197"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_a48d964d13e5975266aa100826ead8737_icgraph.png" border="0" usemap="#main_menu_8c_a48d964d13e5975266aa100826ead8737_icgraph" alt=""/></div>
+<map name="main_menu_8c_a48d964d13e5975266aa100826ead8737_icgraph" id="main_menu_8c_a48d964d13e5975266aa100826ead8737_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="163,5,245,32"/><area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="293,5,344,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac34dac8ec242ee825f0f7242d6931a3f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawRightArrow </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method manipulates the array so the right arrow (to indicate the cursor position) is added to the array. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>contains the pointer to the char-array containing main menu in it's current status </td></tr>
+    <tr><td class="paramname">pPos</td><td>contains the cursor Position of the cursor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="main_menu_8c_source.html#l00024">24</a> der Datei <a class="el" href="main_menu_8c_source.html">mainMenu.c</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="main_menu_8c_source.html#l00039">drawMainMenu()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef DEBUG</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">if</span> (pPos&gt;1) pPos--;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif // DEBUG</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            menu[(pPos+1)*20-2]=<span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            menu[(pPos+1)*20-3]=<span class="charliteral">&#39;&lt;&#39;</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            menu[(pPos+1)*20-4]=<span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_ac34dac8ec242ee825f0f7242d6931a3f_icgraph.png" border="0" usemap="#main_menu_8c_ac34dac8ec242ee825f0f7242d6931a3f_icgraph" alt=""/></div>
+<map name="main_menu_8c_ac34dac8ec242ee825f0f7242d6931a3f_icgraph" id="main_menu_8c_ac34dac8ec242ee825f0f7242d6931a3f_icgraph">
+<area shape="rect" id="node2" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="165,5,275,32"/><area shape="rect" id="node3" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="323,5,405,32"/><area shape="rect" id="node4" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="453,5,504,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8396c50bf544009fb2fc4907b00cbad3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mainMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">con</td><td></td></tr>
+    <tr><td class="paramname">pPos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="main_menu_8c_source.html#l00062">62</a> der Datei <a class="el" href="main_menu_8c_source.html">mainMenu.c</a>.</p>
+
+<p>Benutzt <a class="el" href="system_8c_source.html#l00378">animateBanner()</a>, <a class="el" href="system_8c_source.html#l00392">animateBox()</a>, <a class="el" href="variables_8h_source.html#l00035">con</a>, <a class="el" href="main_menu_8c_source.html#l00039">drawMainMenu()</a> und <a class="el" href="main_menu_8c_source.html#l00115">mainMenuReactToEnter()</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="main_menu_8c_source.html#l00039">drawMainMenu()</a> und <a class="el" href="main_8c_source.html#l00028">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;              {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//describes where the cursor is, default location is 0(NEW GAME)</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> pPos=0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//as long as this variable is one the loop won&#39;t finish</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a>=1;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="signatures_8h.html#ac262850c1cbfc0e20ab1cb807aee901a">animateBanner</a>(1);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="signatures_8h.html#af937aa3025f34bbfad7976c0ceb5b6b6">animateBox</a>(1,1,25,8);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// menu loop</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a>){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737">drawMainMenu</a>(pPos);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">switch</span>(getch()) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">case</span> 72:    <span class="comment">// key up</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                pPos--;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifndef DEBUG</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span> (pPos==1) pPos--; <span class="comment">//settings temporarily disabled</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif // DEBUG</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">case</span> 80:    <span class="comment">// key down</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                pPos++;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#ifndef DEBUG</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">if</span> (pPos==1) pPos++; <span class="comment">//settings temporarily disabled</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // DEBUG</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">case</span> 77:    <span class="comment">// key right</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">case</span> 75:    <span class="comment">// key left</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">case</span> 13: <span class="comment">// key enter</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <a class="code" href="main_menu_8c.html#a056836a121b87f913b3a69e9956fdc76">mainMenuReactToEnter</a>(pPos);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">case</span> 27: <span class="comment">//escape</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">//  exit(0);</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a>=0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        fflush(stdin);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span>(pPos&gt;5){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">//cursor is &quot;below&quot; the menu--&gt;get him back</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            pPos=0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pPos&lt;0){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="comment">//cursor is the &quot;over&quot; the menu--&gt;get him back</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            pPos=5;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="signatures_8h.html#af937aa3025f34bbfad7976c0ceb5b6b6">animateBox</a>(25,8,1,1);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="signatures_8h.html#ac262850c1cbfc0e20ab1cb807aee901a">animateBanner</a>(0);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="ttc" id="signatures_8h_html_af937aa3025f34bbfad7976c0ceb5b6b6"><div class="ttname"><a href="signatures_8h.html#af937aa3025f34bbfad7976c0ceb5b6b6">animateBox</a></div><div class="ttdeci">void animateBox(int wFrom, int hFrom, int wTo, int hTo)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00392">system.c:392</a></div></div>
+<div class="ttc" id="main_menu_8c_html_a48d964d13e5975266aa100826ead8737"><div class="ttname"><a href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737">drawMainMenu</a></div><div class="ttdeci">void drawMainMenu(int pPos)</div><div class="ttdef"><b>Definition:</b> <a href="main_menu_8c_source.html#l00039">mainMenu.c:39</a></div></div>
+<div class="ttc" id="variables_8h_html_a8db35bac6311b6ba0e49b67bad57ddae"><div class="ttname"><a href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a></div><div class="ttdeci">int con</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00035">variables.h:35</a></div></div>
+<div class="ttc" id="main_menu_8c_html_a056836a121b87f913b3a69e9956fdc76"><div class="ttname"><a href="main_menu_8c.html#a056836a121b87f913b3a69e9956fdc76">mainMenuReactToEnter</a></div><div class="ttdeci">void mainMenuReactToEnter(int pPos)</div><div class="ttdef"><b>Definition:</b> <a href="main_menu_8c_source.html#l00115">mainMenu.c:115</a></div></div>
+<div class="ttc" id="signatures_8h_html_ac262850c1cbfc0e20ab1cb807aee901a"><div class="ttname"><a href="signatures_8h.html#ac262850c1cbfc0e20ab1cb807aee901a">animateBanner</a></div><div class="ttdeci">void animateBanner(int slideIn)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00378">system.c:378</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_cgraph.png" border="0" usemap="#main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_cgraph" alt=""/></div>
+<map name="main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_cgraph" id="main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_cgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#ac262850c1cbfc0e20ab1cb807aee901a" title="animateBanner" alt="" coords="837,5,947,32"/><area shape="rect" id="node6" href="signatures_8h.html#af937aa3025f34bbfad7976c0ceb5b6b6" title="animateBox" alt="" coords="509,157,600,184"/><area shape="rect" id="node15" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="669,157,779,184"/><area shape="rect" id="node22" href="main_menu_8c.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="136,473,297,500"/><area shape="rect" id="node3" href="system_8c.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="1006,56,1103,83"/><area shape="rect" id="node4" href="system_8c.html#a74024376169c8c9123f7ec39e1b0fa5e" title="printfBanner" alt="" coords="1009,107,1100,133"/><area shape="rect" id="node5" href="system_8c.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="1177,107,1273,133"/><area shape="rect" id="node7" href="system_8c.html#a29ac42ee2f47e0797ca27b67f6c548a1" title="printEmptyBox" alt="" coords="670,107,778,133"/><area shape="rect" id="node8" href="system_8c.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="851,107,933,133"/><area shape="rect" id="node11" href="system_8c.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="1025,360,1084,387"/><area shape="rect" id="node13" href="system_8c.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="851,56,933,83"/><area shape="rect" id="node9" href="system_8c.html#abad66b8a8320fa60768a3433e2508029" title="deleteLineItem" alt="" coords="1001,259,1108,285"/><area shape="rect" id="node10" href="system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="1161,385,1289,412"/><area shape="rect" id="node12" href="system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="1187,525,1264,552"/><area shape="rect" id="node14" href="system_8c.html#a2374233b8cd8185e753ba171f3229169" title="initBuffer" alt="" coords="1019,208,1091,235"/><area shape="rect" id="node16" href="main_menu_8c.html#a473388e6991e4883256a5af33c2d6e7b" title="drawLeftArrow" alt="" coords="841,208,943,235"/><area shape="rect" id="node17" href="main_menu_8c.html#ac34dac8ec242ee825f0f7242d6931a3f" title="drawRightArrow" alt="" coords="836,259,948,285"/><area shape="rect" id="node18" href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="851,360,933,387"/><area shape="rect" id="node19" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="1025,613,1084,640"/><area shape="rect" id="node20" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7" title="setLineAlign" alt="" coords="845,512,939,539"/><area shape="rect" id="node21" href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="851,411,933,437"/><area shape="rect" id="node23" href="gamefunction_8c.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="345,917,449,944"/><area shape="rect" id="node35" href="hallofshame_8c.html#aa00533bd55f5e103786e415b2427bb56" title="showHallOfShame" alt="" coords="660,563,788,589"/><area shape="rect" id="node47" href="rules_8c.html#a3fc16568c796078d9294f977d0d33a83" title="showRules" alt="" coords="681,461,767,488"/><area shape="rect" id="node48" href="credits_8c.html#ac0a40af75d169dc19259d9c8426dbecd" title="showCredits" alt="" coords="351,436,444,463"/><area shape="rect" id="node24" href="gamefunction_8c.html#af50ec8f99b4ba00b14bf5cb7c7ee9f9d" title="checkDraw" alt="" coords="1182,1239,1269,1265"/><area shape="rect" id="node27" href="gamefunction_8c.html#a798729dca95209ecdc609807a653a2bf" title="clearAll" alt="" coords="522,1157,587,1184"/><area shape="rect" id="node30" href="signatures_8h.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="506,1309,603,1336"/><area shape="rect" id="node31" href="board_8c.html#a8ba56fbeff5fd3e187fdfeb8af94f517" title="drawBoard" alt="" coords="851,1075,933,1101"/><area shape="rect" id="node33" href="gamefunction_8c.html#ac6d4e46f272836525020623c738655cd" title="irand" alt="" coords="529,816,580,843"/><area shape="rect" id="node34" href="signatures_8h.html#ad9ccf6c867482e0fc011631ba855937c" title="lower_to_upper" alt="" coords="500,867,609,893"/><area shape="rect" id="node36" href="gamefunction_8c.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="513,1019,596,1045"/><area shape="rect" id="node44" href="hallofshame_8c.html#aed3a48687a8f8f59fc007b0e40db1ab3" title="updateSaveHoS" alt="" coords="497,917,612,944"/><area shape="rect" id="node25" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="1337,1073,1405,1100"/><area shape="rect" id="node26" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="1453,1029,1576,1056"/><area shape="rect" id="node28" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a" title="clearBoard" alt="" coords="850,1141,934,1168"/><area shape="rect" id="node29" href="board_8c.html#af594e2b93fd0ac869b722812724a58ba" title="freeBoard" alt="" coords="685,1208,763,1235"/><area shape="rect" id="node32" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="1007,1100,1103,1127"/><area shape="rect" id="node37" href="board_8c.html#aa832cfb270f47cdcb3afca65656dd964" title="newBoard" alt="" coords="685,1107,763,1133"/><area shape="rect" id="node38" href="gamefunction_8c.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="677,993,771,1020"/><area shape="rect" id="node39" href="gamefunction_8c.html#ae397e1ee112ca2bac1e8306b2ff4f995" title="drawCoin" alt="" coords="855,973,929,1000"/><area shape="rect" id="node40" href="gamefunction_8c.html#ad1f279dc9f093c9a39000f5a6a077216" title="throwCoin" alt="" coords="853,1024,931,1051"/><area shape="rect" id="node41" href="gamefunction_8c.html#a42025a8656aaf0a1e18e7597ce1ea21c" title="checkForWinner" alt="" coords="996,1049,1113,1076"/><area shape="rect" id="node43" href="board_8c.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0" title="setField" alt="" coords="1337,985,1405,1012"/><area shape="rect" id="node42" href="gamefunction_8c.html#ab00ce6c274e49e96ee206427e2095d5d" title="neighbourRow" alt="" coords="1174,1073,1277,1100"/><area shape="rect" id="node45" href="hallofshame_8c.html#a4b0e4e7abd07e8aa82d0edcefb415142" title="extractMoves" alt="" coords="675,841,773,868"/><area shape="rect" id="node46" href="hallofshame_8c.html#a93a8975b6852b8b59d8f8667f36ecba0" title="getOldFileLength" alt="" coords="664,892,784,919"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_icgraph.png" border="0" usemap="#main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_icgraph" alt=""/></div>
+<map name="main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_icgraph" id="main_menu_8c_a8396c50bf544009fb2fc4907b00cbad3_icgraph">
+<area shape="rect" id="node2" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="136,5,245,32"/><area shape="rect" id="node4" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="424,31,475,57"/><area shape="rect" id="node3" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="293,5,376,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a056836a121b87f913b3a69e9956fdc76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mainMenuReactToEnter </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this method handles the game flow by calling the function corresponding to the cursor posotion within the menu </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPos</td><td>contains the current position (0:Top,4:bottom) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="main_menu_8c_source.html#l00115">115</a> der Datei <a class="el" href="main_menu_8c_source.html">mainMenu.c</a>.</p>
+
+<p>Benutzt <a class="el" href="variables_8h_source.html#l00035">con</a>, <a class="el" href="system_8c_source.html#l00188">flushBuffer()</a>, <a class="el" href="gamefunction_8c_source.html#l00028">gameFunction()</a>, <a class="el" href="variables_8h_source.html#l00067">NO_HIGHLIGHT</a>, <a class="el" href="system_8c_source.html#l00144">output()</a>, <a class="el" href="credits_8c_source.html#l00006">showCredits()</a>, <a class="el" href="hallofshame_8c_source.html#l00013">showHallOfShame()</a>, <a class="el" href="rules_8c_source.html#l00035">showRules()</a> und <a class="el" href="system_8c_source.html#l00319">startBuffer()</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="main_menu_8c_source.html#l00062">mainMenu()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                   {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">switch</span>(pPos){</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="gamefunction_8c.html#a074b577892140039af5605cac59cc8d4">gameFunction</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa">startBuffer</a>(60);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;Settings Menu(Dummy)\nPress any key to return to main\n&quot;</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db">flushBuffer</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            getch();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="rules_8c.html#a3fc16568c796078d9294f977d0d33a83">showRules</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="hallofshame_8c.html#aa00533bd55f5e103786e415b2427bb56">showHallOfShame</a>(<a class="code" href="variables_8h.html#aefd07acc2f74bd35c37a9479c7dd515b">NO_HIGHLIGHT</a>,0);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <a class="code" href="credits_8c.html#ac0a40af75d169dc19259d9c8426dbecd">showCredits</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="comment">//end game</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a>=0;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="comment">//exit(0);</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="ttc" id="hallofshame_8c_html_aa00533bd55f5e103786e415b2427bb56"><div class="ttname"><a href="hallofshame_8c.html#aa00533bd55f5e103786e415b2427bb56">showHallOfShame</a></div><div class="ttdeci">void showHallOfShame(int highlight, int startFrom)</div><div class="ttdef"><b>Definition:</b> <a href="hallofshame_8c_source.html#l00013">hallofshame.c:13</a></div></div>
+<div class="ttc" id="rules_8c_html_a3fc16568c796078d9294f977d0d33a83"><div class="ttname"><a href="rules_8c.html#a3fc16568c796078d9294f977d0d33a83">showRules</a></div><div class="ttdeci">void showRules()</div><div class="ttdef"><b>Definition:</b> <a href="rules_8c_source.html#l00035">rules.c:35</a></div></div>
+<div class="ttc" id="signatures_8h_html_aa4be9e04bfc0423517ed15c1fc6f63db"><div class="ttname"><a href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db">flushBuffer</a></div><div class="ttdeci">void flushBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00188">system.c:188</a></div></div>
+<div class="ttc" id="signatures_8h_html_a7025362e49b3e0b8417d036ae412f1fa"><div class="ttname"><a href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa">startBuffer</a></div><div class="ttdeci">void startBuffer(int maxTextLength)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00319">system.c:319</a></div></div>
+<div class="ttc" id="gamefunction_8c_html_a074b577892140039af5605cac59cc8d4"><div class="ttname"><a href="gamefunction_8c.html#a074b577892140039af5605cac59cc8d4">gameFunction</a></div><div class="ttdeci">void gameFunction()</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00028">gamefunction.c:28</a></div></div>
+<div class="ttc" id="credits_8c_html_ac0a40af75d169dc19259d9c8426dbecd"><div class="ttname"><a href="credits_8c.html#ac0a40af75d169dc19259d9c8426dbecd">showCredits</a></div><div class="ttdeci">void showCredits()</div><div class="ttdef"><b>Definition:</b> <a href="credits_8c_source.html#l00006">credits.c:6</a></div></div>
+<div class="ttc" id="variables_8h_html_a8db35bac6311b6ba0e49b67bad57ddae"><div class="ttname"><a href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a></div><div class="ttdeci">int con</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00035">variables.h:35</a></div></div>
+<div class="ttc" id="variables_8h_html_aefd07acc2f74bd35c37a9479c7dd515b"><div class="ttname"><a href="variables_8h.html#aefd07acc2f74bd35c37a9479c7dd515b">NO_HIGHLIGHT</a></div><div class="ttdeci">const int NO_HIGHLIGHT</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00067">variables.h:67</a></div></div>
+<div class="ttc" id="signatures_8h_html_a341a00a4a37b74dfa8e7e550c1fd1c2c"><div class="ttname"><a href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a></div><div class="ttdeci">int output(const char *input,...)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00144">system.c:144</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_a056836a121b87f913b3a69e9956fdc76_cgraph.png" border="0" usemap="#main_menu_8c_a056836a121b87f913b3a69e9956fdc76_cgraph" alt=""/></div>
+<map name="main_menu_8c_a056836a121b87f913b3a69e9956fdc76_cgraph" id="main_menu_8c_a056836a121b87f913b3a69e9956fdc76_cgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="711,915,793,942"/><area shape="rect" id="node8" href="gamefunction_8c.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="215,307,319,334"/><area shape="rect" id="node17" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="876,625,935,651"/><area shape="rect" id="node23" href="hallofshame_8c.html#aa00533bd55f5e103786e415b2427bb56" title="showHallOfShame" alt="" coords="529,561,657,587"/><area shape="rect" id="node25" href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="711,713,793,739"/><area shape="rect" id="node37" href="credits_8c.html#ac0a40af75d169dc19259d9c8426dbecd" title="showCredits" alt="" coords="220,890,313,917"/><area shape="rect" id="node43" href="rules_8c.html#a3fc16568c796078d9294f977d0d33a83" title="showRules" alt="" coords="551,865,636,891"/><area shape="rect" id="node3" href="system_8c.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="857,1017,954,1043"/><area shape="rect" id="node4" href="system_8c.html#a74024376169c8c9123f7ec39e1b0fa5e" title="printfBanner" alt="" coords="860,966,951,993"/><area shape="rect" id="node5" href="system_8c.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="1028,966,1124,993"/><area shape="rect" id="node6" href="system_8c.html#abad66b8a8320fa60768a3433e2508029" title="deleteLineItem" alt="" coords="852,814,959,841"/><area shape="rect" id="node7" href="system_8c.html#a2374233b8cd8185e753ba171f3229169" title="initBuffer" alt="" coords="869,865,941,891"/><area shape="rect" id="node9" href="gamefunction_8c.html#af50ec8f99b4ba00b14bf5cb7c7ee9f9d" title="checkDraw" alt="" coords="1033,54,1119,81"/><area shape="rect" id="node12" href="gamefunction_8c.html#a798729dca95209ecdc609807a653a2bf" title="clearAll" alt="" coords="391,206,457,233"/><area shape="rect" id="node15" href="signatures_8h.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="375,409,473,435"/><area shape="rect" id="node16" href="board_8c.html#a8ba56fbeff5fd3e187fdfeb8af94f517" title="drawBoard" alt="" coords="711,307,793,334"/><area shape="rect" id="node21" href="gamefunction_8c.html#ac6d4e46f272836525020623c738655cd" title="irand" alt="" coords="399,105,449,131"/><area shape="rect" id="node22" href="signatures_8h.html#ad9ccf6c867482e0fc011631ba855937c" title="lower_to_upper" alt="" coords="369,155,479,182"/><area shape="rect" id="node26" href="gamefunction_8c.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="383,257,465,283"/><area shape="rect" id="node34" href="hallofshame_8c.html#aed3a48687a8f8f59fc007b0e40db1ab3" title="updateSaveHoS" alt="" coords="367,54,481,81"/><area shape="rect" id="node10" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="1188,157,1256,183"/><area shape="rect" id="node11" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="1304,94,1427,121"/><area shape="rect" id="node13" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a" title="clearBoard" alt="" coords="710,193,794,219"/><area shape="rect" id="node14" href="board_8c.html#af594e2b93fd0ac869b722812724a58ba" title="freeBoard" alt="" coords="555,155,632,182"/><area shape="rect" id="node20" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="857,282,953,309"/><area shape="rect" id="node18" href="system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="1037,877,1115,903"/><area shape="rect" id="node19" href="system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="1012,789,1140,815"/><area shape="rect" id="node24" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7" title="setLineAlign" alt="" coords="705,763,799,790"/><area shape="rect" id="node27" href="board_8c.html#aa832cfb270f47cdcb3afca65656dd964" title="newBoard" alt="" coords="554,257,633,283"/><area shape="rect" id="node28" href="gamefunction_8c.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="546,358,641,385"/><area shape="rect" id="node29" href="gamefunction_8c.html#ae397e1ee112ca2bac1e8306b2ff4f995" title="drawCoin" alt="" coords="715,358,789,385"/><area shape="rect" id="node30" href="gamefunction_8c.html#ad1f279dc9f093c9a39000f5a6a077216" title="throwCoin" alt="" coords="713,243,791,270"/><area shape="rect" id="node31" href="gamefunction_8c.html#a42025a8656aaf0a1e18e7597ce1ea21c" title="checkForWinner" alt="" coords="847,231,964,258"/><area shape="rect" id="node33" href="board_8c.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0" title="setField" alt="" coords="1188,30,1256,57"/><area shape="rect" id="node32" href="gamefunction_8c.html#ab00ce6c274e49e96ee206427e2095d5d" title="neighbourRow" alt="" coords="1025,231,1127,258"/><area shape="rect" id="node35" href="hallofshame_8c.html#a4b0e4e7abd07e8aa82d0edcefb415142" title="extractMoves" alt="" coords="544,105,643,131"/><area shape="rect" id="node36" href="hallofshame_8c.html#a93a8975b6852b8b59d8f8667f36ecba0" title="getOldFileLength" alt="" coords="533,54,653,81"/><area shape="rect" id="node38" href="signatures_8h.html#af937aa3025f34bbfad7976c0ceb5b6b6" title="animateBox" alt="" coords="379,1067,469,1094"/><area shape="rect" id="node39" href="system_8c.html#a29ac42ee2f47e0797ca27b67f6c548a1" title="printEmptyBox" alt="" coords="539,1067,647,1094"/><area shape="rect" id="node40" href="system_8c.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="711,966,793,993"/><area shape="rect" id="node41" href="system_8c.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="876,1067,935,1094"/><area shape="rect" id="node42" href="system_8c.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="711,1017,793,1043"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_menu_8c_a056836a121b87f913b3a69e9956fdc76_icgraph.png" border="0" usemap="#main_menu_8c_a056836a121b87f913b3a69e9956fdc76_icgraph" alt=""/></div>
+<map name="main_menu_8c_a056836a121b87f913b3a69e9956fdc76_icgraph" id="main_menu_8c_a056836a121b87f913b3a69e9956fdc76_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="215,56,297,83"/><area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="375,5,425,32"/><area shape="rect" id="node4" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="345,56,455,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6fb10fd182f1a6c12d521696c581f662.html">4-gewinnt</a></li><li class="navelem"><a class="el" href="main_menu_8c.html">mainMenu.c</a></li>
+    <li class="footer">DHBW-MA - TINF13AIBC - Projektmanagement - Team 1337 (Stand: 17.06.2014) </li>
+  </ul>
+</div>
+</body>
+</html>

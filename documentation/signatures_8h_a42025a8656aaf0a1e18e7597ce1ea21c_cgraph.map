@@ -1,0 +1,5 @@
+<map id="checkForWinner" name="checkForWinner">
+<area shape="rect" id="node2" href="$gamefunction_8c.html#ab00ce6c274e49e96ee206427e2095d5d" title="neighbourRow" alt="" coords="171,29,273,56"/>
+<area shape="rect" id="node3" href="$board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="321,29,389,56"/>
+<area shape="rect" id="node4" href="$board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="437,29,560,56"/>
+</map>

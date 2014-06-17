@@ -1,0 +1,26 @@
+var gamefunction_8c =
+[
+    [ "animateFalling", "gamefunction_8c.html#aedf01a36f81b28e539c99f53543efbbd", null ],
+    [ "checkDraw", "gamefunction_8c.html#af50ec8f99b4ba00b14bf5cb7c7ee9f9d", null ],
+    [ "checkForWinner", "gamefunction_8c.html#a42025a8656aaf0a1e18e7597ce1ea21c", null ],
+    [ "clearAll", "gamefunction_8c.html#a798729dca95209ecdc609807a653a2bf", null ],
+    [ "drawCoin", "gamefunction_8c.html#ae397e1ee112ca2bac1e8306b2ff4f995", null ],
+    [ "gameFunction", "gamefunction_8c.html#a074b577892140039af5605cac59cc8d4", null ],
+    [ "irand", "gamefunction_8c.html#ac6d4e46f272836525020623c738655cd", null ],
+    [ "neighbourRow", "gamefunction_8c.html#ab00ce6c274e49e96ee206427e2095d5d", null ],
+    [ "playerAction", "gamefunction_8c.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc", null ],
+    [ "startGame", "gamefunction_8c.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6", null ],
+    [ "throwCoin", "gamefunction_8c.html#ad1f279dc9f093c9a39000f5a6a077216", null ],
+    [ "coinPosition", "gamefunction_8c.html#a1ea724989282f1233e7354b2e74b914d", null ],
+    [ "end", "gamefunction_8c.html#abce9f5dc9c83f2639b72024fdee5d388", null ],
+    [ "gameField", "gamefunction_8c.html#a5d6bdedcfbb7ad18258d403c86edc578", null ],
+    [ "gameFieldCreated", "gamefunction_8c.html#a195fa809ff68e2649f35e007c64fef15", null ],
+    [ "gameFieldHeigth", "gamefunction_8c.html#a82fb16ad8639d3689e5ee32459fa4033", null ],
+    [ "gameFieldWidth", "gamefunction_8c.html#aea196deff315454ee34afce595c2b547", null ],
+    [ "moves", "gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3", null ],
+    [ "player1", "gamefunction_8c.html#aed3186344b0084647ca43ec7edd6c2a4", null ],
+    [ "player2", "gamefunction_8c.html#a26b3bd39502200968d37dd47e795ad98", null ],
+    [ "playersCoin", "gamefunction_8c.html#a27ada2c20a63c8773edf6c83da01c565", null ],
+    [ "playersTurn", "gamefunction_8c.html#a6269b7ebff2639309f19450bb60efa00", null ],
+    [ "victor", "gamefunction_8c.html#accb7cc35835fb3e126f4e4cb5f9d0450", null ]
+];

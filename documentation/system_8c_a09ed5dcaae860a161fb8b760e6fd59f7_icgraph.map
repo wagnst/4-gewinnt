@@ -1,0 +1,12 @@
+<map id="setLineAlign" name="setLineAlign">
+<area shape="rect" id="node2" href="$main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="643,29,753,55"/>
+<area shape="rect" id="node5" href="$signatures_8h.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="147,155,241,182"/>
+<area shape="rect" id="node9" href="$signatures_8h.html#ac0a40af75d169dc19259d9c8426dbecd" title="showCredits" alt="" coords="471,105,564,131"/>
+<area shape="rect" id="node10" href="$signatures_8h.html#aa00533bd55f5e103786e415b2427bb56" title="showHallOfShame" alt="" coords="289,206,417,233"/>
+<area shape="rect" id="node11" href="$signatures_8h.html#a3fc16568c796078d9294f977d0d33a83" title="showRules" alt="" coords="151,54,237,81"/>
+<area shape="rect" id="node3" href="$signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="827,29,909,55"/>
+<area shape="rect" id="node4" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="957,29,1008,55"/>
+<area shape="rect" id="node6" href="$signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="312,155,395,182"/>
+<area shape="rect" id="node7" href="$signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="465,155,569,182"/>
+<area shape="rect" id="node8" href="$signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="617,105,779,131"/>
+</map>

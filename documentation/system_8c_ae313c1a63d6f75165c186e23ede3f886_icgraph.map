@@ -1,0 +1,17 @@
+<map id="consoleClear" name="consoleClear">
+<area shape="rect" id="node2" href="$system_8c.html#ac262850c1cbfc0e20ab1cb807aee901a" title="animateBanner" alt="" coords="791,5,901,32"/>
+<area shape="rect" id="node6" href="$system_8c.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="151,284,233,311"/>
+<area shape="rect" id="node9" href="$signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="613,208,717,235"/>
+<area shape="rect" id="node3" href="$signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="975,215,1057,241"/>
+<area shape="rect" id="node4" href="$main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="1105,189,1215,216"/>
+<area shape="rect" id="node5" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1135,240,1185,267"/>
+<area shape="rect" id="node7" href="$signatures_8h.html#ac0a40af75d169dc19259d9c8426dbecd" title="showCredits" alt="" coords="619,461,712,488"/>
+<area shape="rect" id="node8" href="$signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="765,321,927,348"/>
+<area shape="rect" id="node10" href="$signatures_8h.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="288,157,383,184"/>
+<area shape="rect" id="node12" href="$signatures_8h.html#aa00533bd55f5e103786e415b2427bb56" title="showHallOfShame" alt="" coords="437,259,565,285"/>
+<area shape="rect" id="node13" href="$rules_8c.html#ab6ca730042cb162571cb403dfaa5a4e8" title="addFrame" alt="" coords="295,309,375,336"/>
+<area shape="rect" id="node14" href="$signatures_8h.html#a3fc16568c796078d9294f977d0d33a83" title="showRules" alt="" coords="623,348,708,375"/>
+<area shape="rect" id="node15" href="$system_8c.html#a29ac42ee2f47e0797ca27b67f6c548a1" title="printEmptyBox" alt="" coords="281,512,389,539"/>
+<area shape="rect" id="node11" href="$signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="460,157,543,184"/>
+<area shape="rect" id="node16" href="$system_8c.html#af937aa3025f34bbfad7976c0ceb5b6b6" title="animateBox" alt="" coords="456,512,547,539"/>
+</map>

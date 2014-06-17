@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>4-gewinnt: variables.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_klein.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">4-gewinnt
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">Klassiker &quot;4-gewinnt&quot; als Konsolenanwendung</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('variables_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Datenstrukturen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variablen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">variables.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="variables_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***Global variable declaration file***/</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//EXITCODES</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">    3</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a> = 13;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="variables_8h.html#abff55b21027624494b4176cc2c094ac1">    4</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#abff55b21027624494b4176cc2c094ac1">EXITCODE_BUFFERERROR</a> = 17;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="variables_8h.html#ad55f8b6351f0d1cb02648e9a08e9a4ba">    5</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#ad55f8b6351f0d1cb02648e9a08e9a4ba">EXITCODE_WINDOWERROR</a> = 23;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//dummy.c</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a892062288f78601a35f1657d7434a269">testerVariable</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//fancyfont.c</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*for font constants see file*/</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a3d6d579de1e6326d2ea095c4ec3751a3">FANCY_FONT</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//system.c</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="variables_8h.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="variables_8h.html#struct_line_item">LineItem</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="variables_8h.html#a5969bbd296f3dffab898cbe19f06ea49">   13</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a5969bbd296f3dffab898cbe19f06ea49">length</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="variables_8h.html#a8b14489b895b643b5c7e278823cc5910">   14</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a8b14489b895b643b5c7e278823cc5910">byteSize</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="variables_8h.html#a1a9adf6b9d56e489b08ae59280037ecf">   15</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a1a9adf6b9d56e489b08ae59280037ecf">align</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="variables_8h.html#a210d994c23c0a4f644d9c02b9e72c799">   16</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="variables_8h.html#struct_line_item">LineItem</a>* <a class="code" href="variables_8h.html#a210d994c23c0a4f644d9c02b9e72c799">prev</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="variables_8h.html#a0703dc88719f4ae8cfa29d85f0bc638d">   17</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="variables_8h.html#struct_line_item">LineItem</a>* <a class="code" href="variables_8h.html#a0703dc88719f4ae8cfa29d85f0bc638d">next</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="variables_8h.html#a226444bf45071830bb8785537762a3cb">   18</a></span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="variables_8h.html#a226444bf45071830bb8785537762a3cb">text</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="variables_8h.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="variables_8h.html#struct_out_buffer">OutBuffer</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="variables_8h.html#a87ad277d7219959ab239794feaf422d7">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="variables_8h.html#struct_line_item">LineItem</a>* <a class="code" href="variables_8h.html#a87ad277d7219959ab239794feaf422d7">first</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="variables_8h.html#a92a74ebc38d9b7724473549854cf1dc0">   22</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="variables_8h.html#struct_line_item">LineItem</a>* <a class="code" href="variables_8h.html#a92a74ebc38d9b7724473549854cf1dc0">last</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="variables_8h.html#af43d5a922da18db29dc86b5a38543357">   23</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#af43d5a922da18db29dc86b5a38543357">maxTextLength</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="variables_8h.html#aae000e2b702d7d3897bbfef5adb11c29">   24</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#aae000e2b702d7d3897bbfef5adb11c29">lineCount</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="variables_8h.html#a9bf861ad5c68cbe7798302a20b5ac463">   25</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a9bf861ad5c68cbe7798302a20b5ac463">vAlign</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="variables_8h.html#a57f4522e11f4815aef01edfee3de8693">   26</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a57f4522e11f4815aef01edfee3de8693">hAlign</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="variables_8h.html#a3958bd84b7abe55d3e0ccb9fe87985a1">   28</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a3958bd84b7abe55d3e0ccb9fe87985a1">OUTPUT_MAXBUFFER</a> = 4096;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="variables_8h.html#struct_out_buffer">OutBuffer</a> <a class="code" href="variables_8h.html#a720bc75a20372a363078f6d1b1d681e7">display</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="variables_8h.html#a9c7390483d364a0236a6e7d6efc04ad9">   30</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a9c7390483d364a0236a6e7d6efc04ad9">UTF_MULTIPLIER</a> = 8;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> CONSOLE_SCREEN_BUFFER_INFO <a class="code" href="variables_8h.html#a36d01b46e02a7644af5a0a9d2ff2c83a">csbi</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#aa4883d896880fcc572cd390c091bb2ef">consoleBufferWidth</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a2673793ae3c1dd1d549abfaaa2aea1cf">consoleBufferHeight</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//mainMenu.c</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">   35</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="variables_8h.html#a08fe5b81aa0319d6710ea7c7b085509a">   36</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a08fe5b81aa0319d6710ea7c7b085509a">userInput</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//board.c</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">   38</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a> = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="variables_8h.html#a4792e2ce576b6d4c6cb515c94fe00f2d">   39</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a4792e2ce576b6d4c6cb515c94fe00f2d">FIELD_PLAYER1</a> = <span class="charliteral">&#39;X&#39;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="variables_8h.html#a117fddda23a8354b9984f1ecb74e1f6d">   40</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a117fddda23a8354b9984f1ecb74e1f6d">FIELD_PLAYER2</a> = <span class="charliteral">&#39;O&#39;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="variables_8h.html#a248b88c9f52116e548f3e0abea6e82e5">   41</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a248b88c9f52116e548f3e0abea6e82e5">FIELD_OUTOFBOUNDS</a> = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="variables_8h.html">   43</a></span>&#160;<span class="keyword">struct </span><a class="code" href="variables_8h.html#structboard">board</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">   44</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">   45</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">   46</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">numberOfFields</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">   47</a></span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="variables_8h.html#structboard">board</a> <a class="code" href="variables_8h.html#a3369d7d3ba0c47ba3025860fa01a4d9f">myBoard</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//gamefunction.c</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a7e659e3575ffe840707a069b0cd092a9">name1</a>[20];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a3834540f96ed439a0e2737f7f1e4889f">name2</a>[20];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a7756580a40e2ee4b53517f61c0563e57">winner</a>[20];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#aca75fa6c111cfceda644809f51f5e804">looser</a>[20];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="variables_8h.html#structboard">board</a> <a class="code" href="variables_8h.html#a5d6bdedcfbb7ad18258d403c86edc578">gameField</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#aea196deff315454ee34afce595c2b547">gameFieldWidth</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a82fb16ad8639d3689e5ee32459fa4033">gameFieldHeigth</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a195fa809ff68e2649f35e007c64fef15">gameFieldCreated</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a6269b7ebff2639309f19450bb60efa00">playersTurn</a>; <span class="comment">//player1 starts the game</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a1ea724989282f1233e7354b2e74b914d">coinPosition</a>; <span class="comment">//where the coin is actually placed</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a27ada2c20a63c8773edf6c83da01c565">playersCoin</a>; <span class="comment">//contains X or O</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#abce9f5dc9c83f2639b72024fdee5d388">end</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//HallOfShame.c</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="variables_8h.html#a697e4a08a8ddbbfd959e867fc2ab7ac2">   66</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span>  <a class="code" href="variables_8h.html#a697e4a08a8ddbbfd959e867fc2ab7ac2">HOS_LINES</a> = 10;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="variables_8h.html#aefd07acc2f74bd35c37a9479c7dd515b">   67</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span>  <a class="code" href="variables_8h.html#aefd07acc2f74bd35c37a9479c7dd515b">NO_HIGHLIGHT</a> = -1;</div>
+<div class="ttc" id="variables_8h_html_a3d6d579de1e6326d2ea095c4ec3751a3"><div class="ttname"><a href="variables_8h.html#a3d6d579de1e6326d2ea095c4ec3751a3">FANCY_FONT</a></div><div class="ttdeci">int FANCY_FONT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00003">fancyfont.c:3</a></div></div>
+<div class="ttc" id="variables_8h_html_a1ea724989282f1233e7354b2e74b914d"><div class="ttname"><a href="variables_8h.html#a1ea724989282f1233e7354b2e74b914d">coinPosition</a></div><div class="ttdeci">int coinPosition</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00015">gamefunction.c:15</a></div></div>
+<div class="ttc" id="variables_8h_html_a9bf861ad5c68cbe7798302a20b5ac463"><div class="ttname"><a href="variables_8h.html#a9bf861ad5c68cbe7798302a20b5ac463">OutBuffer::vAlign</a></div><div class="ttdeci">int vAlign</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00025">variables.h:25</a></div></div>
+<div class="ttc" id="variables_8h_html_a8b14489b895b643b5c7e278823cc5910"><div class="ttname"><a href="variables_8h.html#a8b14489b895b643b5c7e278823cc5910">LineItem::byteSize</a></div><div class="ttdeci">int byteSize</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00014">variables.h:14</a></div></div>
+<div class="ttc" id="variables_8h_html_a195fa809ff68e2649f35e007c64fef15"><div class="ttname"><a href="variables_8h.html#a195fa809ff68e2649f35e007c64fef15">gameFieldCreated</a></div><div class="ttdeci">int gameFieldCreated</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00014">gamefunction.c:14</a></div></div>
+<div class="ttc" id="variables_8h_html_aa4883d896880fcc572cd390c091bb2ef"><div class="ttname"><a href="variables_8h.html#aa4883d896880fcc572cd390c091bb2ef">consoleBufferWidth</a></div><div class="ttdeci">int consoleBufferWidth</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00008">system.c:8</a></div></div>
+<div class="ttc" id="variables_8h_html_a720bc75a20372a363078f6d1b1d681e7"><div class="ttname"><a href="variables_8h.html#a720bc75a20372a363078f6d1b1d681e7">display</a></div><div class="ttdeci">struct OutBuffer display</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00006">system.c:6</a></div></div>
+<div class="ttc" id="variables_8h_html_a750943ec425a1b8104d0ed4a6f4073d3"><div class="ttname"><a href="variables_8h.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a></div><div class="ttdeci">int moves</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00019">gamefunction.c:19</a></div></div>
+<div class="ttc" id="variables_8h_html_a117fddda23a8354b9984f1ecb74e1f6d"><div class="ttname"><a href="variables_8h.html#a117fddda23a8354b9984f1ecb74e1f6d">FIELD_PLAYER2</a></div><div class="ttdeci">const char FIELD_PLAYER2</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00040">variables.h:40</a></div></div>
+<div class="ttc" id="variables_8h_html_a4792e2ce576b6d4c6cb515c94fe00f2d"><div class="ttname"><a href="variables_8h.html#a4792e2ce576b6d4c6cb515c94fe00f2d">FIELD_PLAYER1</a></div><div class="ttdeci">const char FIELD_PLAYER1</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00039">variables.h:39</a></div></div>
+<div class="ttc" id="variables_8h_html_a226444bf45071830bb8785537762a3cb"><div class="ttname"><a href="variables_8h.html#a226444bf45071830bb8785537762a3cb">LineItem::text</a></div><div class="ttdeci">char * text</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00018">variables.h:18</a></div></div>
+<div class="ttc" id="variables_8h_html_a210d994c23c0a4f644d9c02b9e72c799"><div class="ttname"><a href="variables_8h.html#a210d994c23c0a4f644d9c02b9e72c799">LineItem::prev</a></div><div class="ttdeci">struct LineItem * prev</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00016">variables.h:16</a></div></div>
+<div class="ttc" id="variables_8h_html_a92a74ebc38d9b7724473549854cf1dc0"><div class="ttname"><a href="variables_8h.html#a92a74ebc38d9b7724473549854cf1dc0">OutBuffer::last</a></div><div class="ttdeci">struct LineItem * last</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00022">variables.h:22</a></div></div>
+<div class="ttc" id="variables_8h_html_af385d79b2bb630ca5da634589b33c747"><div class="ttname"><a href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a></div><div class="ttdeci">const int EXITCODE_OUTOFMEMORY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00003">variables.h:3</a></div></div>
+<div class="ttc" id="variables_8h_html_a87ad277d7219959ab239794feaf422d7"><div class="ttname"><a href="variables_8h.html#a87ad277d7219959ab239794feaf422d7">OutBuffer::first</a></div><div class="ttdeci">struct LineItem * first</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00021">variables.h:21</a></div></div>
+<div class="ttc" id="variables_8h_html_a82fb16ad8639d3689e5ee32459fa4033"><div class="ttname"><a href="variables_8h.html#a82fb16ad8639d3689e5ee32459fa4033">gameFieldHeigth</a></div><div class="ttdeci">int gameFieldHeigth</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00013">gamefunction.c:13</a></div></div>
+<div class="ttc" id="variables_8h_html_a2673793ae3c1dd1d549abfaaa2aea1cf"><div class="ttname"><a href="variables_8h.html#a2673793ae3c1dd1d549abfaaa2aea1cf">consoleBufferHeight</a></div><div class="ttdeci">int consoleBufferHeight</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00009">system.c:9</a></div></div>
+<div class="ttc" id="variables_8h_html_ac49132b4d65e44d24adeb38c80e3ef8e"><div class="ttname"><a href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a></div><div class="ttdeci">const char FIELD_EMPTY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00038">variables.h:38</a></div></div>
+<div class="ttc" id="variables_8h_html_adc7cd5d0cf80217e1af088aeae171ac1"><div class="ttname"><a href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">board::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00045">variables.h:45</a></div></div>
+<div class="ttc" id="variables_8h_html_a7756580a40e2ee4b53517f61c0563e57"><div class="ttname"><a href="variables_8h.html#a7756580a40e2ee4b53517f61c0563e57">winner</a></div><div class="ttdeci">char winner[20]</div></div>
+<div class="ttc" id="variables_8h_html_aca75fa6c111cfceda644809f51f5e804"><div class="ttname"><a href="variables_8h.html#aca75fa6c111cfceda644809f51f5e804">looser</a></div><div class="ttdeci">char looser[20]</div></div>
+<div class="ttc" id="variables_8h_html_struct_out_buffer"><div class="ttname"><a href="variables_8h.html#struct_out_buffer">OutBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00020">variables.h:20</a></div></div>
+<div class="ttc" id="variables_8h_html_a6269b7ebff2639309f19450bb60efa00"><div class="ttname"><a href="variables_8h.html#a6269b7ebff2639309f19450bb60efa00">playersTurn</a></div><div class="ttdeci">int playersTurn</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00016">gamefunction.c:16</a></div></div>
+<div class="ttc" id="variables_8h_html_a3369d7d3ba0c47ba3025860fa01a4d9f"><div class="ttname"><a href="variables_8h.html#a3369d7d3ba0c47ba3025860fa01a4d9f">myBoard</a></div><div class="ttdeci">struct board myBoard</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00005">board.c:5</a></div></div>
+<div class="ttc" id="variables_8h_html_abff55b21027624494b4176cc2c094ac1"><div class="ttname"><a href="variables_8h.html#abff55b21027624494b4176cc2c094ac1">EXITCODE_BUFFERERROR</a></div><div class="ttdeci">const int EXITCODE_BUFFERERROR</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00004">variables.h:4</a></div></div>
+<div class="ttc" id="variables_8h_html_a36d01b46e02a7644af5a0a9d2ff2c83a"><div class="ttname"><a href="variables_8h.html#a36d01b46e02a7644af5a0a9d2ff2c83a">csbi</a></div><div class="ttdeci">CONSOLE_SCREEN_BUFFER_INFO csbi</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00007">system.c:7</a></div></div>
+<div class="ttc" id="variables_8h_html_acbd532e74dde0e17908138cf3abe7ae9"><div class="ttname"><a href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">board::numberOfFields</a></div><div class="ttdeci">unsigned int numberOfFields</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00046">variables.h:46</a></div></div>
+<div class="ttc" id="variables_8h_html_a5969bbd296f3dffab898cbe19f06ea49"><div class="ttname"><a href="variables_8h.html#a5969bbd296f3dffab898cbe19f06ea49">LineItem::length</a></div><div class="ttdeci">int length</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00013">variables.h:13</a></div></div>
+<div class="ttc" id="variables_8h_html_a248b88c9f52116e548f3e0abea6e82e5"><div class="ttname"><a href="variables_8h.html#a248b88c9f52116e548f3e0abea6e82e5">FIELD_OUTOFBOUNDS</a></div><div class="ttdeci">const char FIELD_OUTOFBOUNDS</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00041">variables.h:41</a></div></div>
+<div class="ttc" id="variables_8h_html_structboard"><div class="ttname"><a href="variables_8h.html#structboard">board</a></div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00043">variables.h:43</a></div></div>
+<div class="ttc" id="variables_8h_html_a0703dc88719f4ae8cfa29d85f0bc638d"><div class="ttname"><a href="variables_8h.html#a0703dc88719f4ae8cfa29d85f0bc638d">LineItem::next</a></div><div class="ttdeci">struct LineItem * next</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00017">variables.h:17</a></div></div>
+<div class="ttc" id="variables_8h_html_a8db35bac6311b6ba0e49b67bad57ddae"><div class="ttname"><a href="variables_8h.html#a8db35bac6311b6ba0e49b67bad57ddae">con</a></div><div class="ttdeci">int con</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00035">variables.h:35</a></div></div>
+<div class="ttc" id="variables_8h_html_aec09ce7d9b2ef743e51ace3e41148eff"><div class="ttname"><a href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">board::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00044">variables.h:44</a></div></div>
+<div class="ttc" id="variables_8h_html_af43d5a922da18db29dc86b5a38543357"><div class="ttname"><a href="variables_8h.html#af43d5a922da18db29dc86b5a38543357">OutBuffer::maxTextLength</a></div><div class="ttdeci">int maxTextLength</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00023">variables.h:23</a></div></div>
+<div class="ttc" id="variables_8h_html_aea196deff315454ee34afce595c2b547"><div class="ttname"><a href="variables_8h.html#aea196deff315454ee34afce595c2b547">gameFieldWidth</a></div><div class="ttdeci">int gameFieldWidth</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00012">gamefunction.c:12</a></div></div>
+<div class="ttc" id="variables_8h_html_a3958bd84b7abe55d3e0ccb9fe87985a1"><div class="ttname"><a href="variables_8h.html#a3958bd84b7abe55d3e0ccb9fe87985a1">OUTPUT_MAXBUFFER</a></div><div class="ttdeci">const int OUTPUT_MAXBUFFER</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00028">variables.h:28</a></div></div>
+<div class="ttc" id="variables_8h_html_a697e4a08a8ddbbfd959e867fc2ab7ac2"><div class="ttname"><a href="variables_8h.html#a697e4a08a8ddbbfd959e867fc2ab7ac2">HOS_LINES</a></div><div class="ttdeci">const int HOS_LINES</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00066">variables.h:66</a></div></div>
+<div class="ttc" id="variables_8h_html_a57f4522e11f4815aef01edfee3de8693"><div class="ttname"><a href="variables_8h.html#a57f4522e11f4815aef01edfee3de8693">OutBuffer::hAlign</a></div><div class="ttdeci">int hAlign</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00026">variables.h:26</a></div></div>
+<div class="ttc" id="variables_8h_html_struct_line_item"><div class="ttname"><a href="variables_8h.html#struct_line_item">LineItem</a></div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00012">variables.h:12</a></div></div>
+<div class="ttc" id="variables_8h_html_abce9f5dc9c83f2639b72024fdee5d388"><div class="ttname"><a href="variables_8h.html#abce9f5dc9c83f2639b72024fdee5d388">end</a></div><div class="ttdeci">int end</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00020">gamefunction.c:20</a></div></div>
+<div class="ttc" id="variables_8h_html_a892062288f78601a35f1657d7434a269"><div class="ttname"><a href="variables_8h.html#a892062288f78601a35f1657d7434a269">testerVariable</a></div><div class="ttdeci">int testerVariable</div><div class="ttdef"><b>Definition:</b> <a href="dummy_8c_source.html#l00003">dummy.c:3</a></div></div>
+<div class="ttc" id="variables_8h_html_a832d2b06af80b3937fb5b9bbd451a089"><div class="ttname"><a href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">board::content</a></div><div class="ttdeci">char * content</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00047">variables.h:47</a></div></div>
+<div class="ttc" id="variables_8h_html_a9c7390483d364a0236a6e7d6efc04ad9"><div class="ttname"><a href="variables_8h.html#a9c7390483d364a0236a6e7d6efc04ad9">UTF_MULTIPLIER</a></div><div class="ttdeci">const int UTF_MULTIPLIER</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00030">variables.h:30</a></div></div>
+<div class="ttc" id="variables_8h_html_a5d6bdedcfbb7ad18258d403c86edc578"><div class="ttname"><a href="variables_8h.html#a5d6bdedcfbb7ad18258d403c86edc578">gameField</a></div><div class="ttdeci">struct board gameField</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00011">gamefunction.c:11</a></div></div>
+<div class="ttc" id="variables_8h_html_aae000e2b702d7d3897bbfef5adb11c29"><div class="ttname"><a href="variables_8h.html#aae000e2b702d7d3897bbfef5adb11c29">OutBuffer::lineCount</a></div><div class="ttdeci">int lineCount</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00024">variables.h:24</a></div></div>
+<div class="ttc" id="variables_8h_html_a27ada2c20a63c8773edf6c83da01c565"><div class="ttname"><a href="variables_8h.html#a27ada2c20a63c8773edf6c83da01c565">playersCoin</a></div><div class="ttdeci">char playersCoin</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00017">gamefunction.c:17</a></div></div>
+<div class="ttc" id="variables_8h_html_ad55f8b6351f0d1cb02648e9a08e9a4ba"><div class="ttname"><a href="variables_8h.html#ad55f8b6351f0d1cb02648e9a08e9a4ba">EXITCODE_WINDOWERROR</a></div><div class="ttdeci">const int EXITCODE_WINDOWERROR</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00005">variables.h:5</a></div></div>
+<div class="ttc" id="variables_8h_html_a1a9adf6b9d56e489b08ae59280037ecf"><div class="ttname"><a href="variables_8h.html#a1a9adf6b9d56e489b08ae59280037ecf">LineItem::align</a></div><div class="ttdeci">int align</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00015">variables.h:15</a></div></div>
+<div class="ttc" id="variables_8h_html_a7e659e3575ffe840707a069b0cd092a9"><div class="ttname"><a href="variables_8h.html#a7e659e3575ffe840707a069b0cd092a9">name1</a></div><div class="ttdeci">char name1[20]</div></div>
+<div class="ttc" id="variables_8h_html_aefd07acc2f74bd35c37a9479c7dd515b"><div class="ttname"><a href="variables_8h.html#aefd07acc2f74bd35c37a9479c7dd515b">NO_HIGHLIGHT</a></div><div class="ttdeci">const int NO_HIGHLIGHT</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00067">variables.h:67</a></div></div>
+<div class="ttc" id="variables_8h_html_a08fe5b81aa0319d6710ea7c7b085509a"><div class="ttname"><a href="variables_8h.html#a08fe5b81aa0319d6710ea7c7b085509a">userInput</a></div><div class="ttdeci">unsigned char userInput</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00036">variables.h:36</a></div></div>
+<div class="ttc" id="variables_8h_html_a3834540f96ed439a0e2737f7f1e4889f"><div class="ttname"><a href="variables_8h.html#a3834540f96ed439a0e2737f7f1e4889f">name2</a></div><div class="ttdeci">char name2[20]</div></div>
+<div class="ttc" id="variables_8h_html_accb7cc35835fb3e126f4e4cb5f9d0450"><div class="ttname"><a href="variables_8h.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a></div><div class="ttdeci">char victor</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00018">gamefunction.c:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6fb10fd182f1a6c12d521696c581f662.html">4-gewinnt</a></li><li class="navelem"><a class="el" href="variables_8h.html">variables.h</a></li>
+    <li class="footer">DHBW-MA - TINF13AIBC - Projektmanagement - Team 1337 (Stand: 17.06.2014) </li>
+  </ul>
+</div>
+</body>
+</html>

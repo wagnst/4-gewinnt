@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>4-gewinnt: hallofshame.c-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_klein.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">4-gewinnt
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">Klassiker &quot;4-gewinnt&quot; als Konsolenanwendung</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('hallofshame_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Datenstrukturen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variablen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">hallofshame.c-Dateireferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include-Abhängigkeitsdiagramm für hallofshame.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c__incl.png" border="0" usemap="#hallofshame_8c" alt=""/></div>
+<map name="hallofshame_8c" id="hallofshame_8c">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c__dep__incl.png" border="0" usemap="#hallofshame_8cdep" alt=""/></div>
+<map name="hallofshame_8cdep" id="hallofshame_8cdep">
+<area shape="rect" id="node2" href="main_8c.html" title="main.c" alt="" coords="26,80,87,107"/></map>
+</div>
+</div>
+<p><a href="hallofshame_8c_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:aa00533bd55f5e103786e415b2427bb56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hallofshame_8c.html#aa00533bd55f5e103786e415b2427bb56">showHallOfShame</a> (int highlight, int startFrom)</td></tr>
+<tr class="separator:aa00533bd55f5e103786e415b2427bb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3a48687a8f8f59fc007b0e40db1ab3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hallofshame_8c.html#aed3a48687a8f8f59fc007b0e40db1ab3">updateSaveHoS</a> (char *<a class="el" href="variables_8h.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a>, char *victim, int <a class="el" href="variables_8h.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a>)</td></tr>
+<tr class="separator:aed3a48687a8f8f59fc007b0e40db1ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0e4e7abd07e8aa82d0edcefb415142"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hallofshame_8c.html#a4b0e4e7abd07e8aa82d0edcefb415142">extractMoves</a> (char *line)</td></tr>
+<tr class="separator:a4b0e4e7abd07e8aa82d0edcefb415142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a8975b6852b8b59d8f8667f36ecba0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hallofshame_8c.html#a93a8975b6852b8b59d8f8667f36ecba0">getOldFileLength</a> ()</td></tr>
+<tr class="separator:a93a8975b6852b8b59d8f8667f36ecba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a class="anchor" id="a4b0e4e7abd07e8aa82d0edcefb415142"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int extractMoves </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function extracts the number of moves of the parameter line. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>Pointer to char array (string). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>moves Just the moves as an int. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="hallofshame_8c_source.html#l00160">160</a> der Datei <a class="el" href="hallofshame_8c_source.html">hallofshame.c</a>.</p>
+
+<p>Benutzt <a class="el" href="gamefunction_8c_source.html#l00019">moves</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="hallofshame_8c_source.html#l00101">updateSaveHoS()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                            {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">char</span> work[60];</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    strcpy(work,line);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a> =0;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">char</span> *partOfLine;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    partOfLine = strtok(work, <span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">int</span> i =0 ;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">while</span>(partOfLine != NULL) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">switch</span> (i%3) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            moves = atoi(partOfLine);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        partOfLine = strtok(NULL, <span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        i++;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="ttc" id="gamefunction_8c_html_a750943ec425a1b8104d0ed4a6f4073d3"><div class="ttname"><a href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a></div><div class="ttdeci">int moves</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00019">gamefunction.c:19</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c_a4b0e4e7abd07e8aa82d0edcefb415142_icgraph.png" border="0" usemap="#hallofshame_8c_a4b0e4e7abd07e8aa82d0edcefb415142_icgraph" alt=""/></div>
+<map name="hallofshame_8c_a4b0e4e7abd07e8aa82d0edcefb415142_icgraph" id="hallofshame_8c_a4b0e4e7abd07e8aa82d0edcefb415142_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#aed3a48687a8f8f59fc007b0e40db1ab3" title="updateSaveHoS" alt="" coords="152,56,267,83"/><area shape="rect" id="node3" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="315,56,419,83"/><area shape="rect" id="node4" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="467,56,628,83"/><area shape="rect" id="node5" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="676,56,759,83"/><area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="836,5,887,32"/><area shape="rect" id="node7" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="807,56,916,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a93a8975b6852b8b59d8f8667f36ecba0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getOldFileLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Determine the length of the current HallOfShame.dat file. </p><dl class="section return"><dt>Rückgabe</dt><dd>len Just the length of the HoS as an int. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="hallofshame_8c_source.html#l00185">185</a> der Datei <a class="el" href="hallofshame_8c_source.html">hallofshame.c</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="hallofshame_8c_source.html#l00101">updateSaveHoS()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    FILE *f = fopen(<span class="stringliteral">&quot;HallOfShame.dat&quot;</span>, <span class="stringliteral">&quot;rb&quot;</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (f == NULL || ferror(f))</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span> (f)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            fclose(f);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    fseek(f, 0, SEEK_END);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">int</span> len = ftell(f);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    fclose(f);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">return</span> len;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c_a93a8975b6852b8b59d8f8667f36ecba0_icgraph.png" border="0" usemap="#hallofshame_8c_a93a8975b6852b8b59d8f8667f36ecba0_icgraph" alt=""/></div>
+<map name="hallofshame_8c_a93a8975b6852b8b59d8f8667f36ecba0_icgraph" id="hallofshame_8c_a93a8975b6852b8b59d8f8667f36ecba0_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#aed3a48687a8f8f59fc007b0e40db1ab3" title="updateSaveHoS" alt="" coords="173,56,288,83"/><area shape="rect" id="node3" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="336,56,440,83"/><area shape="rect" id="node4" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="488,56,649,83"/><area shape="rect" id="node5" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="697,56,780,83"/><area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="857,5,908,32"/><area shape="rect" id="node7" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="828,56,937,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa00533bd55f5e103786e415b2427bb56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showHallOfShame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>highlight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startFrom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function prints a certain number (c.f. HOS_LINES) of lines of the HallOfShame.dat to the console. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">highlight</td><td>Highlight a special line with "-&gt; " </td></tr>
+    <tr><td class="paramname">startFrom</td><td>The output is reduced to a constant number of lines (c.f. <a class="el" href="variables_8h.html">variables.h</a> HOS_LINES). The parameter controls which lines actually are printed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="hallofshame_8c_source.html#l00013">13</a> der Datei <a class="el" href="hallofshame_8c_source.html">hallofshame.c</a>.</p>
+
+<p>Benutzt <a class="el" href="system_8c_source.html#l00188">flushBuffer()</a>, <a class="el" href="variables_8h_source.html#l00066">HOS_LINES</a>, <a class="el" href="gamefunction_8c_source.html#l00019">moves</a>, <a class="el" href="system_8c_source.html#l00144">output()</a>, <a class="el" href="system_8c_source.html#l00344">setLineAlign()</a>, <a class="el" href="system_8c_source.html#l00319">startBuffer()</a>, <a class="el" href="variables_8h_source.html#l00036">userInput</a> und <a class="el" href="gamefunction_8c_source.html#l00018">victor</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00028">gameFunction()</a> und <a class="el" href="main_menu_8c_source.html#l00115">mainMenuReactToEnter()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                 {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> viewHoS = 1;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// correct the argument if necessary</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    startFrom = startFrom &gt; 0 ? startFrom : 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">while</span>(viewHoS){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="comment">//decalartions</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa">startBuffer</a>(64);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        FILE *fh;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">char</span> <a class="code" href="gamefunction_8c.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a>[20];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">char</span> victim[20];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">char</span> <a class="code" href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a>[4];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">//counting the lines</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">int</span> lineCounter = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">//open file in read mode</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">//or leave loop</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        fh = fopen(<span class="stringliteral">&quot;HallOfShame.dat&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (fh == NULL || ferror(fh)){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (fh){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                fclose(fh);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7">setLineAlign</a>(0);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;[ HALL OF SHAME ]\n\nWelcome to our Hall of Shame...\n&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7">setLineAlign</a>(-1);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// notice if HoS is empty</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">int</span> somethingPrinted =0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">while</span>((fscanf(fh,<span class="stringliteral">&quot;%19[^,],%19[^,],%2[^,^\n]&quot;</span>,victor,victim,moves)) != EOF ) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">while</span> (victor[0] == <span class="charliteral">&#39;\n&#39;</span>){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                memmove(victor, victor+1, strlen(victor));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span>(lineCounter&gt;=startFrom &amp;&amp; lineCounter&lt;=startFrom+<a class="code" href="variables_8h.html#a697e4a08a8ddbbfd959e867fc2ab7ac2">HOS_LINES</a> &amp;&amp; strlen(victor)&gt;0 &amp;&amp; strlen(victim)&gt;0){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">if</span>(highlight==lineCounter){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;--&gt;%d. %s busted %s with %s moves\n&quot;</span>,lineCounter+1,victor,victim,moves);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                somethingPrinted =1;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot; %d.   %s busted %s with %s moves\n&quot;</span>,lineCounter+1,victor,victim,moves);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                somethingPrinted =1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            lineCounter++;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        fclose(fh);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span>(somethingPrinted == 0){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;   No entries.&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7">setLineAlign</a>(0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;[...Press up/down for scrolling...]\n&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;[...Press  Enter/Escape to exit...]\n&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db">flushBuffer</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        fflush(stdin);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">char</span> <a class="code" href="variables_8h.html#a08fe5b81aa0319d6710ea7c7b085509a">userInput</a> = getch();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">switch</span>(userInput) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">case</span> 72:    <span class="comment">// key up</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    startFrom = startFrom-1 &gt; 0 ? startFrom-1 : 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">case</span> 80:    <span class="comment">// key down</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    startFrom = startFrom+1 &lt; lineCounter-<a class="code" href="variables_8h.html#a697e4a08a8ddbbfd959e867fc2ab7ac2">HOS_LINES</a> ? startFrom+1 : startFrom;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">case</span> 13: <span class="comment">// key enter</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    viewHoS=0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">case</span> 27: <span class="comment">//escape</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    viewHoS =0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">//default:</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">//  viewHoS=0;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        fflush(stdin);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="ttc" id="signatures_8h_html_a09ed5dcaae860a161fb8b760e6fd59f7"><div class="ttname"><a href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7">setLineAlign</a></div><div class="ttdeci">void setLineAlign(int align)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00344">system.c:344</a></div></div>
+<div class="ttc" id="signatures_8h_html_aa4be9e04bfc0423517ed15c1fc6f63db"><div class="ttname"><a href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db">flushBuffer</a></div><div class="ttdeci">void flushBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00188">system.c:188</a></div></div>
+<div class="ttc" id="signatures_8h_html_a7025362e49b3e0b8417d036ae412f1fa"><div class="ttname"><a href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa">startBuffer</a></div><div class="ttdeci">void startBuffer(int maxTextLength)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00319">system.c:319</a></div></div>
+<div class="ttc" id="variables_8h_html_a697e4a08a8ddbbfd959e867fc2ab7ac2"><div class="ttname"><a href="variables_8h.html#a697e4a08a8ddbbfd959e867fc2ab7ac2">HOS_LINES</a></div><div class="ttdeci">const int HOS_LINES</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00066">variables.h:66</a></div></div>
+<div class="ttc" id="gamefunction_8c_html_accb7cc35835fb3e126f4e4cb5f9d0450"><div class="ttname"><a href="gamefunction_8c.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a></div><div class="ttdeci">char victor</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00018">gamefunction.c:18</a></div></div>
+<div class="ttc" id="gamefunction_8c_html_a750943ec425a1b8104d0ed4a6f4073d3"><div class="ttname"><a href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a></div><div class="ttdeci">int moves</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00019">gamefunction.c:19</a></div></div>
+<div class="ttc" id="variables_8h_html_a08fe5b81aa0319d6710ea7c7b085509a"><div class="ttname"><a href="variables_8h.html#a08fe5b81aa0319d6710ea7c7b085509a">userInput</a></div><div class="ttdeci">unsigned char userInput</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00036">variables.h:36</a></div></div>
+<div class="ttc" id="signatures_8h_html_a341a00a4a37b74dfa8e7e550c1fd1c2c"><div class="ttname"><a href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a></div><div class="ttdeci">int output(const char *input,...)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00144">system.c:144</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_cgraph.png" border="0" usemap="#hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_cgraph" alt=""/></div>
+<map name="hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_cgraph" id="hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_cgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="187,111,269,138"/><area shape="rect" id="node8" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="199,289,257,315"/><area shape="rect" id="node11" href="signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7" title="setLineAlign" alt="" coords="181,238,275,265"/><area shape="rect" id="node12" href="signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="187,187,269,214"/><area shape="rect" id="node3" href="system_8c.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="338,137,435,163"/><area shape="rect" id="node4" href="system_8c.html#a74024376169c8c9123f7ec39e1b0fa5e" title="printfBanner" alt="" coords="341,35,432,62"/><area shape="rect" id="node5" href="system_8c.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="499,10,595,37"/><area shape="rect" id="node6" href="system_8c.html#abad66b8a8320fa60768a3433e2508029" title="deleteLineItem" alt="" coords="333,187,440,214"/><area shape="rect" id="node7" href="system_8c.html#a2374233b8cd8185e753ba171f3229169" title="initBuffer" alt="" coords="351,86,423,113"/><area shape="rect" id="node9" href="system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="348,289,425,315"/><area shape="rect" id="node10" href="system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="323,238,451,265"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_icgraph.png" border="0" usemap="#hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_icgraph" alt=""/></div>
+<map name="hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_icgraph" id="hallofshame_8c_aa00533bd55f5e103786e415b2427bb56_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="181,31,285,57"/><area shape="rect" id="node3" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="333,56,495,83"/><area shape="rect" id="node4" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="543,56,625,83"/><area shape="rect" id="node5" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="703,5,753,32"/><area shape="rect" id="node6" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="673,56,783,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aed3a48687a8f8f59fc007b0e40db1ab3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int updateSaveHoS </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>victor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>victim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This functions uses the 3 parameters to update and save the Hall of Shame. The 3 parameters will be interpreted as a line which has to be inserted to the HallOfShame.dat document. A kind of Insertion Sort is used to put the line on the right place. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">victor</td><td>Name of player who won the game. </td></tr>
+    <tr><td class="paramname">vicitim</td><td>Name of player who lost. </td></tr>
+    <tr><td class="paramname">moves</td><td>Number of steps after the game has finished. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>The line number of the inserted one. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="hallofshame_8c_source.html#l00101">101</a> der Datei <a class="el" href="hallofshame_8c_source.html">hallofshame.c</a>.</p>
+
+<p>Benutzt <a class="el" href="variables_8h_source.html#l00003">EXITCODE_OUTOFMEMORY</a>, <a class="el" href="hallofshame_8c_source.html#l00160">extractMoves()</a> und <a class="el" href="hallofshame_8c_source.html#l00185">getOldFileLength()</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00028">gameFunction()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                      {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">char</span> line[60];</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    FILE *fh;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">char</span>* buffer = malloc((<a class="code" href="hallofshame_8c.html#a93a8975b6852b8b59d8f8667f36ecba0">getOldFileLength</a>()+strlen(<a class="code" href="gamefunction_8c.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a>)+strlen(victim))*<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>)+3);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> insertedLineNumber = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span>(buffer == NULL){</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        exit(<a class="code" href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    buffer[0]=<span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">int</span> inserted =0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    fh = fopen(<span class="stringliteral">&quot;HallOfShame.dat&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// while End-Of-File not reached line per line</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">while</span>((fscanf(fh,<span class="stringliteral">&quot;%59[^\n]\n&quot;</span>,line)) != EOF ) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">int</span> currentMoves = <a class="code" href="hallofshame_8c.html#a4b0e4e7abd07e8aa82d0edcefb415142">extractMoves</a>(line);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// compare both</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span>(currentMoves &lt;= <a class="code" href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a>){</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            strcat(line,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            strcat (buffer,line);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            insertedLineNumber++;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span>(inserted==0){</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordtype">char</span> insertLine[120];</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                sprintf(insertLine,<span class="stringliteral">&quot;%s,%s,%d\n%s\n&quot;</span>,<a class="code" href="gamefunction_8c.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a>,victim,<a class="code" href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a>,line);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                strcat (buffer,insertLine);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                inserted = 1;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                strcat(line,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                strcat (buffer,line);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">char</span> lastLine[60];</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// this is the case when the new lines goes at the end</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span>(inserted ==0){</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        sprintf(lastLine,<span class="stringliteral">&quot;%s,%s,%d\n&quot;</span>,<a class="code" href="gamefunction_8c.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a>,victim,<a class="code" href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        strcat(buffer,lastLine);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">//close the current file mode just for reading</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    fclose(fh);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">//open file again in new mode, dat will be blank at the opening moment</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">//so everything will be overwritten</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    fh = fopen(<span class="stringliteral">&quot;HallOfShame.dat&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    fprintf(fh,buffer);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    fclose(fh);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">//do not forget to free your allocated memory</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    free(buffer);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> insertedLineNumber;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="ttc" id="variables_8h_html_af385d79b2bb630ca5da634589b33c747"><div class="ttname"><a href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a></div><div class="ttdeci">const int EXITCODE_OUTOFMEMORY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00003">variables.h:3</a></div></div>
+<div class="ttc" id="hallofshame_8c_html_a93a8975b6852b8b59d8f8667f36ecba0"><div class="ttname"><a href="hallofshame_8c.html#a93a8975b6852b8b59d8f8667f36ecba0">getOldFileLength</a></div><div class="ttdeci">int getOldFileLength()</div><div class="ttdef"><b>Definition:</b> <a href="hallofshame_8c_source.html#l00185">hallofshame.c:185</a></div></div>
+<div class="ttc" id="hallofshame_8c_html_a4b0e4e7abd07e8aa82d0edcefb415142"><div class="ttname"><a href="hallofshame_8c.html#a4b0e4e7abd07e8aa82d0edcefb415142">extractMoves</a></div><div class="ttdeci">int extractMoves(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="hallofshame_8c_source.html#l00160">hallofshame.c:160</a></div></div>
+<div class="ttc" id="gamefunction_8c_html_accb7cc35835fb3e126f4e4cb5f9d0450"><div class="ttname"><a href="gamefunction_8c.html#accb7cc35835fb3e126f4e4cb5f9d0450">victor</a></div><div class="ttdeci">char victor</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00018">gamefunction.c:18</a></div></div>
+<div class="ttc" id="gamefunction_8c_html_a750943ec425a1b8104d0ed4a6f4073d3"><div class="ttname"><a href="gamefunction_8c.html#a750943ec425a1b8104d0ed4a6f4073d3">moves</a></div><div class="ttdeci">int moves</div><div class="ttdef"><b>Definition:</b> <a href="gamefunction_8c_source.html#l00019">gamefunction.c:19</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_cgraph.png" border="0" usemap="#hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_cgraph" alt=""/></div>
+<map name="hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_cgraph" id="hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_cgraph">
+<area shape="rect" id="node2" href="hallofshame_8c.html#a4b0e4e7abd07e8aa82d0edcefb415142" title="extractMoves" alt="" coords="179,5,277,32"/><area shape="rect" id="node3" href="hallofshame_8c.html#a93a8975b6852b8b59d8f8667f36ecba0" title="getOldFileLength" alt="" coords="168,56,288,83"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_icgraph.png" border="0" usemap="#hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_icgraph" alt=""/></div>
+<map name="hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_icgraph" id="hallofshame_8c_aed3a48687a8f8f59fc007b0e40db1ab3_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="168,56,272,83"/><area shape="rect" id="node3" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="320,56,481,83"/><area shape="rect" id="node4" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="529,56,612,83"/><area shape="rect" id="node5" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="689,5,740,32"/><area shape="rect" id="node6" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="660,56,769,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6fb10fd182f1a6c12d521696c581f662.html">4-gewinnt</a></li><li class="navelem"><a class="el" href="hallofshame_8c.html">hallofshame.c</a></li>
+    <li class="footer">DHBW-MA - TINF13AIBC - Projektmanagement - Team 1337 (Stand: 17.06.2014) </li>
+  </ul>
+</div>
+</body>
+</html>

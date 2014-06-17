@@ -1,0 +1,8 @@
+<map id="printEmptyBox" name="printEmptyBox">
+<area shape="rect" id="node2" href="$system_8c.html#af937aa3025f34bbfad7976c0ceb5b6b6" title="animateBox" alt="" coords="161,5,252,32"/>
+<area shape="rect" id="node3" href="$signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="651,5,733,32"/>
+<area shape="rect" id="node6" href="$signatures_8h.html#ac0a40af75d169dc19259d9c8426dbecd" title="showCredits" alt="" coords="300,31,393,57"/>
+<area shape="rect" id="node4" href="$main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="781,5,891,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="811,56,861,83"/>
+<area shape="rect" id="node7" href="$signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="441,31,603,57"/>
+</map>

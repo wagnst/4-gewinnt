@@ -1,0 +1,11 @@
+<map id="addFrame" name="addFrame">
+<area shape="rect" id="node2" href="$signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="133,132,216,159"/>
+<area shape="rect" id="node8" href="$signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="145,259,204,285"/>
+<area shape="rect" id="node3" href="$system_8c.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="279,5,377,32"/>
+<area shape="rect" id="node4" href="$system_8c.html#a74024376169c8c9123f7ec39e1b0fa5e" title="printfBanner" alt="" coords="283,56,373,83"/>
+<area shape="rect" id="node5" href="$system_8c.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="440,81,536,108"/>
+<area shape="rect" id="node6" href="$system_8c.html#abad66b8a8320fa60768a3433e2508029" title="deleteLineItem" alt="" coords="275,157,381,184"/>
+<area shape="rect" id="node7" href="$system_8c.html#a2374233b8cd8185e753ba171f3229169" title="initBuffer" alt="" coords="292,208,364,235"/>
+<area shape="rect" id="node9" href="$system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="289,259,367,285"/>
+<area shape="rect" id="node10" href="$system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="264,309,392,336"/>
+</map>

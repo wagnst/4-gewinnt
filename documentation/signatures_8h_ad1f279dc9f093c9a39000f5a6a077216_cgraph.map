@@ -1,0 +1,7 @@
+<map id="throwCoin" name="throwCoin">
+<area shape="rect" id="node2" href="$gamefunction_8c.html#a42025a8656aaf0a1e18e7597ce1ea21c" title="checkForWinner" alt="" coords="132,29,249,56"/>
+<area shape="rect" id="node4" href="$board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="448,80,516,107"/>
+<area shape="rect" id="node6" href="$board_8c.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0" title="setField" alt="" coords="315,131,383,157"/>
+<area shape="rect" id="node3" href="$gamefunction_8c.html#ab00ce6c274e49e96ee206427e2095d5d" title="neighbourRow" alt="" coords="297,29,400,56"/>
+<area shape="rect" id="node5" href="$board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="564,105,687,132"/>
+</map>

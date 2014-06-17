@@ -1,0 +1,8 @@
+<map id="freeBoard" name="freeBoard">
+<area shape="rect" id="node2" href="$signatures_8h.html#a798729dca95209ecdc609807a653a2bf" title="clearAll" alt="" coords="131,56,196,83"/>
+<area shape="rect" id="node3" href="$signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="244,56,348,83"/>
+<area shape="rect" id="node4" href="$signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="396,56,557,83"/>
+<area shape="rect" id="node5" href="$signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="605,56,688,83"/>
+<area shape="rect" id="node6" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="765,5,816,32"/>
+<area shape="rect" id="node7" href="$main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="736,56,845,83"/>
+</map>

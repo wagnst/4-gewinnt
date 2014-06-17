@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>4-gewinnt: board.c Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_klein.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">4-gewinnt
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">Klassiker &quot;4-gewinnt&quot; als Konsolenanwendung</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('board_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Datenstrukturen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variablen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">board.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="board_8c.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//Board-Core: Create board, read&amp;update field, draw board</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="variables_8h.html#a3369d7d3ba0c47ba3025860fa01a4d9f">    5</a></span>&#160;<span class="keyword">struct </span><a class="code" href="variables_8h.html#structboard">board</a> <a class="code" href="board_8c.html#a3369d7d3ba0c47ba3025860fa01a4d9f">myBoard</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="signatures_8h.html#aa832cfb270f47cdcb3afca65656dd964">   15</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="board_8c.html#aa832cfb270f47cdcb3afca65656dd964">newBoard</a>(<span class="keyword">struct</span> <a class="code" href="variables_8h.html#structboard">board</a>* target, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//sanity check</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (width&lt;4 || height&lt;4) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//Initialize board</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a> = <a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> = <a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">numberOfFields</a> = width*<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> = malloc(target-&gt;<a class="code" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">numberOfFields</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) + 1);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//abort if memory allocation failed</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> == NULL) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        exit(<a class="code" href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//board is ready, now clear it</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a">clearBoard</a>(target);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="signatures_8h.html#aaf722a3aee3bf1d85e57eef1a4c4f02a">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a">clearBoard</a>(<span class="keyword">struct</span> <a class="code" href="variables_8h.html#structboard">board</a>* target) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//fills the whole board with space chars</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; target-&gt;<a class="code" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">numberOfFields</a>; i++) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        *((target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a>) + i) = <a class="code" href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//add null terminator which allows direct board content debug output</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    *(target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> + i) = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="signatures_8h.html#a46db977f6db0fd0825f5ef5108c30e9e">   60</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a>(<span class="keyword">struct</span> <a class="code" href="variables_8h.html#structboard">board</a>* target, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> offset = y*(target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>) + x;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> (target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> + offset);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="signatures_8h.html#a6cf24a8fbcadd26575f5d4ef0066e3f3">   72</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3">getField</a>(<span class="keyword">struct</span> <a class="code" href="variables_8h.html#structboard">board</a>* target, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (x&lt;0 || y&lt;0 || x&gt;=target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a> || y&gt;=target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="variables_8h.html#a248b88c9f52116e548f3e0abea6e82e5">FIELD_OUTOFBOUNDS</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a>(target, x, y);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="signatures_8h.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="board_8c.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0">setField</a>(<span class="keyword">struct</span> <a class="code" href="variables_8h.html#structboard">board</a>* target, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> value) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    *<a class="code" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a>(target, x, y) = value;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="signatures_8h.html#af594e2b93fd0ac869b722812724a58ba">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="board_8c.html#af594e2b93fd0ac869b722812724a58ba">freeBoard</a>(<span class="keyword">struct</span> <a class="code" href="variables_8h.html#structboard">board</a>* target) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    free(target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="signatures_8h.html#a8ba56fbeff5fd3e187fdfeb8af94f517">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="board_8c.html#a8ba56fbeff5fd3e187fdfeb8af94f517">drawBoard</a>(<span class="keyword">struct</span> <a class="code" href="variables_8h.html#structboard">board</a>* target) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">//calculate dimensions of output and reserve memory</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">char</span>* canvas;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//4 chars wide per field plus ending bar and newline</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">int</span> charsWidth  = target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>*4 + 2;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//4 chars wide per field plus stand</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">int</span> charsHeight = target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>*2 + 3;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//multiply by 6 for full UTF-8 eventualities plus 1 for string terminator \0</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">int</span> totalSize = charsWidth*charsHeight*6 + 1;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    canvas = malloc(totalSize * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (canvas==NULL) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        exit(<a class="code" href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">//writing-to-canvas setup</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    canvas[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">int</span> fieldX;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> fieldY;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">//loop over rows and build 2 console lines (grid + values) per loop</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span>(fieldY = target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1; fieldY &gt;= 0; fieldY--) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="comment">//grid row</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">if</span> (fieldY == target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1 &amp;&amp; fieldX == 0) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#ab1227be6f0dfa9c4e672f57dffece613">FONT_DPIPE_TOP_LEFT</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fieldY == target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#a8273b9df0b5d2b69099fbfc3ae3f94af">FONT_DPIPE_TBAR_DOWN</a>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fieldX == 0) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#a2c89a6cf26332e4cdd9179327f25fc2c">FONT_DPIPE_TBAR_RIGHT</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#a830f113f3b91b03cb8ee6927e86d0b39">FONT_DPIPE_CROSSING</a>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">//end of grid row</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">if</span> (fieldY == target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a2e3aff1ecb832f4e18b7ac6ac84443e9">FONT_DPIPE_TOP_RIGHT</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#afeb9c32e1673db23ede155fb7f62b090">FONT_DPIPE_TBAR_LEFT</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">//value row</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a5fc7b3a380ace4fa9cd43b8036d0bfae">FONT_DPIPE_VERT_BAR</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            strcat(canvas,<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordtype">char</span> field = <a class="code" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3">getField</a>(target,fieldX,fieldY);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">if</span> (field==<a class="code" href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a>)   strcat(canvas,<a class="code" href="fancyfont_8c.html#a7640becc7c532e0d004e92527b2645f0">FONT_COIN_EMPTY</a>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> (field==<a class="code" href="variables_8h.html#a4792e2ce576b6d4c6cb515c94fe00f2d">FIELD_PLAYER1</a>) strcat(canvas,<a class="code" href="fancyfont_8c.html#a00696025b45bd1a10063f3f58d28c8c8">FONT_COIN_PLAYER1</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">if</span> (field==<a class="code" href="variables_8h.html#a117fddda23a8354b9984f1ecb74e1f6d">FIELD_PLAYER2</a>) strcat(canvas,<a class="code" href="fancyfont_8c.html#a31f5afc95ce5907767c86b15f492f332">FONT_COIN_PLAYER2</a>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            strcat(canvas,<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">//finish value row</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        strcat(canvas,<a class="code" href="fancyfont_8c.html#a5fc7b3a380ace4fa9cd43b8036d0bfae">FONT_DPIPE_VERT_BAR</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">//build stand</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (fieldX == 0) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a2c89a6cf26332e4cdd9179327f25fc2c">FONT_DPIPE_TBAR_RIGHT</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a837122b96cbd8f58bfa0a86b626a859f">FONT_DPIPE_TBAR_UP</a>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    strcat(canvas,<a class="code" href="fancyfont_8c.html#afeb9c32e1673db23ede155fb7f62b090">FONT_DPIPE_TBAR_LEFT</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (fieldX == 0) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#ae6a85d0427ebf8268637159cd80fa793">FONT_DPIPE_BOTTOM_LEFT</a>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,4);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    strcat(canvas,<a class="code" href="fancyfont_8c.html#ace05b133988e625c49675b04323aa557">FONT_DPIPE_BOTTOM_RIGHT</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">//we&#39;re done, output the whole thing</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;%s&quot;</span>,canvas);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    free(canvas);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="ttc" id="fancyfont_8c_html_a2c89a6cf26332e4cdd9179327f25fc2c"><div class="ttname"><a href="fancyfont_8c.html#a2c89a6cf26332e4cdd9179327f25fc2c">FONT_DPIPE_TBAR_RIGHT</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00010">fancyfont.c:10</a></div></div>
+<div class="ttc" id="signatures_8h_html_a3c9d83905eaf8cbe0888ad9e2f419833"><div class="ttname"><a href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a></div><div class="ttdeci">void strcatRepeat(char *target, const char *source, unsigned int howOften)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00458">system.c:458</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_ab1227be6f0dfa9c4e672f57dffece613"><div class="ttname"><a href="fancyfont_8c.html#ab1227be6f0dfa9c4e672f57dffece613">FONT_DPIPE_TOP_LEFT</a></div><div class="ttdeci">char * FONT_DPIPE_TOP_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00004">fancyfont.c:4</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a837122b96cbd8f58bfa0a86b626a859f"><div class="ttname"><a href="fancyfont_8c.html#a837122b96cbd8f58bfa0a86b626a859f">FONT_DPIPE_TBAR_UP</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_UP</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00012">fancyfont.c:12</a></div></div>
+<div class="ttc" id="board_8c_html_a6cf24a8fbcadd26575f5d4ef0066e3f3"><div class="ttname"><a href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3">getField</a></div><div class="ttdeci">char getField(struct board *target, int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00072">board.c:72</a></div></div>
+<div class="ttc" id="variables_8h_html_a117fddda23a8354b9984f1ecb74e1f6d"><div class="ttname"><a href="variables_8h.html#a117fddda23a8354b9984f1ecb74e1f6d">FIELD_PLAYER2</a></div><div class="ttdeci">const char FIELD_PLAYER2</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00040">variables.h:40</a></div></div>
+<div class="ttc" id="variables_8h_html_a4792e2ce576b6d4c6cb515c94fe00f2d"><div class="ttname"><a href="variables_8h.html#a4792e2ce576b6d4c6cb515c94fe00f2d">FIELD_PLAYER1</a></div><div class="ttdeci">const char FIELD_PLAYER1</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00039">variables.h:39</a></div></div>
+<div class="ttc" id="variables_8h_html_af385d79b2bb630ca5da634589b33c747"><div class="ttname"><a href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a></div><div class="ttdeci">const int EXITCODE_OUTOFMEMORY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00003">variables.h:3</a></div></div>
+<div class="ttc" id="board_8c_html_aaf722a3aee3bf1d85e57eef1a4c4f02a"><div class="ttname"><a href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a">clearBoard</a></div><div class="ttdeci">void clearBoard(struct board *target)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00043">board.c:43</a></div></div>
+<div class="ttc" id="board_8c_html_ab0314fc030a3d0d9a0e2a5d4fad73bd0"><div class="ttname"><a href="board_8c.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0">setField</a></div><div class="ttdeci">void setField(struct board *target, int x, int y, char value)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00087">board.c:87</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_ae6a85d0427ebf8268637159cd80fa793"><div class="ttname"><a href="fancyfont_8c.html#ae6a85d0427ebf8268637159cd80fa793">FONT_DPIPE_BOTTOM_LEFT</a></div><div class="ttdeci">char * FONT_DPIPE_BOTTOM_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00006">fancyfont.c:6</a></div></div>
+<div class="ttc" id="variables_8h_html_ac49132b4d65e44d24adeb38c80e3ef8e"><div class="ttname"><a href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a></div><div class="ttdeci">const char FIELD_EMPTY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00038">variables.h:38</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_afeb9c32e1673db23ede155fb7f62b090"><div class="ttname"><a href="fancyfont_8c.html#afeb9c32e1673db23ede155fb7f62b090">FONT_DPIPE_TBAR_LEFT</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00011">fancyfont.c:11</a></div></div>
+<div class="ttc" id="variables_8h_html_adc7cd5d0cf80217e1af088aeae171ac1"><div class="ttname"><a href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">board::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00045">variables.h:45</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a31f5afc95ce5907767c86b15f492f332"><div class="ttname"><a href="fancyfont_8c.html#a31f5afc95ce5907767c86b15f492f332">FONT_COIN_PLAYER2</a></div><div class="ttdeci">char * FONT_COIN_PLAYER2</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00016">fancyfont.c:16</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a7640becc7c532e0d004e92527b2645f0"><div class="ttname"><a href="fancyfont_8c.html#a7640becc7c532e0d004e92527b2645f0">FONT_COIN_EMPTY</a></div><div class="ttdeci">char * FONT_COIN_EMPTY</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00017">fancyfont.c:17</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_ace05b133988e625c49675b04323aa557"><div class="ttname"><a href="fancyfont_8c.html#ace05b133988e625c49675b04323aa557">FONT_DPIPE_BOTTOM_RIGHT</a></div><div class="ttdeci">char * FONT_DPIPE_BOTTOM_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00007">fancyfont.c:7</a></div></div>
+<div class="ttc" id="variables_8h_html_acbd532e74dde0e17908138cf3abe7ae9"><div class="ttname"><a href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">board::numberOfFields</a></div><div class="ttdeci">unsigned int numberOfFields</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00046">variables.h:46</a></div></div>
+<div class="ttc" id="variables_8h_html_a248b88c9f52116e548f3e0abea6e82e5"><div class="ttname"><a href="variables_8h.html#a248b88c9f52116e548f3e0abea6e82e5">FIELD_OUTOFBOUNDS</a></div><div class="ttdeci">const char FIELD_OUTOFBOUNDS</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00041">variables.h:41</a></div></div>
+<div class="ttc" id="variables_8h_html_structboard"><div class="ttname"><a href="variables_8h.html#structboard">board</a></div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00043">variables.h:43</a></div></div>
+<div class="ttc" id="board_8c_html_a3369d7d3ba0c47ba3025860fa01a4d9f"><div class="ttname"><a href="board_8c.html#a3369d7d3ba0c47ba3025860fa01a4d9f">myBoard</a></div><div class="ttdeci">struct board myBoard</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00005">board.c:5</a></div></div>
+<div class="ttc" id="variables_8h_html_aec09ce7d9b2ef743e51ace3e41148eff"><div class="ttname"><a href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">board::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00044">variables.h:44</a></div></div>
+<div class="ttc" id="board_8c_html_a46db977f6db0fd0825f5ef5108c30e9e"><div class="ttname"><a href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a></div><div class="ttdeci">char * calcFieldAddress(struct board *target, int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00060">board.c:60</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a8273b9df0b5d2b69099fbfc3ae3f94af"><div class="ttname"><a href="fancyfont_8c.html#a8273b9df0b5d2b69099fbfc3ae3f94af">FONT_DPIPE_TBAR_DOWN</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_DOWN</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00013">fancyfont.c:13</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a5fc7b3a380ace4fa9cd43b8036d0bfae"><div class="ttname"><a href="fancyfont_8c.html#a5fc7b3a380ace4fa9cd43b8036d0bfae">FONT_DPIPE_VERT_BAR</a></div><div class="ttdeci">char * FONT_DPIPE_VERT_BAR</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00008">fancyfont.c:8</a></div></div>
+<div class="ttc" id="board_8c_html_af594e2b93fd0ac869b722812724a58ba"><div class="ttname"><a href="board_8c.html#af594e2b93fd0ac869b722812724a58ba">freeBoard</a></div><div class="ttdeci">void freeBoard(struct board *target)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00095">board.c:95</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a00696025b45bd1a10063f3f58d28c8c8"><div class="ttname"><a href="fancyfont_8c.html#a00696025b45bd1a10063f3f58d28c8c8">FONT_COIN_PLAYER1</a></div><div class="ttdeci">char * FONT_COIN_PLAYER1</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00015">fancyfont.c:15</a></div></div>
+<div class="ttc" id="board_8c_html_aa832cfb270f47cdcb3afca65656dd964"><div class="ttname"><a href="board_8c.html#aa832cfb270f47cdcb3afca65656dd964">newBoard</a></div><div class="ttdeci">int newBoard(struct board *target, unsigned int width, unsigned int height)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00015">board.c:15</a></div></div>
+<div class="ttc" id="variables_8h_html_a832d2b06af80b3937fb5b9bbd451a089"><div class="ttname"><a href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">board::content</a></div><div class="ttdeci">char * content</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00047">variables.h:47</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a9de76bc4ce56f456ca75272be7898aca"><div class="ttname"><a href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a></div><div class="ttdeci">char * FONT_DPIPE_HORI_BAR</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00009">fancyfont.c:9</a></div></div>
+<div class="ttc" id="board_8c_html_a8ba56fbeff5fd3e187fdfeb8af94f517"><div class="ttname"><a href="board_8c.html#a8ba56fbeff5fd3e187fdfeb8af94f517">drawBoard</a></div><div class="ttdeci">void drawBoard(struct board *target)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00103">board.c:103</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a2e3aff1ecb832f4e18b7ac6ac84443e9"><div class="ttname"><a href="fancyfont_8c.html#a2e3aff1ecb832f4e18b7ac6ac84443e9">FONT_DPIPE_TOP_RIGHT</a></div><div class="ttdeci">char * FONT_DPIPE_TOP_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00005">fancyfont.c:5</a></div></div>
+<div class="ttc" id="signatures_8h_html_a341a00a4a37b74dfa8e7e550c1fd1c2c"><div class="ttname"><a href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a></div><div class="ttdeci">int output(const char *input,...)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00144">system.c:144</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a830f113f3b91b03cb8ee6927e86d0b39"><div class="ttname"><a href="fancyfont_8c.html#a830f113f3b91b03cb8ee6927e86d0b39">FONT_DPIPE_CROSSING</a></div><div class="ttdeci">char * FONT_DPIPE_CROSSING</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00014">fancyfont.c:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6fb10fd182f1a6c12d521696c581f662.html">4-gewinnt</a></li><li class="navelem"><a class="el" href="board_8c.html">board.c</a></li>
+    <li class="footer">DHBW-MA - TINF13AIBC - Projektmanagement - Team 1337 (Stand: 17.06.2014) </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>4-gewinnt: board.c-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_klein.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">4-gewinnt
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">Klassiker &quot;4-gewinnt&quot; als Konsolenanwendung</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('board_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Datenstrukturen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variablen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktionen</a> &#124;
+<a href="#var-members">Variablen</a>  </div>
+  <div class="headertitle">
+<div class="title">board.c-Dateireferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include-Abhängigkeitsdiagramm für board.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c__incl.png" border="0" usemap="#board_8c" alt=""/></div>
+<map name="board_8c" id="board_8c">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c__dep__incl.png" border="0" usemap="#board_8cdep" alt=""/></div>
+<map name="board_8cdep" id="board_8cdep">
+<area shape="rect" id="node2" href="main_8c.html" title="main.c" alt="" coords="7,80,69,107"/></map>
+</div>
+</div>
+<p><a href="board_8c_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:aa832cfb270f47cdcb3afca65656dd964"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#aa832cfb270f47cdcb3afca65656dd964">newBoard</a> (struct <a class="el" href="variables_8h.html#structboard">board</a> *target, unsigned int width, unsigned int height)</td></tr>
+<tr class="separator:aa832cfb270f47cdcb3afca65656dd964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf722a3aee3bf1d85e57eef1a4c4f02a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a">clearBoard</a> (struct <a class="el" href="variables_8h.html#structboard">board</a> *target)</td></tr>
+<tr class="separator:aaf722a3aee3bf1d85e57eef1a4c4f02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46db977f6db0fd0825f5ef5108c30e9e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a> (struct <a class="el" href="variables_8h.html#structboard">board</a> *target, int x, int y)</td></tr>
+<tr class="separator:a46db977f6db0fd0825f5ef5108c30e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf24a8fbcadd26575f5d4ef0066e3f3"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3">getField</a> (struct <a class="el" href="variables_8h.html#structboard">board</a> *target, int x, int y)</td></tr>
+<tr class="separator:a6cf24a8fbcadd26575f5d4ef0066e3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0314fc030a3d0d9a0e2a5d4fad73bd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0">setField</a> (struct <a class="el" href="variables_8h.html#structboard">board</a> *target, int x, int y, char value)</td></tr>
+<tr class="separator:ab0314fc030a3d0d9a0e2a5d4fad73bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af594e2b93fd0ac869b722812724a58ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#af594e2b93fd0ac869b722812724a58ba">freeBoard</a> (struct <a class="el" href="variables_8h.html#structboard">board</a> *target)</td></tr>
+<tr class="separator:af594e2b93fd0ac869b722812724a58ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba56fbeff5fd3e187fdfeb8af94f517"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#a8ba56fbeff5fd3e187fdfeb8af94f517">drawBoard</a> (struct <a class="el" href="variables_8h.html#structboard">board</a> *target)</td></tr>
+<tr class="separator:a8ba56fbeff5fd3e187fdfeb8af94f517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variablen</h2></td></tr>
+<tr class="memitem:a3369d7d3ba0c47ba3025860fa01a4d9f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="variables_8h.html#structboard">board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html#a3369d7d3ba0c47ba3025860fa01a4d9f">myBoard</a></td></tr>
+<tr class="separator:a3369d7d3ba0c47ba3025860fa01a4d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a class="anchor" id="a46db977f6db0fd0825f5ef5108c30e9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* calcFieldAddress </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="variables_8h.html#structboard">board</a> *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Internal helper method to calculate the data offset of a given field on the board </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Board to base calculations on. </td></tr>
+    <tr><td class="paramname">x</td><td>X-coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>Y-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Pointer to requested field. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00060">60</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+<p>Benutzt <a class="el" href="variables_8h_source.html#l00047">board::content</a> und <a class="el" href="variables_8h_source.html#l00044">board::width</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00446">animateFalling()</a>, <a class="el" href="board_8c_source.html#l00072">getField()</a> und <a class="el" href="board_8c_source.html#l00087">setField()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                           {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> offset = y*(target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>) + x;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> (target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> + offset);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="ttc" id="variables_8h_html_aec09ce7d9b2ef743e51ace3e41148eff"><div class="ttname"><a href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">board::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00044">variables.h:44</a></div></div>
+<div class="ttc" id="variables_8h_html_a832d2b06af80b3937fb5b9bbd451a089"><div class="ttname"><a href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">board::content</a></div><div class="ttdeci">char * content</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00047">variables.h:47</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_a46db977f6db0fd0825f5ef5108c30e9e_icgraph.png" border="0" usemap="#board_8c_a46db977f6db0fd0825f5ef5108c30e9e_icgraph" alt=""/></div>
+<map name="board_8c_a46db977f6db0fd0825f5ef5108c30e9e_icgraph" id="board_8c_a46db977f6db0fd0825f5ef5108c30e9e_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#aa4fc6e6e661f7a4dba70ac76f76ebb7e" title="animateFalling" alt="" coords="448,5,555,32"/><area shape="rect" id="node3" href="signatures_8h.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="176,145,244,172"/><area shape="rect" id="node16" href="signatures_8h.html#ab0314fc030a3d0d9a0e2a5d4fad73bd0" title="setField" alt="" coords="176,233,244,260"/><area shape="rect" id="node4" href="signatures_8h.html#a8ba56fbeff5fd3e187fdfeb8af94f517" title="drawBoard" alt="" coords="302,120,385,147"/><area shape="rect" id="node12" href="signatures_8h.html#ad1f279dc9f093c9a39000f5a6a077216" title="throwCoin" alt="" coords="612,233,691,260"/><area shape="rect" id="node13" href="signatures_8h.html#ab00ce6c274e49e96ee206427e2095d5d" title="neighbourRow" alt="" coords="292,259,395,285"/><area shape="rect" id="node15" href="signatures_8h.html#af50ec8f99b4ba00b14bf5cb7c7ee9f9d" title="checkDraw" alt="" coords="608,56,695,83"/><area shape="rect" id="node5" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="1016,107,1120,133"/><area shape="rect" id="node10" href="signatures_8h.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="743,157,837,184"/><area shape="rect" id="node6" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="1168,107,1329,133"/><area shape="rect" id="node7" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="1377,107,1460,133"/><area shape="rect" id="node8" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1537,56,1588,83"/><area shape="rect" id="node9" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="1508,107,1617,133"/><area shape="rect" id="node11" href="signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="885,157,968,184"/><area shape="rect" id="node14" href="signatures_8h.html#a42025a8656aaf0a1e18e7597ce1ea21c" title="checkForWinner" alt="" coords="443,259,560,285"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf722a3aee3bf1d85e57eef1a4c4f02a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clearBoard </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="variables_8h.html#structboard">board</a> *&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes all chips from the board </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Already existing board. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00043">43</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+<p>Benutzt <a class="el" href="variables_8h_source.html#l00047">board::content</a>, <a class="el" href="variables_8h_source.html#l00038">FIELD_EMPTY</a> und <a class="el" href="variables_8h_source.html#l00046">board::numberOfFields</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00171">clearAll()</a> und <a class="el" href="board_8c_source.html#l00015">newBoard()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                      {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//fills the whole board with space chars</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; target-&gt;<a class="code" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">numberOfFields</a>; i++) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        *((target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a>) + i) = <a class="code" href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//add null terminator which allows direct board content debug output</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    *(target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> + i) = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="ttc" id="variables_8h_html_ac49132b4d65e44d24adeb38c80e3ef8e"><div class="ttname"><a href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a></div><div class="ttdeci">const char FIELD_EMPTY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00038">variables.h:38</a></div></div>
+<div class="ttc" id="variables_8h_html_acbd532e74dde0e17908138cf3abe7ae9"><div class="ttname"><a href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">board::numberOfFields</a></div><div class="ttdeci">unsigned int numberOfFields</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00046">variables.h:46</a></div></div>
+<div class="ttc" id="variables_8h_html_a832d2b06af80b3937fb5b9bbd451a089"><div class="ttname"><a href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">board::content</a></div><div class="ttdeci">char * content</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00047">variables.h:47</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_aaf722a3aee3bf1d85e57eef1a4c4f02a_icgraph.png" border="0" usemap="#board_8c_aaf722a3aee3bf1d85e57eef1a4c4f02a_icgraph" alt=""/></div>
+<map name="board_8c_aaf722a3aee3bf1d85e57eef1a4c4f02a_icgraph" id="board_8c_aaf722a3aee3bf1d85e57eef1a4c4f02a_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#a798729dca95209ecdc609807a653a2bf" title="clearAll" alt="" coords="273,31,338,57"/><area shape="rect" id="node8" href="signatures_8h.html#aa832cfb270f47cdcb3afca65656dd964" title="newBoard" alt="" coords="137,81,216,108"/><area shape="rect" id="node3" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="395,56,499,83"/><area shape="rect" id="node4" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="547,56,708,83"/><area shape="rect" id="node5" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="756,56,839,83"/><area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="916,5,967,32"/><area shape="rect" id="node7" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="887,56,996,83"/><area shape="rect" id="node9" href="signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="264,81,347,108"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ba56fbeff5fd3e187fdfeb8af94f517"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawBoard </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="variables_8h.html#structboard">board</a> *&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Outputs a graphical representation of the given board to the console </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Board to draw. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00103">103</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+<p>Benutzt <a class="el" href="variables_8h_source.html#l00003">EXITCODE_OUTOFMEMORY</a>, <a class="el" href="variables_8h_source.html#l00038">FIELD_EMPTY</a>, <a class="el" href="variables_8h_source.html#l00039">FIELD_PLAYER1</a>, <a class="el" href="variables_8h_source.html#l00040">FIELD_PLAYER2</a>, <a class="el" href="fancyfont_8c_source.html#l00017">FONT_COIN_EMPTY</a>, <a class="el" href="fancyfont_8c_source.html#l00015">FONT_COIN_PLAYER1</a>, <a class="el" href="fancyfont_8c_source.html#l00016">FONT_COIN_PLAYER2</a>, <a class="el" href="fancyfont_8c_source.html#l00006">FONT_DPIPE_BOTTOM_LEFT</a>, <a class="el" href="fancyfont_8c_source.html#l00007">FONT_DPIPE_BOTTOM_RIGHT</a>, <a class="el" href="fancyfont_8c_source.html#l00014">FONT_DPIPE_CROSSING</a>, <a class="el" href="fancyfont_8c_source.html#l00009">FONT_DPIPE_HORI_BAR</a>, <a class="el" href="fancyfont_8c_source.html#l00013">FONT_DPIPE_TBAR_DOWN</a>, <a class="el" href="fancyfont_8c_source.html#l00011">FONT_DPIPE_TBAR_LEFT</a>, <a class="el" href="fancyfont_8c_source.html#l00010">FONT_DPIPE_TBAR_RIGHT</a>, <a class="el" href="fancyfont_8c_source.html#l00012">FONT_DPIPE_TBAR_UP</a>, <a class="el" href="fancyfont_8c_source.html#l00004">FONT_DPIPE_TOP_LEFT</a>, <a class="el" href="fancyfont_8c_source.html#l00005">FONT_DPIPE_TOP_RIGHT</a>, <a class="el" href="fancyfont_8c_source.html#l00008">FONT_DPIPE_VERT_BAR</a>, <a class="el" href="board_8c_source.html#l00072">getField()</a>, <a class="el" href="variables_8h_source.html#l00045">board::height</a>, <a class="el" href="system_8c_source.html#l00144">output()</a>, <a class="el" href="system_8c_source.html#l00458">strcatRepeat()</a> und <a class="el" href="variables_8h_source.html#l00044">board::width</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00446">animateFalling()</a>, <a class="el" href="gamefunction_8c_source.html#l00028">gameFunction()</a> und <a class="el" href="gamefunction_8c_source.html#l00194">playerAction()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                     {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">//calculate dimensions of output and reserve memory</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">char</span>* canvas;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//4 chars wide per field plus ending bar and newline</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">int</span> charsWidth  = target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>*4 + 2;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//4 chars wide per field plus stand</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">int</span> charsHeight = target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>*2 + 3;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//multiply by 6 for full UTF-8 eventualities plus 1 for string terminator \0</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">int</span> totalSize = charsWidth*charsHeight*6 + 1;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    canvas = malloc(totalSize * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (canvas==NULL) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        exit(<a class="code" href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">//writing-to-canvas setup</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    canvas[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">int</span> fieldX;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> fieldY;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">//loop over rows and build 2 console lines (grid + values) per loop</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span>(fieldY = target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1; fieldY &gt;= 0; fieldY--) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="comment">//grid row</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">if</span> (fieldY == target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1 &amp;&amp; fieldX == 0) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#ab1227be6f0dfa9c4e672f57dffece613">FONT_DPIPE_TOP_LEFT</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fieldY == target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#a8273b9df0b5d2b69099fbfc3ae3f94af">FONT_DPIPE_TBAR_DOWN</a>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fieldX == 0) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#a2c89a6cf26332e4cdd9179327f25fc2c">FONT_DPIPE_TBAR_RIGHT</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                strcat(canvas,<a class="code" href="fancyfont_8c.html#a830f113f3b91b03cb8ee6927e86d0b39">FONT_DPIPE_CROSSING</a>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">//end of grid row</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">if</span> (fieldY == target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> - 1) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a2e3aff1ecb832f4e18b7ac6ac84443e9">FONT_DPIPE_TOP_RIGHT</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#afeb9c32e1673db23ede155fb7f62b090">FONT_DPIPE_TBAR_LEFT</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">//value row</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a5fc7b3a380ace4fa9cd43b8036d0bfae">FONT_DPIPE_VERT_BAR</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            strcat(canvas,<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordtype">char</span> field = <a class="code" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3">getField</a>(target,fieldX,fieldY);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">if</span> (field==<a class="code" href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a>)   strcat(canvas,<a class="code" href="fancyfont_8c.html#a7640becc7c532e0d004e92527b2645f0">FONT_COIN_EMPTY</a>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> (field==<a class="code" href="variables_8h.html#a4792e2ce576b6d4c6cb515c94fe00f2d">FIELD_PLAYER1</a>) strcat(canvas,<a class="code" href="fancyfont_8c.html#a00696025b45bd1a10063f3f58d28c8c8">FONT_COIN_PLAYER1</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">if</span> (field==<a class="code" href="variables_8h.html#a117fddda23a8354b9984f1ecb74e1f6d">FIELD_PLAYER2</a>) strcat(canvas,<a class="code" href="fancyfont_8c.html#a31f5afc95ce5907767c86b15f492f332">FONT_COIN_PLAYER2</a>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            strcat(canvas,<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">//finish value row</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        strcat(canvas,<a class="code" href="fancyfont_8c.html#a5fc7b3a380ace4fa9cd43b8036d0bfae">FONT_DPIPE_VERT_BAR</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">//build stand</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (fieldX == 0) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a2c89a6cf26332e4cdd9179327f25fc2c">FONT_DPIPE_TBAR_RIGHT</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#a837122b96cbd8f58bfa0a86b626a859f">FONT_DPIPE_TBAR_UP</a>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    strcat(canvas,<a class="code" href="fancyfont_8c.html#afeb9c32e1673db23ede155fb7f62b090">FONT_DPIPE_TBAR_LEFT</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">for</span>(fieldX = 0; fieldX &lt; target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>; fieldX++) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (fieldX == 0) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            strcat(canvas,<a class="code" href="fancyfont_8c.html#ae6a85d0427ebf8268637159cd80fa793">FONT_DPIPE_BOTTOM_LEFT</a>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,3);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <a class="code" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a>(canvas,<a class="code" href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a>,4);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    strcat(canvas,<a class="code" href="fancyfont_8c.html#ace05b133988e625c49675b04323aa557">FONT_DPIPE_BOTTOM_RIGHT</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    strcat(canvas,<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">//we&#39;re done, output the whole thing</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a>(<span class="stringliteral">&quot;%s&quot;</span>,canvas);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    free(canvas);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="ttc" id="fancyfont_8c_html_a2c89a6cf26332e4cdd9179327f25fc2c"><div class="ttname"><a href="fancyfont_8c.html#a2c89a6cf26332e4cdd9179327f25fc2c">FONT_DPIPE_TBAR_RIGHT</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00010">fancyfont.c:10</a></div></div>
+<div class="ttc" id="signatures_8h_html_a3c9d83905eaf8cbe0888ad9e2f419833"><div class="ttname"><a href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833">strcatRepeat</a></div><div class="ttdeci">void strcatRepeat(char *target, const char *source, unsigned int howOften)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00458">system.c:458</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_ab1227be6f0dfa9c4e672f57dffece613"><div class="ttname"><a href="fancyfont_8c.html#ab1227be6f0dfa9c4e672f57dffece613">FONT_DPIPE_TOP_LEFT</a></div><div class="ttdeci">char * FONT_DPIPE_TOP_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00004">fancyfont.c:4</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a837122b96cbd8f58bfa0a86b626a859f"><div class="ttname"><a href="fancyfont_8c.html#a837122b96cbd8f58bfa0a86b626a859f">FONT_DPIPE_TBAR_UP</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_UP</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00012">fancyfont.c:12</a></div></div>
+<div class="ttc" id="board_8c_html_a6cf24a8fbcadd26575f5d4ef0066e3f3"><div class="ttname"><a href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3">getField</a></div><div class="ttdeci">char getField(struct board *target, int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00072">board.c:72</a></div></div>
+<div class="ttc" id="variables_8h_html_a117fddda23a8354b9984f1ecb74e1f6d"><div class="ttname"><a href="variables_8h.html#a117fddda23a8354b9984f1ecb74e1f6d">FIELD_PLAYER2</a></div><div class="ttdeci">const char FIELD_PLAYER2</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00040">variables.h:40</a></div></div>
+<div class="ttc" id="variables_8h_html_a4792e2ce576b6d4c6cb515c94fe00f2d"><div class="ttname"><a href="variables_8h.html#a4792e2ce576b6d4c6cb515c94fe00f2d">FIELD_PLAYER1</a></div><div class="ttdeci">const char FIELD_PLAYER1</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00039">variables.h:39</a></div></div>
+<div class="ttc" id="variables_8h_html_af385d79b2bb630ca5da634589b33c747"><div class="ttname"><a href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a></div><div class="ttdeci">const int EXITCODE_OUTOFMEMORY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00003">variables.h:3</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_ae6a85d0427ebf8268637159cd80fa793"><div class="ttname"><a href="fancyfont_8c.html#ae6a85d0427ebf8268637159cd80fa793">FONT_DPIPE_BOTTOM_LEFT</a></div><div class="ttdeci">char * FONT_DPIPE_BOTTOM_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00006">fancyfont.c:6</a></div></div>
+<div class="ttc" id="variables_8h_html_ac49132b4d65e44d24adeb38c80e3ef8e"><div class="ttname"><a href="variables_8h.html#ac49132b4d65e44d24adeb38c80e3ef8e">FIELD_EMPTY</a></div><div class="ttdeci">const char FIELD_EMPTY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00038">variables.h:38</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_afeb9c32e1673db23ede155fb7f62b090"><div class="ttname"><a href="fancyfont_8c.html#afeb9c32e1673db23ede155fb7f62b090">FONT_DPIPE_TBAR_LEFT</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00011">fancyfont.c:11</a></div></div>
+<div class="ttc" id="variables_8h_html_adc7cd5d0cf80217e1af088aeae171ac1"><div class="ttname"><a href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">board::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00045">variables.h:45</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a31f5afc95ce5907767c86b15f492f332"><div class="ttname"><a href="fancyfont_8c.html#a31f5afc95ce5907767c86b15f492f332">FONT_COIN_PLAYER2</a></div><div class="ttdeci">char * FONT_COIN_PLAYER2</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00016">fancyfont.c:16</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a7640becc7c532e0d004e92527b2645f0"><div class="ttname"><a href="fancyfont_8c.html#a7640becc7c532e0d004e92527b2645f0">FONT_COIN_EMPTY</a></div><div class="ttdeci">char * FONT_COIN_EMPTY</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00017">fancyfont.c:17</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_ace05b133988e625c49675b04323aa557"><div class="ttname"><a href="fancyfont_8c.html#ace05b133988e625c49675b04323aa557">FONT_DPIPE_BOTTOM_RIGHT</a></div><div class="ttdeci">char * FONT_DPIPE_BOTTOM_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00007">fancyfont.c:7</a></div></div>
+<div class="ttc" id="variables_8h_html_aec09ce7d9b2ef743e51ace3e41148eff"><div class="ttname"><a href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">board::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00044">variables.h:44</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a8273b9df0b5d2b69099fbfc3ae3f94af"><div class="ttname"><a href="fancyfont_8c.html#a8273b9df0b5d2b69099fbfc3ae3f94af">FONT_DPIPE_TBAR_DOWN</a></div><div class="ttdeci">char * FONT_DPIPE_TBAR_DOWN</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00013">fancyfont.c:13</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a5fc7b3a380ace4fa9cd43b8036d0bfae"><div class="ttname"><a href="fancyfont_8c.html#a5fc7b3a380ace4fa9cd43b8036d0bfae">FONT_DPIPE_VERT_BAR</a></div><div class="ttdeci">char * FONT_DPIPE_VERT_BAR</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00008">fancyfont.c:8</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a00696025b45bd1a10063f3f58d28c8c8"><div class="ttname"><a href="fancyfont_8c.html#a00696025b45bd1a10063f3f58d28c8c8">FONT_COIN_PLAYER1</a></div><div class="ttdeci">char * FONT_COIN_PLAYER1</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00015">fancyfont.c:15</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a9de76bc4ce56f456ca75272be7898aca"><div class="ttname"><a href="fancyfont_8c.html#a9de76bc4ce56f456ca75272be7898aca">FONT_DPIPE_HORI_BAR</a></div><div class="ttdeci">char * FONT_DPIPE_HORI_BAR</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00009">fancyfont.c:9</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a2e3aff1ecb832f4e18b7ac6ac84443e9"><div class="ttname"><a href="fancyfont_8c.html#a2e3aff1ecb832f4e18b7ac6ac84443e9">FONT_DPIPE_TOP_RIGHT</a></div><div class="ttdeci">char * FONT_DPIPE_TOP_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00005">fancyfont.c:5</a></div></div>
+<div class="ttc" id="signatures_8h_html_a341a00a4a37b74dfa8e7e550c1fd1c2c"><div class="ttname"><a href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c">output</a></div><div class="ttdeci">int output(const char *input,...)</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00144">system.c:144</a></div></div>
+<div class="ttc" id="fancyfont_8c_html_a830f113f3b91b03cb8ee6927e86d0b39"><div class="ttname"><a href="fancyfont_8c.html#a830f113f3b91b03cb8ee6927e86d0b39">FONT_DPIPE_CROSSING</a></div><div class="ttdeci">char * FONT_DPIPE_CROSSING</div><div class="ttdef"><b>Definition:</b> <a href="fancyfont_8c_source.html#l00014">fancyfont.c:14</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_cgraph.png" border="0" usemap="#board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_cgraph" alt=""/></div>
+<map name="board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_cgraph" id="board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_cgraph">
+<area shape="rect" id="node2" href="board_8c.html#a6cf24a8fbcadd26575f5d4ef0066e3f3" title="getField" alt="" coords="150,5,218,32"/><area shape="rect" id="node4" href="signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="155,56,213,83"/><area shape="rect" id="node7" href="signatures_8h.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="136,107,232,133"/><area shape="rect" id="node3" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="283,5,405,32"/><area shape="rect" id="node5" href="system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="305,56,383,83"/><area shape="rect" id="node6" href="system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="280,107,408,133"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_icgraph.png" border="0" usemap="#board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_icgraph" alt=""/></div>
+<map name="board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_icgraph" id="board_8c_a8ba56fbeff5fd3e187fdfeb8af94f517_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#aa4fc6e6e661f7a4dba70ac76f76ebb7e" title="animateFalling" alt="" coords="136,5,243,32"/><area shape="rect" id="node3" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="421,81,525,108"/><area shape="rect" id="node8" href="signatures_8h.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="142,107,237,133"/><area shape="rect" id="node4" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="573,81,735,108"/><area shape="rect" id="node5" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="783,81,865,108"/><area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="943,31,993,57"/><area shape="rect" id="node7" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="913,81,1023,108"/><area shape="rect" id="node9" href="signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="291,107,373,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af594e2b93fd0ac869b722812724a58ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeBoard </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="variables_8h.html#structboard">board</a> *&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Frees memory taken by a board (warning: makes it unusable until <a class="el" href="board_8c.html#aa832cfb270f47cdcb3afca65656dd964">newBoard()</a> has been called again) </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Board to free memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00095">95</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+<p>Benutzt <a class="el" href="variables_8h_source.html#l00047">board::content</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00171">clearAll()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                     {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    free(target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="ttc" id="variables_8h_html_a832d2b06af80b3937fb5b9bbd451a089"><div class="ttname"><a href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">board::content</a></div><div class="ttdeci">char * content</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00047">variables.h:47</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_af594e2b93fd0ac869b722812724a58ba_icgraph.png" border="0" usemap="#board_8c_af594e2b93fd0ac869b722812724a58ba_icgraph" alt=""/></div>
+<map name="board_8c_af594e2b93fd0ac869b722812724a58ba_icgraph" id="board_8c_af594e2b93fd0ac869b722812724a58ba_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#a798729dca95209ecdc609807a653a2bf" title="clearAll" alt="" coords="131,56,196,83"/><area shape="rect" id="node3" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="244,56,348,83"/><area shape="rect" id="node4" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="396,56,557,83"/><area shape="rect" id="node5" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="605,56,688,83"/><area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="765,5,816,32"/><area shape="rect" id="node7" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="736,56,845,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6cf24a8fbcadd26575f5d4ef0066e3f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char getField </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="variables_8h.html#structboard">board</a> *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets what is on a given field of the board (returns FIELD_XYZ constant) </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Board to read. </td></tr>
+    <tr><td class="paramname">x</td><td>X-coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>Y-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Value of requested field. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00072">72</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+<p>Benutzt <a class="el" href="board_8c_source.html#l00060">calcFieldAddress()</a>, <a class="el" href="variables_8h_source.html#l00041">FIELD_OUTOFBOUNDS</a>, <a class="el" href="variables_8h_source.html#l00045">board::height</a> und <a class="el" href="variables_8h_source.html#l00044">board::width</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00419">checkDraw()</a>, <a class="el" href="board_8c_source.html#l00103">drawBoard()</a>, <a class="el" href="gamefunction_8c_source.html#l00406">neighbourRow()</a> und <a class="el" href="gamefunction_8c_source.html#l00252">throwCoin()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                  {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (x&lt;0 || y&lt;0 || x&gt;=target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a> || y&gt;=target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="variables_8h.html#a248b88c9f52116e548f3e0abea6e82e5">FIELD_OUTOFBOUNDS</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a>(target, x, y);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="ttc" id="variables_8h_html_adc7cd5d0cf80217e1af088aeae171ac1"><div class="ttname"><a href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">board::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00045">variables.h:45</a></div></div>
+<div class="ttc" id="variables_8h_html_a248b88c9f52116e548f3e0abea6e82e5"><div class="ttname"><a href="variables_8h.html#a248b88c9f52116e548f3e0abea6e82e5">FIELD_OUTOFBOUNDS</a></div><div class="ttdeci">const char FIELD_OUTOFBOUNDS</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00041">variables.h:41</a></div></div>
+<div class="ttc" id="variables_8h_html_aec09ce7d9b2ef743e51ace3e41148eff"><div class="ttname"><a href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">board::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00044">variables.h:44</a></div></div>
+<div class="ttc" id="board_8c_html_a46db977f6db0fd0825f5ef5108c30e9e"><div class="ttname"><a href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a></div><div class="ttdeci">char * calcFieldAddress(struct board *target, int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00060">board.c:60</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_cgraph.png" border="0" usemap="#board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_cgraph" alt=""/></div>
+<map name="board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_cgraph" id="board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_cgraph">
+<area shape="rect" id="node2" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="121,5,244,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_icgraph.png" border="0" usemap="#board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_icgraph" alt=""/></div>
+<map name="board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_icgraph" id="board_8c_a6cf24a8fbcadd26575f5d4ef0066e3f3_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#af50ec8f99b4ba00b14bf5cb7c7ee9f9d" title="checkDraw" alt="" coords="287,12,374,39"/><area shape="rect" id="node8" href="signatures_8h.html#a8ba56fbeff5fd3e187fdfeb8af94f517" title="drawBoard" alt="" coords="437,92,520,119"/><area shape="rect" id="node12" href="signatures_8h.html#ab00ce6c274e49e96ee206427e2095d5d" title="neighbourRow" alt="" coords="121,153,224,180"/><area shape="rect" id="node14" href="signatures_8h.html#ad1f279dc9f093c9a39000f5a6a077216" title="throwCoin" alt="" coords="439,157,518,184"/><area shape="rect" id="node3" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="853,56,957,83"/><area shape="rect" id="node4" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="1005,56,1167,83"/><area shape="rect" id="node5" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="1215,56,1297,83"/><area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1375,5,1425,32"/><area shape="rect" id="node7" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="1345,56,1455,83"/><area shape="rect" id="node9" href="signatures_8h.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="574,157,669,184"/><area shape="rect" id="node11" href="signatures_8h.html#aa4fc6e6e661f7a4dba70ac76f76ebb7e" title="animateFalling" alt="" coords="568,107,675,133"/><area shape="rect" id="node10" href="signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="723,132,805,159"/><area shape="rect" id="node13" href="signatures_8h.html#a42025a8656aaf0a1e18e7597ce1ea21c" title="checkForWinner" alt="" coords="272,153,389,180"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa832cfb270f47cdcb3afca65656dd964"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int newBoard </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="variables_8h.html#structboard">board</a> *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates new clean and usable board (including memory allocation) Warning: To resize an existing board call <a class="el" href="board_8c.html#af594e2b93fd0ac869b722812724a58ba">freeBoard()</a> before to prevent memory leak </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Pointer to a fresh board structure. </td></tr>
+    <tr><td class="paramname">width</td><td>Board width (&gt;=4). </td></tr>
+    <tr><td class="paramname">height</td><td>Board height (&gt;=4). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>1 on success, otherwise 0. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00015">15</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+<p>Benutzt <a class="el" href="board_8c_source.html#l00043">clearBoard()</a>, <a class="el" href="variables_8h_source.html#l00047">board::content</a>, <a class="el" href="variables_8h_source.html#l00003">EXITCODE_OUTOFMEMORY</a>, <a class="el" href="variables_8h_source.html#l00045">board::height</a>, <a class="el" href="variables_8h_source.html#l00046">board::numberOfFields</a> und <a class="el" href="variables_8h_source.html#l00044">board::width</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00333">startGame()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//sanity check</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>&lt;4 || <a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>&lt;4) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//Initialize board</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a> = <a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a> = <a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">numberOfFields</a> = <a class="code" href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">width</a>*<a class="code" href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">height</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> = malloc(target-&gt;<a class="code" href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">numberOfFields</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) + 1);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//abort if memory allocation failed</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (target-&gt;<a class="code" href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">content</a> == NULL) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        exit(<a class="code" href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//board is ready, now clear it</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a">clearBoard</a>(target);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="ttc" id="variables_8h_html_af385d79b2bb630ca5da634589b33c747"><div class="ttname"><a href="variables_8h.html#af385d79b2bb630ca5da634589b33c747">EXITCODE_OUTOFMEMORY</a></div><div class="ttdeci">const int EXITCODE_OUTOFMEMORY</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00003">variables.h:3</a></div></div>
+<div class="ttc" id="board_8c_html_aaf722a3aee3bf1d85e57eef1a4c4f02a"><div class="ttname"><a href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a">clearBoard</a></div><div class="ttdeci">void clearBoard(struct board *target)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00043">board.c:43</a></div></div>
+<div class="ttc" id="variables_8h_html_adc7cd5d0cf80217e1af088aeae171ac1"><div class="ttname"><a href="variables_8h.html#adc7cd5d0cf80217e1af088aeae171ac1">board::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00045">variables.h:45</a></div></div>
+<div class="ttc" id="variables_8h_html_acbd532e74dde0e17908138cf3abe7ae9"><div class="ttname"><a href="variables_8h.html#acbd532e74dde0e17908138cf3abe7ae9">board::numberOfFields</a></div><div class="ttdeci">unsigned int numberOfFields</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00046">variables.h:46</a></div></div>
+<div class="ttc" id="variables_8h_html_aec09ce7d9b2ef743e51ace3e41148eff"><div class="ttname"><a href="variables_8h.html#aec09ce7d9b2ef743e51ace3e41148eff">board::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00044">variables.h:44</a></div></div>
+<div class="ttc" id="variables_8h_html_a832d2b06af80b3937fb5b9bbd451a089"><div class="ttname"><a href="variables_8h.html#a832d2b06af80b3937fb5b9bbd451a089">board::content</a></div><div class="ttdeci">char * content</div><div class="ttdef"><b>Definition:</b> <a href="variables_8h_source.html#l00047">variables.h:47</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_aa832cfb270f47cdcb3afca65656dd964_cgraph.png" border="0" usemap="#board_8c_aa832cfb270f47cdcb3afca65656dd964_cgraph" alt=""/></div>
+<map name="board_8c_aa832cfb270f47cdcb3afca65656dd964_cgraph" id="board_8c_aa832cfb270f47cdcb3afca65656dd964_cgraph">
+<area shape="rect" id="node2" href="board_8c.html#aaf722a3aee3bf1d85e57eef1a4c4f02a" title="clearBoard" alt="" coords="132,5,216,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_aa832cfb270f47cdcb3afca65656dd964_icgraph.png" border="0" usemap="#board_8c_aa832cfb270f47cdcb3afca65656dd964_icgraph" alt=""/></div>
+<map name="board_8c_aa832cfb270f47cdcb3afca65656dd964_icgraph" id="board_8c_aa832cfb270f47cdcb3afca65656dd964_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="132,56,215,83"/><area shape="rect" id="node3" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="263,56,367,83"/><area shape="rect" id="node4" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="415,56,576,83"/><area shape="rect" id="node5" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="624,56,707,83"/><area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="784,5,835,32"/><area shape="rect" id="node7" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="755,56,864,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab0314fc030a3d0d9a0e2a5d4fad73bd0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setField </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="variables_8h.html#structboard">board</a> *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets what is on a given field of the board (see FIELD_XYZ constants) </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Board to change. </td></tr>
+    <tr><td class="paramname">x</td><td>X-coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>Y-coordinate. </td></tr>
+    <tr><td class="paramname">value</td><td>Field value (FIELD_EMPTY/FIELD_PLAYER1/FIELD_PLAYER2). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00087">87</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+<p>Benutzt <a class="el" href="board_8c_source.html#l00060">calcFieldAddress()</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="gamefunction_8c_source.html#l00252">throwCoin()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                              {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    *<a class="code" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a>(target, x, y) = value;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="ttc" id="board_8c_html_a46db977f6db0fd0825f5ef5108c30e9e"><div class="ttname"><a href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e">calcFieldAddress</a></div><div class="ttdeci">char * calcFieldAddress(struct board *target, int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="board_8c_source.html#l00060">board.c:60</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_cgraph.png" border="0" usemap="#board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_cgraph" alt=""/></div>
+<map name="board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_cgraph" id="board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_cgraph">
+<area shape="rect" id="node2" href="board_8c.html#a46db977f6db0fd0825f5ef5108c30e9e" title="calcFieldAddress" alt="" coords="121,5,244,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_icgraph.png" border="0" usemap="#board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_icgraph" alt=""/></div>
+<map name="board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_icgraph" id="board_8c_ab0314fc030a3d0d9a0e2a5d4fad73bd0_icgraph">
+<area shape="rect" id="node2" href="signatures_8h.html#ad1f279dc9f093c9a39000f5a6a077216" title="throwCoin" alt="" coords="121,56,200,83"/><area shape="rect" id="node3" href="signatures_8h.html#a4c3fafd1b547a7f6f3491c97a5ec7dfc" title="playerAction" alt="" coords="248,56,343,83"/><area shape="rect" id="node4" href="signatures_8h.html#ab1f321a2f17fa8ba0f5ab4e2621fd6d6" title="startGame" alt="" coords="391,56,473,83"/><area shape="rect" id="node5" href="signatures_8h.html#a074b577892140039af5605cac59cc8d4" title="gameFunction" alt="" coords="521,56,625,83"/><area shape="rect" id="node6" href="signatures_8h.html#a056836a121b87f913b3a69e9956fdc76" title="mainMenuReactToEnter" alt="" coords="673,56,835,83"/><area shape="rect" id="node7" href="signatures_8h.html#a8396c50bf544009fb2fc4907b00cbad3" title="mainMenu" alt="" coords="883,56,965,83"/><area shape="rect" id="node8" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1043,5,1093,32"/><area shape="rect" id="node9" href="main_menu_8c.html#a48d964d13e5975266aa100826ead8737" title="drawMainMenu" alt="" coords="1013,56,1123,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variablen-Dokumentation</h2>
+<a class="anchor" id="a3369d7d3ba0c47ba3025860fa01a4d9f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="variables_8h.html#structboard">board</a> myBoard</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="board_8c_source.html#l00005">5</a> der Datei <a class="el" href="board_8c_source.html">board.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6fb10fd182f1a6c12d521696c581f662.html">4-gewinnt</a></li><li class="navelem"><a class="el" href="board_8c.html">board.c</a></li>
+    <li class="footer">DHBW-MA - TINF13AIBC - Projektmanagement - Team 1337 (Stand: 17.06.2014) </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<map id="showHallOfShame" name="showHallOfShame">
+<area shape="rect" id="node2" href="$signatures_8h.html#aa4be9e04bfc0423517ed15c1fc6f63db" title="flushBuffer" alt="" coords="187,132,269,159"/>
+<area shape="rect" id="node8" href="$signatures_8h.html#a341a00a4a37b74dfa8e7e550c1fd1c2c" title="output" alt="" coords="199,309,257,336"/>
+<area shape="rect" id="node11" href="$signatures_8h.html#a09ed5dcaae860a161fb8b760e6fd59f7" title="setLineAlign" alt="" coords="181,259,275,285"/>
+<area shape="rect" id="node12" href="$signatures_8h.html#a7025362e49b3e0b8417d036ae412f1fa" title="startBuffer" alt="" coords="187,208,269,235"/>
+<area shape="rect" id="node3" href="$system_8c.html#ae313c1a63d6f75165c186e23ede3f886" title="consoleClear" alt="" coords="338,157,435,184"/>
+<area shape="rect" id="node4" href="$system_8c.html#abad66b8a8320fa60768a3433e2508029" title="deleteLineItem" alt="" coords="333,208,440,235"/>
+<area shape="rect" id="node5" href="$system_8c.html#a2374233b8cd8185e753ba171f3229169" title="initBuffer" alt="" coords="351,5,423,32"/>
+<area shape="rect" id="node6" href="$system_8c.html#a74024376169c8c9123f7ec39e1b0fa5e" title="printfBanner" alt="" coords="341,107,432,133"/>
+<area shape="rect" id="node7" href="$system_8c.html#a3c9d83905eaf8cbe0888ad9e2f419833" title="strcatRepeat" alt="" coords="499,81,595,108"/>
+<area shape="rect" id="node9" href="$system_8c.html#acca9c7a0097972b4bcb8afb753ad34c2" title="copyChar" alt="" coords="348,309,425,336"/>
+<area shape="rect" id="node10" href="$system_8c.html#a4a5bf9bf2724910545dfa307edfc8fba" title="insertNewLineItem" alt="" coords="323,259,451,285"/>
+</map>
