@@ -1,6 +1,8 @@
 #DHBW Projektmanagement 1&2: 
 ##4-gewinnt in C
 
+###Download: https://github.com/wagnst/4-gewinnt/releases/tag/v1.0
+
 ###Projektziel:
 ***
 Der Klassiker "4 gewinnt" soll als Konsolenanwendung bis zum 1.6.2014 in der Programmiersprache C entwickelt werden. 
