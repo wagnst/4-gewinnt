@@ -34,7 +34,7 @@ void showHallOfShame(int highlight,int startFrom){
 		}
 
 		setLineAlign(0);
-		output("[ HALL OF SHAME ]\n\nWelcome to our Hall of Shame...\n");
+		output("[ HALL OF SHAME ]\n\nWelcome to our Hall of Shame...\n\n");
 		setLineAlign(-1);
 		// notice if HoS is empty
 		int somethingPrinted =0;

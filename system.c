@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+#include <conio.h>
 
 struct OutBuffer display;
 CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -383,6 +384,7 @@ void animateBanner(int slideIn){
 		Sleep(50);
 		i += (slideIn ? -1 : +1);
 	}
+	while(kbhit()) getch();
 }
 
 /**
@@ -408,6 +410,7 @@ void animateBox(int wFrom, int hFrom, int wTo, int hTo){
 		printEmptyBox(w,h);
 		w--;
 	}
+	while(kbhit()) getch();
 }
 
 /**

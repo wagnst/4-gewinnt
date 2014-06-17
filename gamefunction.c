@@ -112,6 +112,7 @@ void gameFunction(){
 			moves =  (moves/2)+(moves%2);
 			consoleClear();
 			startBuffer(50);
+			setLineAlign(0);
 			drawBoard(&gameField);
 			winnerLine = updateSaveHoS(player1,player2,moves);
 			//output victor
@@ -129,6 +130,7 @@ void gameFunction(){
 			moves = (moves/2)+(moves%2);
 			consoleClear();
 			startBuffer(50);
+			setLineAlign(0);
 			drawBoard(&gameField);
 			winnerLine = updateSaveHoS(player2,player1,moves);
 			//output victor
@@ -145,6 +147,7 @@ void gameFunction(){
 			end = 1;
 			consoleClear();
 			startBuffer(50);
+			setLineAlign(0);
 			drawBoard(&gameField);
 			//output draw
 			output("Game ended with a draw...\n\n");
@@ -444,51 +447,51 @@ int irand( int a, int e){
 * @param CoinType variable to determine if the current Player has 'X' or '0' as Coin
 */
 void animateFalling(struct board* currBoard,unsigned int xPos,char CoinType){
-	//determing which type of coin is going to fall
-	char coin;
-	if(CoinType == FIELD_PLAYER1){
-		coin='X';
-	}else{
-		coin='O';
-	}
-
-
-
-
-
-	unsigned int currY=currBoard->height-1;
-	char* old;
-	//(getField(currBoard,xPos,currY)!=FIELD_EMPTY)&&
-	while((currY!=0)){
-		//no deletions possible at first run of loop
-		if(currY!=currBoard->height-1){
-			//delete coin one field above
-			old=calcFieldAddress(currBoard,xPos,currY+1);
-			old=&FIELD_EMPTY;
-		}
-		//setting coin one field lower
-		char* curr=calcFieldAddress(currBoard,xPos,currY);
-			curr=&coin;
-		currY--;
-
-		drawBoard(currBoard);
-		//improvised wait Method
-		int x=0;
-		for(x=0;x<1000000;x++){
-			//funny nothing will ever happen here :D
-			x=x;
-		};
-
-
-	}
-	/**final clean up
-	*deleting the last coin
-	*if this last part of the code will be deleted the last position of the coin will be permantely saved on the supplied board
-	**/
-	old=calcFieldAddress(currBoard,xPos,currY);
-//	&old=FIELD_EMPTY;
-	old=FIELD_EMPTY;
-	//return;
-
+//	//determing which type of coin is going to fall
+//	char coin;
+//	if(CoinType == FIELD_PLAYER1){
+//		coin='X';
+//	}else{
+//		coin='O';
+//	}
+//
+//
+//
+//
+//
+//	unsigned int currY=currBoard->height-1;
+//	char* old;
+//	//(getField(currBoard,xPos,currY)!=FIELD_EMPTY)&&
+//	while((currY!=0)){
+//		//no deletions possible at first run of loop
+//		if(currY!=currBoard->height-1){
+//			//delete coin one field above
+//			old=calcFieldAddress(currBoard,xPos,currY+1);
+//			old=&FIELD_EMPTY;
+//		}
+//		//setting coin one field lower
+//		char* curr=calcFieldAddress(currBoard,xPos,currY);
+//			curr=&coin;
+//		currY--;
+//
+//		drawBoard(currBoard);
+//		//improvised wait Method
+//		int x=0;
+//		for(x=0;x<1000000;x++){
+//			//funny nothing will ever happen here :D
+//			x=x;
+//		};
+//
+//
+//	}
+//	/**final clean up
+//	*deleting the last coin
+//	*if this last part of the code will be deleted the last position of the coin will be permantely saved on the supplied board
+//	**/
+//	old=calcFieldAddress(currBoard,xPos,currY);
+////	&old=FIELD_EMPTY;
+//	old=FIELD_EMPTY;
+//	//return;
+//
 }
 
